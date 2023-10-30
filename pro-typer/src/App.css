@@ -15,30 +15,6 @@ body {
   height: 100vh;
 }
 
-.navbar {
-  padding-left: 10px;
-  display: flex;
-  width: 100%;
-  column-gap: 50px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-  height: 100px;
-  align-items: center;
-  font-family: "Courier New", Courier, monospace;
-  background-color: #1c1c1c;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: white;
-  transition: 0.8s;
-}
-
-.navbar a:hover {
-  color: #add5f8;
-  text-shadow: 0 0px 15px #add5f889;
-  transition: 0.2s;
-}
-
 .content {
   display: flex;
   width: 100%;
