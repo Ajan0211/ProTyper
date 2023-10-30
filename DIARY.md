@@ -72,3 +72,19 @@ Made minor improvements on CSS for index page to improve visibility.
 ### 25th October
 
 Added extra CSS effects for improved UI usability such as smoother transitions and better colours.
+
+### 26th October
+
+Attended supervisor meeting where I got given feedback for my project plan as well as ask questions I wanted awnsers to.
+
+In this meeting we discussed how I should not be divergering too much from my current timeline and how I am able to add feature which are currently not on my timeline like having an online feature. Supervisor also said that I should look into web testing so that I can do backend testing and went through features like making my website responsive would also give me additional marks.
+
+### 27th October
+
+Looked further into components in React and what it is used for as well as how it can be utilized properly within my frontend development.
+
+## Week 6
+
+### 30th October
+
+Made navbar into a component so that it helps me improve code readability.
