@@ -88,3 +88,5 @@ Looked further into components in React and what it is used for as well as how i
 ### 30th October
 
 Made navbar into a component so that it helps me improve code readability.
+
+### 2nd November
