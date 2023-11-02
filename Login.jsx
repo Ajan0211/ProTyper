@@ -1,4 +1,4 @@
-import Navbar from "./navbar";
+import Navbar from "./pro-typer/src/navbar";
 import "./Login.css";
 
 function Login() {
