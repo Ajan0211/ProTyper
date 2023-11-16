@@ -1,21 +1,23 @@
 import "./navbar.css";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
+  const navigate = useNavigate();
   return (
     <div className="navbar">
       <img className="logo" src="src/assets/Layer 1.png"></img>
 
       <div className="nav-item">
-        <a href="#home">Home</a>
+        <a onClick={() => navigate("/Start")}>Home</a>
       </div>
       <div className="nav-item">
-        <a href="#Settings">Settings</a>
+        <a onClick={() => navigate("/Settings")}>Settings</a>
       </div>
       <div className="nav-item">
-        <a href="#Shop">Shop</a>
+        <a onClick={() => navigate("/Shop")}>Shop</a>
       </div>
       <div className="nav-item">
-        <a href="#Login/Signup">Login/SignUp</a>
+        <a onClick={() => navigate("/Login")}>Login/Signup</a>
       </div>
     </div>
   );
