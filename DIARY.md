@@ -90,3 +90,21 @@ Looked further into components in React and what it is used for as well as how i
 Made navbar into a component so that it helps me improve code readability.
 
 ### 2nd November
+
+Made skelton for login page as well as setting up a react router dom to organise page paths.
+
+### 10th Novemeber
+
+Made figma pages for login page and register page, to prepare for coding.
+
+### 15th Novemeber
+
+Made html skelton code for username and password input.
+
+### 16th November
+
+linked all the pages to the relevant buttons on the homepage.
+
+### 17th November
+
+Made a start on my iterim report as well as finishing off front end for login page; I also made minor updates on font size in navbar.
