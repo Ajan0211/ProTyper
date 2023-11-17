@@ -5,12 +5,12 @@ import Start from "./Start";
 
 function App() {
   return (
-    <>
+    <div className="App">
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/start" element={<Start />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Start" element={<Start />} />
       </Routes>
-    </>
+    </div>
   );
 }
 
