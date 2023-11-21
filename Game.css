@@ -1,0 +1,39 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.time {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.game-container {
+  background-color: #323437;
+  background-color: #70768431;
+  color: aliceblue;
+  font-weight: bold;
+  border: 3px solid rgb(67, 67, 67);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  padding: 20px;
+  opacity: 20px;
+}
+.text-container {
+  margin-bottom: 20px;
+}
+input[id="text"] {
+  border-radius: 20px;
+  border-color: #6c6c6c;
+  min-height: 32px;
+  width: 925px;
+  margin-bottom: 10px;
+  border-style: solid;
+  padding-left: 10px;
+  transition: 0.3s;
+  outline: none;
+}
