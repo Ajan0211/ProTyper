@@ -37,3 +37,7 @@ input[id="text"] {
   transition: 0.3s;
   outline: none;
 }
+
+.correct {
+  color: green;
+}

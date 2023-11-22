@@ -29,7 +29,13 @@ function Game() {
             Timer: 0
           </div>
           <div className="text-container" id="quote">
-            {currentQuote}
+            {currentQuote.split("").map((char, index) => {
+              return (
+                <span key={index} className="correct">
+                  {char}
+                </span>
+              );
+            })}
           </div>
           <input id="text" autoFocus></input>
         </div>
