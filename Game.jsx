@@ -15,6 +15,7 @@ function Game() {
   }
 
   const [currentQuote, setCurrentText] = useState("");
+  const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
     newText();
@@ -30,14 +31,33 @@ function Game() {
           </div>
           <div className="text-container" id="quote">
             {currentQuote.split("").map((char, index) => {
+              let correct = false;
+              let empty = false;
+              if (inputValue.length >= index + 1) {
+                if (inputValue.substring(index, index + 1) == char) {
+                  correct = true;
+                }
+              } else {
+                empty = true;
+              }
               return (
-                <span key={index} className="correct">
+                <span
+                  key={index}
+                  className={
+                    correct && !empty ? "correct" : empty ? "" : "incorrect"
+                  }
+                >
                   {char}
                 </span>
               );
             })}
           </div>
-          <input id="text" autoFocus></input>
+          <input
+            id="text"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            autoFocus
+          ></input>
         </div>
       </div>
     </>
