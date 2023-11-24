@@ -84,6 +84,11 @@ function Game() {
             autoFocus
           ></input>
         </div>
+        <div className="math-container">
+          <div>Words per minute:</div>
+          <div>Accuracy:</div>
+          <div>Time:</div>
+        </div>
       </div>
     </>
   );
