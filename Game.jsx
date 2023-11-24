@@ -12,6 +12,7 @@ function Game() {
   async function newText() {
     const text = await randomText();
     setCurrentText(text);
+    setInputValue("");
   }
 
   const [currentQuote, setCurrentText] = useState("");
@@ -35,6 +36,12 @@ function Game() {
     };
   }, [startedTyping]);
 
+  useEffect(() => {
+    if (inputValue == currentQuote && startedTyping) {
+      newText();
+    }
+  }, [inputValue]);
+
   return (
     <>
       <Navbar></Navbar>
@@ -54,6 +61,7 @@ function Game() {
               } else {
                 empty = true;
               }
+
               return (
                 <span
                   key={index}
