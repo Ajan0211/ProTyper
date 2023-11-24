@@ -39,6 +39,7 @@ function Game() {
   useEffect(() => {
     if (inputValue == currentQuote && startedTyping) {
       newText();
+      setTimer(0);
     }
   }, [inputValue]);
 
