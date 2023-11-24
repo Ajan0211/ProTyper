@@ -69,4 +69,10 @@ input[id="text"] {
   padding: 15px 10px;
   border-radius: 5px;
   cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  transition: transform 0.5s;
+}
+
+.reset-button:hover {
+  transform: translateY(-3px);
 }
