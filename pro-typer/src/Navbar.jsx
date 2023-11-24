@@ -8,7 +8,7 @@ function Navbar() {
       <img className="logo" src="src/assets/Layer 1.png"></img>
 
       <div className="nav-item">
-        <a onClick={() => navigate("/Start")}>Home</a>
+        <a onClick={() => navigate("/")}>Home</a>
       </div>
       <div className="nav-item">
         <a onClick={() => navigate("/Settings")}>Settings</a>
