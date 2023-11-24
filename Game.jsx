@@ -19,6 +19,7 @@ function Game() {
   const [inputValue, setInputValue] = useState("");
   const [timer, setTimer] = useState(0);
   const [startedTyping, setStartedTyping] = useState(false);
+  const [pageLoaded, setPageLoaded] = useState(false);
   const [wordsPerMinute, setWordsPerMinute] = useState(0);
 
   const calculateMetrics = () => {
@@ -29,11 +30,13 @@ function Game() {
   };
 
   useEffect(() => {
-    if (!startedTyping) {
+    if (!pageLoaded) {
       newText();
+      setWordsPerMinute(0);
+      setPageLoaded(true);
+      setInputValue("");
     }
 
-    setWordsPerMinute(0);
     const interval = setInterval(() => {
       if (startedTyping) {
         setTimer((timer) => timer + 1);
@@ -99,7 +102,15 @@ function Game() {
         </div>
         <div className="math-container">
           <div>Words Per Minute: {wordsPerMinute} </div>
-          <div className="reset-button">
+          <div
+            className="reset-button"
+            onClick={() => {
+              newText();
+              setWordsPerMinute(0);
+              setTimer(0);
+              setInputValue("");
+            }}
+          >
             <i className="fa-solid fa-rotate-right" />
             <div>Reset</div>
           </div>
