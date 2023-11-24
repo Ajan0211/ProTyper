@@ -16,10 +16,24 @@ function Game() {
 
   const [currentQuote, setCurrentText] = useState("");
   const [inputValue, setInputValue] = useState("");
+  const [timer, setTimer] = useState(0);
+  const [startedTyping, setStartedTyping] = useState(false);
 
   useEffect(() => {
-    newText();
-  }, []);
+    if (!startedTyping) {
+      newText();
+    }
+    setTimer(0);
+    const interval = setInterval(() => {
+      if (startedTyping) {
+        setTimer((timer) => timer + 1);
+      }
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [startedTyping]);
 
   return (
     <>
@@ -27,7 +41,7 @@ function Game() {
       <div className="main-container">
         <div className="game-container">
           <div className="time" id="timer">
-            Timer: 0
+            Timer: {timer}
           </div>
           <div className="text-container" id="quote">
             {currentQuote.split("").map((char, index) => {
@@ -55,7 +69,10 @@ function Game() {
           <input
             id="text"
             value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
+            onChange={(e) => {
+              setStartedTyping(true);
+              setInputValue(e.target.value);
+            }}
             autoFocus
           ></input>
         </div>
