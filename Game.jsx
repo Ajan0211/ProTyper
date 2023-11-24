@@ -98,6 +98,7 @@ function Game() {
               setInputValue(e.target.value);
             }}
             autoFocus
+            autoComplete="off"
           ></input>
         </div>
         <div className="math-container">
