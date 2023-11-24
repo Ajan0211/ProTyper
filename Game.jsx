@@ -98,7 +98,11 @@ function Game() {
           ></input>
         </div>
         <div className="math-container">
-          <div>Words per minute: {wordsPerMinute} </div>
+          <div>Words Per Minute: {wordsPerMinute} </div>
+          <div className="reset-button">
+            <i className="fa-solid fa-rotate-right" />
+            <div>Reset</div>
+          </div>
         </div>
       </div>
     </>
