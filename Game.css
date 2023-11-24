@@ -15,7 +15,6 @@
 .game-container {
   background-color: #323437;
   background-color: #70768431;
-  color: aliceblue;
   font-weight: bold;
   border: 3px solid rgb(67, 67, 67);
   width: 80%;
@@ -24,11 +23,14 @@
 }
 .text-container {
   margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 100;
+  text-align: center;
 }
 input[id="text"] {
   border-radius: 20px;
   border-color: #6c6c6c;
-  min-height: 32px;
+  min-height: 40px;
   width: 100%;
   margin-bottom: 10px;
   border-style: solid;
@@ -46,8 +48,10 @@ input[id="text"] {
   text-decoration: underline;
 }
 .math-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  width: 500px;
+  background-color: #323437;
+  background-color: #70768431;
+  border: 3px solid rgb(67, 67, 67);
+  padding: 10px;
+  text-align: center;
 }

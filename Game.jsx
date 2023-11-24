@@ -19,12 +19,21 @@ function Game() {
   const [inputValue, setInputValue] = useState("");
   const [timer, setTimer] = useState(0);
   const [startedTyping, setStartedTyping] = useState(false);
+  const [wordsPerMinute, setWordsPerMinute] = useState(0);
+
+  const calculateMetrics = () => {
+    if (startedTyping && timer > 0) {
+      const totalWords = inputValue.split(/\s+/).length;
+      setWordsPerMinute(Math.round((totalWords / timer) * 60));
+    }
+  };
 
   useEffect(() => {
     if (!startedTyping) {
       newText();
     }
-    setTimer(0);
+
+    setWordsPerMinute(0);
     const interval = setInterval(() => {
       if (startedTyping) {
         setTimer((timer) => timer + 1);
@@ -35,6 +44,10 @@ function Game() {
       clearInterval(interval);
     };
   }, [startedTyping]);
+
+  useEffect(() => {
+    calculateMetrics();
+  }, [timer]);
 
   useEffect(() => {
     if (inputValue == currentQuote && startedTyping) {
@@ -85,9 +98,7 @@ function Game() {
           ></input>
         </div>
         <div className="math-container">
-          <div>Words per minute:</div>
-          <div>Accuracy:</div>
-          <div>Time:</div>
+          <div>Words per minute: {wordsPerMinute} </div>
         </div>
       </div>
     </>
