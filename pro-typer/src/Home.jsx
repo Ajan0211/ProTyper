@@ -7,9 +7,17 @@ function Home() {
   return (
     <>
       <Navbar></Navbar>
+
       <div className="content">
-        <div className="button">
-          <a onClick={() => navigate("/Game")}>Start Game</a>
+        <div className="container">
+          <div className="heading">Welcome to ProTyper</div>
+          <div className="summary">
+            Get ready to unleash your typing skills in the ultimate race against
+            the clock – where speed meets precision at ProTyper!
+          </div>
+          <div className="button">
+            <a onClick={() => navigate("/Game")}>Start Game</a>
+          </div>
         </div>
       </div>
     </>
