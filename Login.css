@@ -7,7 +7,6 @@
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
-  width: autopx;
   background-color: #323437;
   background-color: #70768431;
   padding: 20px;
@@ -15,28 +14,32 @@
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
 }
 
-input[type="username"] {
+.input {
   border-radius: 20px;
-  border-color: #6c6c6c;
+  border: 3px solid #6c6c6c;
   min-height: 32px;
   min-width: 200px;
+  padding: 10px 15px;
   margin-bottom: 20px;
-  border-style: solid;
-  padding-left: 10px;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+}
+
+input[type="username"] {
+  border: none;
+  background-color: transparent;
   transition: 0.3s;
   outline: none;
+  color: white;
 }
 
 input[type="password"] {
-  border-radius: 20px;
-  border-color: #6c6c6c;
-  min-height: 32px;
-  min-width: 200px;
-  margin-bottom: 15px;
-  border-style: solid;
-  padding-left: 10px;
+  border: none;
+  background-color: transparent;
   transition: 0.3s;
   outline: none;
+  color: white;
 }
 
 .submit-button {

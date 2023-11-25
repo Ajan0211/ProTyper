@@ -9,6 +9,7 @@ function Login() {
       <div className="container-login">
         <div className="heading-login">Login</div>
         <div className="input">
+          <i className="fa-solid fa-user"></i>
           <input
             type="username"
             id="uernamename"
@@ -18,6 +19,7 @@ function Login() {
         </div>
 
         <div className="input">
+          <i class="fa-solid fa-key"></i>
           <input
             type="password"
             id="password"
