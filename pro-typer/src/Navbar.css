@@ -1,18 +1,21 @@
 .navbar {
-  padding-left: 10px;
   display: flex;
+  padding: 0 20px;
   width: 100%;
-  column-gap: 50px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   height: 100px;
+  justify-content: space-between;
   align-items: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position: relative;
+  overflow: hidden;
 }
 
 .navbar a {
   text-decoration: none;
   color: white;
   transition: 0.8s;
+  float: left;
 }
 
 .navbar a:hover {
@@ -20,4 +23,23 @@
   text-shadow: 0 0px 15px #add5f889;
   transition: 0.2s;
   cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+}
+
+.nav-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 30px;
 }
