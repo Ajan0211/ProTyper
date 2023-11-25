@@ -6,12 +6,10 @@ function Home() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="App">
-        <Navbar></Navbar>
-        <div className="content">
-          <div className="button">
-            <a onClick={() => navigate("/Game")}>Start Game</a>
-          </div>
+      <Navbar></Navbar>
+      <div className="content">
+        <div className="button">
+          <a onClick={() => navigate("/Game")}>Start Game</a>
         </div>
       </div>
     </>

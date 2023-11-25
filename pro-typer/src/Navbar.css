@@ -3,7 +3,7 @@
   display: flex;
   width: 100%;
   column-gap: 50px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   height: 100px;
   align-items: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
