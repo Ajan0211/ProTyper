@@ -12,7 +12,7 @@ function SignUp() {
             type="firstname"
             id="fname"
             name="firstname"
-            placeholder="firstname..."
+            placeholder="Firstname..."
           ></input>
         </div>
 
@@ -20,7 +20,7 @@ function SignUp() {
           <input
             type="lastname"
             id="lname"
-            name="lastname"
+            name="Lastname"
             placeholder="Lastname..."
           ></input>
         </div>
