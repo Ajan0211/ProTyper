@@ -1,7 +1,6 @@
 .navbar {
   display: flex;
   padding: 0 20px;
-  width: 100%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   height: 100px;
   justify-content: space-between;
@@ -14,15 +13,25 @@
 .navbar a {
   text-decoration: none;
   color: white;
-  transition: 0.8s;
-  float: left;
 }
 
 .navbar a:hover {
-  color: #add5f8;
-  text-shadow: 0 0px 15px #add5f889;
-  transition: 0.2s;
+  color: #b6c8cf9c;
+
   cursor: pointer;
+}
+.navbar a::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background-color: #444;
+  position: absolute;
+  top: 0;
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+.navbar a:hover::before {
+  width: 100%;
 }
 
 .logo {
@@ -42,4 +51,15 @@
   justify-content: center;
   align-items: center;
   column-gap: 30px;
+
+  margin-bottom: 10px;
+}
+
+.nav-item1 {
+  position: relative;
+  padding-top: 10px;
+}
+.nav-right {
+  position: relative;
+  padding-top: 10px;
 }
