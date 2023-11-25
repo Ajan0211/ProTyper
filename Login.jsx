@@ -7,7 +7,7 @@ function Login() {
     <>
       <Navbar></Navbar>
       <div className="container-login">
-        <div className="heading">Login</div>
+        <div className="heading-login">Login</div>
         <div className="input">
           <input
             type="username"
@@ -22,7 +22,7 @@ function Login() {
             type="password"
             id="password"
             name="password"
-            placeholder="password..."
+            placeholder="Password..."
           ></input>
         </div>
         <div className="button-container">

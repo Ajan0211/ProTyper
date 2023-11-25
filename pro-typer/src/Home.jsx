@@ -9,7 +9,7 @@ function Home() {
       <Navbar></Navbar>
 
       <div className="content">
-        <div className="container">
+        <div className="container-summary">
           <div className="heading">Welcome to ProTyper</div>
           <div className="summary">
             Get ready to unleash your typing skills in the ultimate race against
