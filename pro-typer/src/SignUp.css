@@ -66,7 +66,7 @@ input[type="password"] {
 .button-container2 {
   display: flex;
   column-gap: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .signup-button {
@@ -85,6 +85,7 @@ input[type="password"] {
   cursor: pointer;
   text-align: center;
   transition: transform 0.5s;
+  margin-top: 10px;
 }
 
 .signup-button:hover {
