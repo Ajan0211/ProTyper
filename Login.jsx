@@ -1,4 +1,4 @@
-import Navbar from "./pro-typer/src/navbar";
+import Navbar from "./Navbar.jsx";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 
@@ -33,7 +33,7 @@ function Login() {
             <a onClick={() => navigate("/Game")}>Login</a>
           </div>
           <div className="submit-button">
-            <a onClick={() => navigate("/Sign-up")}>Sign up</a>
+            <a onClick={() => navigate("/SignUp")}>Sign up</a>
           </div>
         </div>
         <div className="forgot-password">
