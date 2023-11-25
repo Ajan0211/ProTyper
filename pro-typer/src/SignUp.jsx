@@ -8,6 +8,7 @@ function SignUp() {
       <div className="container-signup">
         <div className="heading-signup">Sign up</div>
         <div className="input">
+          <i class="fa-solid fa-user"></i>
           <input
             type="firstname"
             id="fname"
@@ -17,6 +18,7 @@ function SignUp() {
         </div>
 
         <div className="input">
+          <i class="fa-solid fa-user"></i>
           <input
             type="lastname"
             id="lname"
@@ -26,6 +28,7 @@ function SignUp() {
         </div>
 
         <div className="input">
+          <i class="fa-solid fa-envelope"></i>
           <input
             type="email"
             id="email"
@@ -34,6 +37,7 @@ function SignUp() {
           ></input>
         </div>
         <div className="input">
+          <i class="fa-solid fa-key"></i>
           <input
             type="password"
             id="password"
