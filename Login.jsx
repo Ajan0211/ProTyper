@@ -1,8 +1,9 @@
 import Navbar from "./pro-typer/src/navbar";
-
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
   return (
     <>
       <Navbar></Navbar>
@@ -28,10 +29,18 @@ function Login() {
           ></input>
         </div>
         <div className="button-container">
-          <div className="submit-button">Login</div>
-          <div className="submit-button">Sign up</div>
+          <div className="submit-button">
+            <a onClick={() => navigate("/Game")}>Login</a>
+          </div>
+          <div className="submit-button">
+            <a onClick={() => navigate("/Sign-up")}>Sign up</a>
+          </div>
         </div>
-        <div className="forgot-password">Forgot your password?</div>
+        <div className="forgot-password">
+          <a onClick={() => navigate("/reset-password")}>
+            Forgot your password?
+          </a>
+        </div>
       </div>
     </>
   );
