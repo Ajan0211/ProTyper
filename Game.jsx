@@ -1,5 +1,5 @@
 import "./Game.css";
-import Navbar from "./pro-typer/src/navbar";
+import Navbar from "./Navbar";
 import { useEffect, useState } from "react";
 const TEXT_API_URL = "https://api.quotable.io/random";
 
