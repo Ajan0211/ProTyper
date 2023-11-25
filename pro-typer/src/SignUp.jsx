@@ -46,12 +46,7 @@ function SignUp() {
           ></input>
         </div>
         <div className="button-container2">
-          <div
-            className="sign
-          up-button"
-          >
-            Sign up
-          </div>
+          <div className="signup-button">Sign up</div>
         </div>
       </div>
     </>
