@@ -16,6 +16,7 @@
   min-height: 200px;
   cursor: pointer;
   transition: transform 0.25s, box-shadow 0.25s;
+  text-align: center;
 }
 .box-container:hover {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
