@@ -1,7 +1,9 @@
 import Navbar from "../../Navbar.jsx";
 import "./ResetPassword.css";
+import { useNavigate } from "react-router-dom";
 
 function ResetPassword() {
+  const navigate = useNavigate();
   return (
     <>
       <Navbar></Navbar>
