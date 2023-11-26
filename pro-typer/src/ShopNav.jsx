@@ -2,7 +2,8 @@ import "./ShopNav.css";
 
 import { useNavigate } from "react-router-dom";
 
-function ShopNav() {
+function ShopNav(props) {
+  const { searchValue, setSearchValue } = props;
   const navigate = useNavigate();
   return (
     <>
@@ -15,7 +16,14 @@ function ShopNav() {
         <div className="shopnav-left">
           <div className="shopnav-item1">
             <div className="searchbar">
-              <input type="text" placeholder="Search.."></input>
+              <input
+                type="text"
+                placeholder="Search.."
+                value={searchValue}
+                onChange={(e) => {
+                  setSearchValue(e.target.value);
+                }}
+              ></input>
               <i className="fa-solid fa-magnifying-glass"></i>
             </div>
           </div>
