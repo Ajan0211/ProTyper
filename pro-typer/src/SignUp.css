@@ -61,6 +61,11 @@ input[type="password"] {
   transition: 0.3s;
   outline: none;
   color: white;
+  min-width: 310px;
+}
+
+i[type="show-password"] {
+  cursor: pointer;
 }
 
 .button-container2 {
@@ -85,7 +90,6 @@ input[type="password"] {
   cursor: pointer;
   text-align: center;
   transition: transform 0.5s;
-  margin-top: 10px;
 }
 
 .signup-button:hover {

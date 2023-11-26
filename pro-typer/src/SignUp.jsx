@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function SignUp() {
   const navigate = useNavigate();
+
   return (
     <>
       <Navbar></Navbar>
@@ -46,10 +47,11 @@ function SignUp() {
             name="password"
             placeholder="Password..."
           ></input>
+          <i className="fa-solid fa-eye" type="show-password"></i>
         </div>
         <div className="button-container2">
           <div className="signup-button">
-            <a onClick={() => navigate("/Game")}>Sign up</a>
+            <a onClick={() => navigate("/Login")}>Sign up</a>
           </div>
         </div>
       </div>
