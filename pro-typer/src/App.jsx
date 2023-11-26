@@ -5,6 +5,7 @@ import Home from "./Home";
 import Game from "../../Game";
 import SignUp from "./SignUp";
 import ResetPassword from "./ResetPassword";
+import Shop from "./Shop";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/Game" element={<Game />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/ResetPassword" element={<ResetPassword />} />
+        <Route path="/Shop" element={<Shop />} />
       </Routes>
     </div>
   );
