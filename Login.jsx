@@ -37,7 +37,7 @@ function Login() {
           </div>
         </div>
         <div className="forgot-password">
-          <a onClick={() => navigate("/reset-password")}>
+          <a onClick={() => navigate("/ResetPassword")}>
             Forgot your password?
           </a>
         </div>
