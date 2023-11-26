@@ -1,9 +1,11 @@
 import Navbar from "./Navbar.jsx";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 function Login() {
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState("");
   return (
     <>
       <Navbar></Navbar>
@@ -22,11 +24,16 @@ function Login() {
         <div className="input">
           <i class="fa-solid fa-key"></i>
           <input
-            type="password"
+            type={`${showPassword ? "text" : "password"}`}
             id="password"
             name="password"
             placeholder="Password..."
           ></input>
+          <i
+            className={`fa-solid ${showPassword ? "fa-eye-slash" : "fa-eye"}`}
+            type="show-password"
+            onClick={() => setShowPassword((state) => !state)}
+          ></i>
         </div>
         <div className="button-container">
           <div className="submit-button">

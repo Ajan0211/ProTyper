@@ -24,17 +24,6 @@
   display: flex;
   column-gap: 10px;
   align-items: center;
-}
-
-input[type="username"] {
-  border: none;
-  background-color: transparent;
-  transition: 0.3s;
-  outline: none;
-  color: white;
-}
-
-input[type="password"] {
   border: none;
   background-color: transparent;
   transition: 0.3s;
