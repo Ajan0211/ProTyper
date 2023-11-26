@@ -1,0 +1,122 @@
+.navbar1 {
+  display: flex;
+  padding: 0 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.26);
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar1 a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar1 a:hover {
+  color: #b6c8cf9c;
+
+  cursor: pointer;
+}
+.navbar1 a::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background-color: #444;
+  position: absolute;
+  top: 0;
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+.navbar1 a:hover::before {
+  width: 100%;
+}
+.navbar2 {
+  display: flex;
+  padding: 0 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  height: 40px;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+.navbar2 a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar2 a:hover {
+  color: #b6c8cf9c;
+
+  cursor: pointer;
+}
+.navbar2 a::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background-color: #444;
+  position: absolute;
+  top: 0;
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+.navbar2 a:hover::before {
+  width: 100%;
+}
+
+.shoplogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+}
+
+.shopnav-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 30px;
+
+  margin-bottom: 10px;
+}
+
+.shopnav-item1 {
+  position: relative;
+  padding-top: 10px;
+}
+.shopnav-right {
+  position: relative;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 50px;
+}
+.searchbar {
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+  border: 3px solid #6c6c6c;
+  min-height: 10px;
+  min-width: 350px;
+  padding: 10px 15px;
+
+  column-gap: 10px;
+  align-items: center;
+
+  background-color: #70768431;
+  transition: 0.3s;
+  outline: none;
+  color: white;
+}
+.Account {
+  margin-right: -40px;
+}

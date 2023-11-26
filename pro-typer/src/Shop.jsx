@@ -1,10 +1,10 @@
-import Navbar from "../../Navbar.jsx";
+import ShopNav from "./ShopNav.jsx";
 import "./Shop.css";
 
 function Shop() {
   return (
     <>
-      <Navbar></Navbar>
+      <ShopNav></ShopNav>
     </>
   );
 }
