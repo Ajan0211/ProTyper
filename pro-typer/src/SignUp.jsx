@@ -51,7 +51,7 @@ function SignUp() {
             placeholder="Password..."
           ></input>
           <i
-            className="fa-solid fa-eye"
+            className={`fa-solid ${showPassword ? "fa-eye-slash" : "fa-eye"}`}
             type="show-password"
             onClick={() => setShowPassword((state) => !state)}
           ></i>
