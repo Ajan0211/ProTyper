@@ -11,6 +11,18 @@ function Shop() {
         <div className="box-container">box 3</div>
         <div className="box-container">box 4</div>
       </div>
+      <div className="page-container">
+        <div className="box-container">box 5</div>
+        <div className="box-container">box 6</div>
+        <div className="box-container">box 7</div>
+        <div className="box-container">box 8</div>
+      </div>
+      <div className="page-container">
+        <div className="box-container">box 9</div>
+        <div className="box-container">box 10</div>
+        <div className="box-container">box 11</div>
+        <div className="box-container">box 12</div>
+      </div>
     </>
   );
 }
