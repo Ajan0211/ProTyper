@@ -10,7 +10,9 @@ function Shop() {
           item 1<div className="image-container"></div>
           <div className="price-container">
             $$$$
-            <div className="Add-button">Add to Bag</div>
+            <div className="Add-button">
+              <i class="fa-solid fa-plus"></i>
+            </div>
           </div>
         </div>
         <div className="box-container">box 2</div>
