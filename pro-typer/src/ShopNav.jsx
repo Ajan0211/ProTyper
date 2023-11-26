@@ -18,14 +18,16 @@ function ShopNav() {
         </div>
 
         <div className="shopnav-right">
-          <div className="Account">
+          <div className="shopnav-item1">
             <a onClick={() => navigate("/Login")}>My Account </a>
+            <i className="fa-solid fa-user"></i>
           </div>
-          <i className="fa-solid fa-user"></i>
+          <div className="shopnav-item1">
+            <a onClick={() => navigate("/ShoppingBag")}>
+              <i className="fa-solid fa-bag-shopping"></i>
+            </a>
+          </div>
 
-          <a onClick={() => navigate("/ShoppingBag")}>
-            <i className="fa-solid fa-bag-shopping"></i>
-          </a>
           <div className="checkout-button">Checkout</div>
         </div>
       </div>
