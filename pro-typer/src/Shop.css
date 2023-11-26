@@ -2,6 +2,8 @@
   margin: 50px;
   justify-content: space-between;
   display: flex;
+  flex-wrap: wrap;
+  row-gap: 50px;
   position: relative;
 }
 
@@ -29,7 +31,7 @@
 .image-container {
   width: 200px;
   height: 150px;
-  background-color: rgb(241, 229, 229);
+  background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   align-items: center;

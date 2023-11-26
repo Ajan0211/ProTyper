@@ -1,35 +1,20 @@
 import ShopNav from "./ShopNav.jsx";
 import "./Shop.css";
+import ShopItem from "./ShopItem.jsx";
 
 function Shop() {
   return (
     <>
       <ShopNav></ShopNav>
       <div className="page-container">
-        <div className="box-container">
-          item 1<div className="image-container"></div>
-          <div className="price-container">
-            $$$$
-            <div className="Add-button">
-              <i class="fa-solid fa-plus"></i>
-            </div>
-          </div>
-        </div>
-        <div className="box-container">box 2</div>
-        <div className="box-container">box 3</div>
-        <div className="box-container">box 4</div>
-      </div>
-      <div className="page-container">
-        <div className="box-container">box 5</div>
-        <div className="box-container">box 6</div>
-        <div className="box-container">box 7</div>
-        <div className="box-container">box 8</div>
-      </div>
-      <div className="page-container">
-        <div className="box-container">box 9</div>
-        <div className="box-container">box 10</div>
-        <div className="box-container">box 11</div>
-        <div className="box-container">box 12</div>
+        <ShopItem name={"item1"} price={"£8.99"} />
+        <ShopItem name={"item2"} price={"£7.99"} />
+        <ShopItem name={"item3"} price={"£6.99"} />
+        <ShopItem name={"item5"} price={"£5.99"} />
+        <ShopItem name={"item6"} price={"£8.99"} />
+        <ShopItem name={"item7"} price={"£7.99"} />
+        <ShopItem name={"item8"} price={"£6.99"} />
+        <ShopItem name={"item9"} price={"£5.99"} />
       </div>
     </>
   );
