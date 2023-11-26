@@ -7,7 +7,11 @@ function ShopNav() {
   return (
     <>
       <div className="navbar1">
-        <img className="shoplogo" src="src/assets/Layer 1.png"></img>
+        <img
+          className="shoplogo"
+          src="src/assets/Layer 1.png"
+          onClick={() => navigate("/")}
+        />
         <div className="shopnav-left">
           <div className="shopnav-item1">
             <div className="searchbar">
