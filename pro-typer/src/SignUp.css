@@ -31,37 +31,13 @@
   align-items: center;
 }
 
-input[type="firstname"] {
+input {
   border: none;
   background-color: transparent;
   transition: 0.3s;
   outline: none;
   color: white;
-}
-
-input[type="lastname"] {
-  border: none;
-  background-color: transparent;
-  transition: 0.3s;
-  outline: none;
-  color: white;
-}
-
-input[type="email"] {
-  border: none;
-  background-color: transparent;
-  transition: 0.3s;
-  outline: none;
-  color: white;
-}
-
-input[type="password"] {
-  border: none;
-  background-color: transparent;
-  transition: 0.3s;
-  outline: none;
-  color: white;
-  min-width: 310px;
+  width: 100%;
 }
 
 i[type="show-password"] {
