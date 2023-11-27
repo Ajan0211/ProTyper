@@ -40,7 +40,13 @@ function ShopNav(props) {
             </a>
           </div>
 
-          <div className="checkout-button">Checkout</div>
+          <div
+            className="checkout-button"
+            onClick={() => navigate("/Checkout")}
+          >
+            {" "}
+            Checkout
+          </div>
         </div>
       </div>
       <div className="navbar2">
