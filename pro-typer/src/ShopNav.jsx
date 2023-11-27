@@ -45,13 +45,28 @@ function ShopNav(props) {
       </div>
       <div className="navbar2">
         <div className="shopnav-item1">
-          <a onClick={() => setTypeFilter("skin")}>Skins</a>
+          <a
+            className={typeFilter == "skin" ? `active` : ""}
+            onClick={() => setTypeFilter("skin")}
+          >
+            Skins
+          </a>
         </div>
         <div className="shopnav-item1">
-          <a onClick={() => setTypeFilter("theme")}>Themes</a>
+          <a
+            className={typeFilter == "theme" ? `active` : ""}
+            onClick={() => setTypeFilter("theme")}
+          >
+            Themes
+          </a>
         </div>
         <div className="shopnav-item1">
-          <a onClick={() => setTypeFilter("coin")}>Coins</a>
+          <a
+            className={typeFilter == "coin" ? `active` : ""}
+            onClick={() => setTypeFilter("coin")}
+          >
+            Coins
+          </a>
         </div>
       </div>
     </>
