@@ -106,6 +106,7 @@ function Game() {
           <div
             className="reset-button"
             onClick={() => {
+              setStartedTyping(false);
               newText();
               setWordsPerMinute(0);
               setTimer(0);

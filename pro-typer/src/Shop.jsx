@@ -21,7 +21,16 @@ function Shop() {
 
   const filterItems = () => {
     return items.filter((item) => {
-      return item.name.toLowerCase().includes(searchValue.toLowerCase());
+      if (item.name.toLowerCase().includes(searchValue.toLowerCase())) {
+        if (typeFilter == "") {
+          return true;
+        }
+        if (item.type == typeFilter) {
+          return true;
+        }
+      }
+
+      return false;
     });
   };
 
@@ -30,6 +39,8 @@ function Shop() {
       <ShopNav
         searchValue={searchValue}
         setSearchValue={setSearchValue}
+        setTypeFilter={setTypeFilter}
+        typeFilter={typeFilter}
       ></ShopNav>
       <div className="page-container">
         {filterItems().map((item, index) => {

@@ -3,7 +3,7 @@ import "./ShopNav.css";
 import { useNavigate } from "react-router-dom";
 
 function ShopNav(props) {
-  const { searchValue, setSearchValue } = props;
+  const { searchValue, setSearchValue, typeFilter, setTypeFilter } = props;
   const navigate = useNavigate();
   return (
     <>
@@ -45,13 +45,13 @@ function ShopNav(props) {
       </div>
       <div className="navbar2">
         <div className="shopnav-item1">
-          <a onClick={() => navigate("/Skins")}>Skins</a>
+          <a onClick={() => setTypeFilter("/Skins")}>Skins</a>
         </div>
         <div className="shopnav-item1">
-          <a onClick={() => navigate("/Themes")}>Themes</a>
+          <a onClick={() => setTypeFilter("/Themes")}>Themes</a>
         </div>
         <div className="shopnav-item1">
-          <a onClick={() => navigate("/Coins")}>Coins</a>
+          <a onClick={() => setTypeFilter("/Coins")}>Coins</a>
         </div>
       </div>
     </>
