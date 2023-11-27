@@ -1,9 +1,10 @@
 import "./ShopNav.css";
-
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function ShopNav(props) {
   const { searchValue, setSearchValue, typeFilter, setTypeFilter } = props;
+  const [popUp, setPopUp] = useState(false);
   const navigate = useNavigate();
   return (
     <>
@@ -34,10 +35,19 @@ function ShopNav(props) {
             <a onClick={() => navigate("/Login")}>My Account </a>
             <i className="fa-solid fa-user"></i>
           </div>
+
           <div className="shopnav-item1">
-            <a onClick={() => navigate("/ShoppingBag")}>
+            <div
+              className="bag-button"
+              onClick={() =>
+                setPopUp((state) => {
+                  return !state;
+                })
+              }
+            >
               <i className="fa-solid fa-bag-shopping"></i>
-            </a>
+            </div>
+            <div className={`PopUp ${[popUp ? "show" : ""]}`}>ugjgugug</div>
           </div>
 
           <div

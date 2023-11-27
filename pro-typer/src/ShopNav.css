@@ -7,7 +7,6 @@
   align-items: center;
 
   position: relative;
-  overflow: hidden;
 }
 
 .navbar1 a {
@@ -41,7 +40,6 @@
   justify-content: space-between;
   align-items: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  position: relative;
   overflow: hidden;
 }
 .navbar2 a {
@@ -104,8 +102,28 @@
   padding-top: 10px;
   margin-bottom: 10px;
 }
+
+.PopUp {
+  position: absolute;
+  right: 0;
+  transform: translateX(7px) translateY(20px);
+  z-index: 1;
+  background-color: #70768431;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.75);
+  padding: 20px;
+  border-radius: 20px;
+  opacity: 0;
+  filter: blur(10px);
+
+  transition: opacity 0.15s, filter 0.15s;
+}
+
+.PopUp.show {
+  opacity: 100%;
+  filter: blur(0);
+}
+
 .shopnav-right {
-  position: relative;
   padding-top: 10px;
   display: flex;
   flex-direction: row;
