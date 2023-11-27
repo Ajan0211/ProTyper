@@ -47,7 +47,14 @@ function ShopNav(props) {
         <div className="shopnav-item1">
           <a
             className={typeFilter == "skin" ? `active` : ""}
-            onClick={() => setTypeFilter("skin")}
+            onClick={() =>
+              setTypeFilter((state) => {
+                if (state == "skin") {
+                  return "";
+                }
+                return "skin";
+              })
+            }
           >
             Skins
           </a>
@@ -55,7 +62,14 @@ function ShopNav(props) {
         <div className="shopnav-item1">
           <a
             className={typeFilter == "theme" ? `active` : ""}
-            onClick={() => setTypeFilter("theme")}
+            onClick={() =>
+              setTypeFilter((state) => {
+                if (state == "theme") {
+                  return "";
+                }
+                return "theme";
+              })
+            }
           >
             Themes
           </a>
@@ -63,7 +77,14 @@ function ShopNav(props) {
         <div className="shopnav-item1">
           <a
             className={typeFilter == "coin" ? `active` : ""}
-            onClick={() => setTypeFilter("coin")}
+            onClick={() =>
+              setTypeFilter((state) => {
+                if (state == "coin") {
+                  return "";
+                }
+                return "coin";
+              })
+            }
           >
             Coins
           </a>
