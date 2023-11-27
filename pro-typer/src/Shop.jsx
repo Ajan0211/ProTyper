@@ -16,7 +16,10 @@ function Shop() {
     { name: "item6", price: "£8.99", type: "skin" },
     { name: "item7", price: "£8.99", type: "theme" },
     { name: "item8", price: "£8.99", type: "skin" },
-    { name: "item9", price: "£8.99", type: "theme" },
+    { name: "item9", price: "£10.99", type: "coin" },
+    { name: "item10", price: "£15.99", type: "coin" },
+    { name: "item11", price: "£5.99", type: "coin" },
+    { name: "item12", price: "£25.99", type: "coin" },
   ];
 
   const filterItems = () => {
