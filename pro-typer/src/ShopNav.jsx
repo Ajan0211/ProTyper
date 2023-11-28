@@ -1,6 +1,7 @@
 import "./ShopNav.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Bag from "./Bag";
 
 function ShopNav(props) {
   const { searchValue, setSearchValue, typeFilter, setTypeFilter } = props;
@@ -47,17 +48,7 @@ function ShopNav(props) {
             >
               <i className="fa-solid fa-bag-shopping"></i>
             </div>
-            <div className={`PopUp ${[popUp ? "show" : ""]}`}>
-              Shopping bag
-              <div className="item-container">
-                <div className="shop-container"></div>
-                <div className="shop-container"></div>
-                <div className="shop-container"></div>
-                <div className="total-container">
-                  <div className="total">Total:</div> $$$
-                </div>
-              </div>
-            </div>
+            <Bag popUp={popUp} />
           </div>
 
           <div
