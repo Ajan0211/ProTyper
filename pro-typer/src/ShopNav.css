@@ -108,19 +108,26 @@
   right: 0;
   transform: translateX(7px) translateY(20px);
   z-index: 1;
-  background-color: #70768431;
+  background-color: #505258;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.75);
   padding: 20px;
   border-radius: 20px;
   opacity: 0;
   filter: blur(10px);
-
   transition: opacity 0.15s, filter 0.15s;
+  min-width: 250px;
+  min-height: 300px;
+  text-align: center;
 }
 
 .PopUp.show {
   opacity: 100%;
   filter: blur(0);
+}
+
+.bag-button {
+  position: relative;
+  cursor: pointer;
 }
 
 .shopnav-right {

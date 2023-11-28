@@ -47,7 +47,12 @@ function ShopNav(props) {
             >
               <i className="fa-solid fa-bag-shopping"></i>
             </div>
-            <div className={`PopUp ${[popUp ? "show" : ""]}`}>ugjgugug</div>
+            <div className={`PopUp ${[popUp ? "show" : ""]}`}>
+              Shopping bag
+              <div className="item-container">
+                <div className="box-container"></div>
+              </div>
+            </div>
           </div>
 
           <div
