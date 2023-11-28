@@ -129,6 +129,19 @@
   position: relative;
   cursor: pointer;
 }
+.shop-container {
+  margin-top: 10px;
+  background-color: #252525;
+  min-width: 150px;
+  min-height: 50px;
+  border-radius: 10px;
+}
+
+.total-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
 
 .shopnav-right {
   padding-top: 10px;

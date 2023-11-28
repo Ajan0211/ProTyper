@@ -50,7 +50,12 @@ function ShopNav(props) {
             <div className={`PopUp ${[popUp ? "show" : ""]}`}>
               Shopping bag
               <div className="item-container">
-                <div className="box-container"></div>
+                <div className="shop-container"></div>
+                <div className="shop-container"></div>
+                <div className="shop-container"></div>
+                <div className="total-container">
+                  <div className="total">Total:</div> $$$
+                </div>
               </div>
             </div>
           </div>
