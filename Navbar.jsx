@@ -17,7 +17,11 @@ function Navbar() {
         </div>
       </div>
 
-      <img className="logo" src="src/assets/Layer 1.png"></img>
+      <img
+        className="logo"
+        src="src/assets/Layer 1.png"
+        onClick={() => navigate("/")}
+      ></img>
       <div className="nav-right">
         <a onClick={() => navigate("/Login")}>Login/Signup</a>
       </div>
