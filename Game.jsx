@@ -21,6 +21,7 @@ function Game() {
   const [startedTyping, setStartedTyping] = useState(false);
   const [pageLoaded, setPageLoaded] = useState(false);
   const [wordsPerMinute, setWordsPerMinute] = useState(0);
+  const [finishedRace, setFinishedRace] = useState(false);
 
   const calculateMetrics = () => {
     if (startedTyping && timer > 0) {
@@ -55,6 +56,7 @@ function Game() {
   useEffect(() => {
     if (inputValue == currentQuote && startedTyping) {
       setStartedTyping(false);
+      setFinishedRace(true);
     }
   }, [inputValue]);
 
@@ -99,6 +101,7 @@ function Game() {
             }}
             autoFocus
             autoComplete="off"
+            disabled={finishedRace}
           ></input>
         </div>
         <div className="math-container">
@@ -106,10 +109,12 @@ function Game() {
           <div
             className="reset-button"
             onClick={() => {
+              setStartedTyping(false);
               newText();
               setWordsPerMinute(0);
               setTimer(0);
               setInputValue("");
+              setFinishedRace(false);
             }}
           >
             <i className="fa-solid fa-rotate-right" />

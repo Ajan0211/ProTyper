@@ -1,0 +1,209 @@
+.navbar1 {
+  display: flex;
+  padding: 0 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.651);
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+}
+
+.navbar1 a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar1 a:hover {
+  color: #b6c8cf9c;
+
+  cursor: pointer;
+}
+.navbar1 a::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background-color: #444;
+  position: absolute;
+  top: 0;
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+.navbar1 a:hover::before {
+  width: 100%;
+}
+.navbar2 {
+  display: flex;
+  padding: 0 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  height: 40px;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow: hidden;
+}
+.navbar2 a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar2 a:hover,
+.navbar2 a.active {
+  color: #b6c8cf9c;
+
+  cursor: pointer;
+}
+.navbar2 a::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background-color: #444;
+  position: absolute;
+  top: 0;
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+.navbar2 a:hover::before,
+.navbar2 a.active::before {
+  width: 100%;
+}
+
+.shoplogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  transition: transform 0.5s;
+}
+
+.shoplogo:hover {
+  cursor: pointer;
+  background-position: left;
+  filter: drop-shadow(0px 15px rgba(34, 34, 34, 0.5));
+  transform: translate(-50%, calc(-50% - 5px));
+}
+
+.shopnav-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 30px;
+
+  margin-bottom: 10px;
+}
+
+.shopnav-item1 {
+  position: relative;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+.PopUp {
+  position: absolute;
+  right: 0;
+  transform: translateX(7px) translateY(20px);
+  z-index: 1;
+  background-color: #505258;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.75);
+  padding: 20px;
+  border-radius: 20px;
+  opacity: 0;
+  filter: blur(10px);
+  transition: opacity 0.15s, filter 0.15s;
+  min-width: 250px;
+  height: 300px;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.PopUp.show {
+  opacity: 100%;
+  filter: blur(0);
+}
+
+.bag-button {
+  position: relative;
+  cursor: pointer;
+}
+.shop-container {
+  margin-top: 10px;
+  background-color: #252525;
+  min-width: 150px;
+  min-height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+.quantity {
+  display: flex;
+  column-gap: 10px;
+}
+.item-container {
+}
+
+.total-container {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.total-cost {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.shopnav-right {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 50px;
+}
+.searchbar {
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+  border: 3px solid #6c6c6c;
+  min-height: 10px;
+  min-width: 350px;
+  padding: 10px 15px;
+
+  column-gap: 10px;
+  align-items: center;
+
+  background-color: #70768431;
+  transition: 0.3s;
+  outline: none;
+  color: white;
+}
+
+.checkout-button {
+  color: white;
+  padding: 9px 10px;
+  min-width: 50px;
+  min-height: 20px;
+  transition: 0.6s;
+  border-radius: 8px;
+  border: 0px solid rgba(0, 0, 0, 0);
+  background-image: linear-gradient(90deg, #252525, #261d19, #96938f);
+  box-shadow: 0 0px 10px rgba(34, 34, 34, 0.835);
+  background-size: 300%;
+  background-position: right;
+  cursor: pointer;
+  text-align: center;
+}
+
+.checkout-button:hover {
+  cursor: pointer;
+  background-position: left;
+  transition: 0.6s;
+}
