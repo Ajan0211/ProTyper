@@ -6,11 +6,16 @@ import { useState } from "react";
 function Login() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState("");
+  const [showError, setShowError] = useState(false);
+
   return (
     <>
       <Navbar></Navbar>
       <div className="container-login">
         <div className="heading-login">Login</div>
+        {showError ? (
+          <div class="error">The username or password is incorrect!</div>
+        ) : undefined}
         <div className="input">
           <i className="fa-solid fa-user"></i>
           <input
@@ -37,7 +42,7 @@ function Login() {
         </div>
         <div className="button-container">
           <div className="submit-button">
-            <a onClick={() => navigate("/Game")}>Login</a>
+            <a onClick={() => setShowError(true)}>Login</a>
           </div>
           <div className="submit-button">
             <a onClick={() => navigate("/SignUp")}>Sign up</a>
