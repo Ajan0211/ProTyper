@@ -116,7 +116,8 @@
   filter: blur(10px);
   transition: opacity 0.15s, filter 0.15s;
   min-width: 250px;
-  min-height: 300px;
+  height: 300px;
+  overflow-y: auto;
   text-align: center;
 }
 
@@ -144,10 +145,21 @@
   display: flex;
   column-gap: 10px;
 }
+.item-container {
+}
 
 .total-container {
   display: flex;
   margin-top: 20px;
+  align-items: center;
+}
+
+.total-cost {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
 }
 
 .shopnav-right {
