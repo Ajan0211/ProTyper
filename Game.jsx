@@ -22,6 +22,8 @@ function Game() {
   const [pageLoaded, setPageLoaded] = useState(false);
   const [wordsPerMinute, setWordsPerMinute] = useState(0);
   const [finishedRace, setFinishedRace] = useState(false);
+  const [animPaused, setAnimPaused] = useState(true);
+  const [lastKeyPress, setLastKeyPress] = useState(0);
 
   const calculateMetrics = () => {
     if (startedTyping && timer > 0) {
@@ -51,11 +53,14 @@ function Game() {
 
   useEffect(() => {
     calculateMetrics();
+    setAnimPaused(timer > lastKeyPress + 0.5 || timer == 0);
   }, [timer]);
 
   useEffect(() => {
     if (inputValue == currentQuote && startedTyping) {
       setStartedTyping(false);
+      setAnimPaused(true);
+      setLastKeyPress(timer);
       setFinishedRace(true);
     }
   }, [inputValue]);
@@ -65,7 +70,10 @@ function Game() {
       <Navbar></Navbar>
       <div className="main-container">
         <div className="game-container">
-          <img className="running-animation" src="src/assets/car.png"></img>
+          <img
+            className={`running-animation ${animPaused ? "paused" : ""}`}
+            src="src/assets/car.png"
+          ></img>
           <div className="time" id="timer">
             Timer: {timer}
           </div>
@@ -99,6 +107,8 @@ function Game() {
             onChange={(e) => {
               setStartedTyping(true);
               setInputValue(e.target.value);
+              setAnimPaused(false);
+              setLastKeyPress(timer);
             }}
             autoFocus
             autoComplete="off"

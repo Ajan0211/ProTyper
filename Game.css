@@ -31,9 +31,14 @@
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%) translateY(-100%);
+  transform: translateX(-50%) translateY(-100%) rotate(-90deg);
   animation: running-animation 10s linear infinite;
 }
+
+.running-animation.paused {
+  animation-play-state: paused;
+}
+
 @keyframes running-animation {
   0% {
     top: 0;
