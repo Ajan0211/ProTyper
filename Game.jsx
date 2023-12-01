@@ -65,7 +65,7 @@ function Game() {
       <Navbar></Navbar>
       <div className="main-container">
         <div className="game-container">
-          <div className="running-animation"></div>
+          <img className="running-animation" src="src/assets/car.png"></img>
           <div className="time" id="timer">
             Timer: {timer}
           </div>
