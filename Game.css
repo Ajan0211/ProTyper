@@ -39,6 +39,10 @@
   animation-play-state: paused;
 }
 
+.running-animation.reset {
+  animation: none;
+}
+
 @keyframes running-animation {
   0% {
     top: 0;

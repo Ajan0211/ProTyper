@@ -71,7 +71,9 @@ function Game() {
       <div className="main-container">
         <div className="game-container">
           <img
-            className={`running-animation ${animPaused ? "paused" : ""}`}
+            className={`running-animation ${animPaused ? "paused" : ""} ${
+              finishedRace ? "reset" : ""
+            }`}
             src="src/assets/car.png"
           ></img>
           <div className="time" id="timer">
