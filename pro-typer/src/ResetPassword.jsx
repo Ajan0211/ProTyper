@@ -2,6 +2,13 @@ import Navbar from "../../Navbar.jsx";
 import "./ResetPassword.css";
 import { useNavigate } from "react-router-dom";
 
+/**
+ * @author Ajanthapan Agilaruben
+ * This file is used for the user to reset there password if they have forgotten it.
+ * @date 12/5/2023 - 11:33:27 AM
+ *
+ * @returns {Navbar component as well as instructions on what to do to reset password.}
+ */
 function ResetPassword() {
   const navigate = useNavigate();
   return (

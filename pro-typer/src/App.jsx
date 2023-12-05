@@ -1,3 +1,10 @@
+/**
+ * This file is what sets up all the routes which would allow the onclick feature on links and buttons to work and lead the user to the right page.
+ * @date 12/5/2023 - 11:17:03 AM
+ * @author Ajanthapan Agilaruben
+ * @returns {Routes}
+ */
+
 import Login from "../../Login";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home";

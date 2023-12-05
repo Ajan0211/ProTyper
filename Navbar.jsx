@@ -1,6 +1,12 @@
 import "./navbar.css";
 import { useNavigate } from "react-router-dom";
 
+/**
+ * This file holds the navbar component which is used throughout the pages so user can navigate to different pages at any time.
+ * @date 12/5/2023 - 15:33:47 PM
+ *
+ * @returns {the Navbar component}
+ */
 function Navbar() {
   const navigate = useNavigate();
   return (

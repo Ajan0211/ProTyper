@@ -2,6 +2,14 @@ import "./Home.css";
 import Navbar from "../../Navbar";
 import { useNavigate } from "react-router-dom";
 
+/**
+ * @author Ajanthapan Agilaruben
+ * This file contains the Home page to the game so this would allow the user to press the button Start Game
+ * and it would direct the user to the game.
+ * @date 12/5/2023 - 12:50:30 PM
+ *
+ * @returns { the navbar component with a short welcome text and a button which directs user to the game.}
+ */
 function Home() {
   const navigate = useNavigate();
   return (

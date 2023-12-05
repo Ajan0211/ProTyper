@@ -3,6 +3,15 @@ import "./SignUp.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
+/**
+ * @author Ajanthapan Agilaruben
+ * This File contains the Sign up component which allows the user to input there personal information and
+ * sign up to ProTyper.
+ *
+ * @date 12/5/2023 - 13:35:48 PM
+ *
+ * @returns the SignUp component
+ */
 function SignUp() {
   const navigate = useNavigate();
 

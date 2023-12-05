@@ -3,6 +3,16 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Bag from "./Bag";
 
+/**
+ * @author Ajanthapan Agilaruben
+ * This file contains the ShopNav Component which is used throughout the shop page. It holds all the links to lead to other pages.
+ *
+ * @date 12/5/2023 15:31:25 PM
+ *
+ * @param {searchValue, setSearchValue are used for the search bars to get the item searched by the user and
+ * typefilter, setTypeFilter are used to filter through the 3 filters skins,coins and themes. }
+ * @returns {ShopNav component}
+ */
 function ShopNav(props) {
   const { searchValue, setSearchValue, typeFilter, setTypeFilter } = props;
   const [popUp, setPopUp] = useState(false);

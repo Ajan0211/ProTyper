@@ -1,6 +1,13 @@
 import ShopNav from "./ShopNav.jsx";
 import "./Checkout.css";
 
+/**
+ * @author Ajanthapan Agilaruben
+ *  This file contains the Checkout page which would allow the user to pay for what has been placed in the users basket.
+ * @date 12/5/2023 - 12:46:36 PM
+ *
+ * @returns {the shopNav component as well as the payment section and the personal information section.}
+ */
 function Checkout() {
   return (
     <>
