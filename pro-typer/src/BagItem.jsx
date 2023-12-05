@@ -1,7 +1,7 @@
 import React from "react";
 
 const BagItem = (props) => {
-  const { priceIndex, priceList, setPriceList } = props;
+  const { priceIndex, priceList } = props;
 
   return (
     <>

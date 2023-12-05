@@ -34,7 +34,7 @@ function Checkout() {
               ></input>
             </div>
             <div className="input-pay">
-              <i class="fa-solid fa-house"></i>
+              <i className="fa-solid fa-house"></i>
               <input
                 type="street"
                 id="street"
@@ -43,7 +43,7 @@ function Checkout() {
               ></input>
             </div>
             <div className="input-pay">
-              <i class="fa-solid fa-house"></i>
+              <i className="fa-solid fa-house"></i>
               <input
                 type="country"
                 id="country"
@@ -52,7 +52,7 @@ function Checkout() {
               ></input>
             </div>
             <div className="input-pay">
-              <i class="fa-solid fa-house"></i>
+              <i className="fa-solid fa-house"></i>
               <input
                 type="city"
                 id="city"
@@ -61,7 +61,7 @@ function Checkout() {
               ></input>
             </div>
             <div className="input-pay">
-              <i class="fa-solid fa-house"></i>
+              <i className="fa-solid fa-house"></i>
               <input
                 type="postcode"
                 id="postcode"
@@ -77,23 +77,27 @@ function Checkout() {
             <img className="card" src="src/assets/Mastercard-Logo.png"></img>
             <div className="card-info-text">Enter card information below</div>
 
-            <div class="card-input-container">
-              <div class="input-container">
-                <i class="fa-solid fa-credit-card"></i>
+            <div className="card-input-container">
+              <div className="input-container">
+                <i className="fa-solid fa-credit-card"></i>
                 <input
                   placeholder="XXXX-XXXX-XXXX-XXXX"
-                  class="input-box-card"
+                  className="input-box-card"
                   id="card-number"
                 />
               </div>
               <div className="split">
-                <div class="input-container2">
-                  <i class="fa-solid fa-credit-card"></i>
-                  <input placeholder="XX/XX" class="input-box" id="exp-date" />
+                <div className="input-container2">
+                  <i className="fa-solid fa-credit-card"></i>
+                  <input
+                    placeholder="XX/XX"
+                    className="input-box"
+                    id="exp-date"
+                  />
                 </div>
-                <div class="input-container2">
-                  <i class="fa-solid fa-credit-card"></i>
-                  <input placeholder="CVV" class="input-box" id="cvv" />
+                <div className="input-container2">
+                  <i className="fa-solid fa-credit-card"></i>
+                  <input placeholder="CVV" className="input-box" id="cvv" />
                 </div>
               </div>
             </div>

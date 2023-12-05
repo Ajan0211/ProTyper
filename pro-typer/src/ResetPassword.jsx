@@ -15,7 +15,7 @@ function ResetPassword() {
           on Protyper.
         </div>
         <div className="input">
-          <i class="fa-solid fa-envelope"></i>
+          <i className="fa-solid fa-envelope"></i>
           <input
             type="email"
             id="email"

@@ -14,7 +14,7 @@ function Login() {
       <div className="container-login">
         <div className="heading-login">Login</div>
         {showError ? (
-          <div class="error">The username or password is incorrect!</div>
+          <div className="error">The username or password is incorrect!</div>
         ) : undefined}
         <div className="input">
           <i className="fa-solid fa-user"></i>
@@ -27,7 +27,7 @@ function Login() {
         </div>
 
         <div className="input">
-          <i class="fa-solid fa-key"></i>
+          <i className="fa-solid fa-key"></i>
           <input
             type={`${showPassword ? "text" : "password"}`}
             id="password"
@@ -42,7 +42,7 @@ function Login() {
         </div>
         <div className="button-container">
           <div className="submit-button">
-            <a onClick={() => setShowError(true)}>Login</a>
+            <a onClick={() => navigate("/game")}>Login</a>
           </div>
           <div className="submit-button">
             <a onClick={() => navigate("/SignUp")}>Sign up</a>

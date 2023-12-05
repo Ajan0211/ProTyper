@@ -33,8 +33,8 @@ function ShopNav(props) {
 
         <div className="shopnav-right">
           <div className="shopnav-item1">
-            <a onClick={() => navigate("/Login")}>My Account </a>
-            <i className="fa-solid fa-user"></i>
+            <a onClick={() => navigate("/Login")}>Login/SignUp </a>
+            {/* <i className="fa-solid fa-user"></i> */}
           </div>
 
           <div className="shopnav-item1">
