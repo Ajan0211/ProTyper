@@ -14,7 +14,7 @@ const TEXT_API_URL = "https://api.quotable.io/random";
  * @returns game component.
  */
 function Game() {
-  // Fetches a random quote from the Quotable.io API
+  /** Fetches a random quote from the Quotable.io API*/
 
   function randomText() {
     return fetch(TEXT_API_URL)
@@ -22,8 +22,7 @@ function Game() {
       .then((data) => data.content);
   }
 
-  // Sets the quote in the quote box on the game page to a new quote and
-  // erases the input box
+  /**  Sets the quote in the quote box on the game page to a new quote and erases the input box */
   async function newText() {
     const text = await randomText();
     setCurrentText(text);
@@ -40,7 +39,7 @@ function Game() {
   const [animPaused, setAnimPaused] = useState(true);
   const [lastKeyPress, setLastKeyPress] = useState(0);
 
-  // Calculates typing metrics such as words per minute and sets each state
+  /** Calculates typing metrics such as words per minute and sets each state */
 
   const calculateMetrics = () => {
     if (startedTyping && timer > 0) {
@@ -49,7 +48,7 @@ function Game() {
     }
   };
 
-  // Starts the timer interval when the user has started typing and resets statistics on page load
+  /** Starts the timer interval when the user has started typing and resets statistics on page load */
   useEffect(() => {
     if (!pageLoaded) {
       newText();
@@ -69,14 +68,13 @@ function Game() {
     };
   }, [startedTyping]);
 
-  // Every second, the typing metrics are calculated and the car animation is handled
+  /** Every second, the typing metrics are calculated and the car animation is handled */
   useEffect(() => {
     calculateMetrics();
     setAnimPaused(timer > lastKeyPress + 0.5 || timer == 0);
   }, [timer]);
 
-  // If the user has finished typing the quote correctly, then the timer is paused
-  // and the car animation is reset
+  // If the user has finished typing the quote correctly, then the timer is paused and the car animation is reset */
   useEffect(() => {
     if (inputValue == currentQuote && startedTyping) {
       setStartedTyping(false);
@@ -100,18 +98,18 @@ function Game() {
           <div className="time" id="timer">
             Timer: {timer}
           </div>
+          {/** This whole section splits up the current quote into a span tag for each character */}
           <div className="text-container" id="quote">
-            {/* This whole section splits up the current quote into a span tag for each character */}
             {currentQuote.split("").map((char, index) => {
               let correct = false;
               let empty = false;
               if (inputValue.length >= index + 1) {
                 if (inputValue.substring(index, index + 1) == char) {
-                  // If the character has been typed correctly by the user then it'll be green (correct class)
+                  /**  If the character has been typed correctly by the user then it'll be green (correct class) */
                   correct = true;
                 }
               } else {
-                // If it hasn't been typed yet then it will be white (no class)
+                /** If it hasn't been typed yet then it will be white (no class) */
                 empty = true;
               }
 
@@ -119,7 +117,7 @@ function Game() {
                 <span
                   key={index}
                   className={
-                    // If it's wrong then it'll be red (incorrect class)
+                    /**  If it's wrong then it'll be red (incorrect class)/*/
                     correct && !empty ? "correct" : empty ? "" : "incorrect"
                   }
                 >
@@ -153,6 +151,7 @@ function Game() {
               setTimer(0);
               setInputValue("");
               setFinishedRace(false);
+              setAnimPaused(true);
             }}
           >
             <i className="fa-solid fa-rotate-right" />
