@@ -13,6 +13,7 @@ import SignUp from "./SignUp";
 import ResetPassword from "./ResetPassword";
 import Shop from "./Shop";
 import Checkout from "./Checkout";
+import Settings from "./Settings";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/ResetPassword" element={<ResetPassword />} />
         <Route path="/Shop" element={<Shop />} />
         <Route path="/Checkout" element={<Checkout />} />
+        <Route path="/Settings" element={<Settings />} />
       </Routes>
     </div>
   );
