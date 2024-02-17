@@ -2,6 +2,7 @@ import Navbar from "./Navbar.jsx";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
 /**
  * @author Ajanthapan Agilaruben
@@ -15,6 +16,24 @@ function Login() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState("");
   const [showError, setShowError] = useState(false);
+
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
+  const handleSubmit = () => {
+    axios
+      .post("http://localhost:3001/Login", {
+        email,
+        password,
+      })
+      .then((result) => {
+        console.log(result);
+        if (result.data === "Success") {
+          navigate("/Game");
+        }
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <>
@@ -31,6 +50,7 @@ function Login() {
             id="uernamename"
             name="username"
             placeholder="Username..."
+            onChange={(e) => setEmail(e.target.value)}
           ></input>
         </div>
 
@@ -41,6 +61,7 @@ function Login() {
             id="password"
             name="password"
             placeholder="Password..."
+            onChange={(e) => setPassword(e.target.value)}
           ></input>
 
           <i
@@ -53,7 +74,7 @@ function Login() {
           <div className="submit-button">
             {/* This is commented out as it would set off error message. */
             /* <a onClick={() => setShowError(true)}>Login</a> */}
-            <a onClick={() => navigate("/Game")}>Login</a>
+            <a onClick={() => handleSubmit()}>Login</a>
           </div>
           <div className="submit-button">
             <a onClick={() => navigate("/SignUp")}>Sign up</a>

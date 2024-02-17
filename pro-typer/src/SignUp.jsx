@@ -2,6 +2,7 @@ import Navbar from "../../Navbar.jsx";
 import "./SignUp.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
 /**
  * @author Ajanthapan Agilaruben
@@ -14,6 +15,25 @@ import { useState } from "react";
  */
 function SignUp() {
   const navigate = useNavigate();
+  const [firstname, setFirstname] = useState();
+  const [lastname, setLastname] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
+  const handleSubmit = () => {
+    axios
+      .post("http://localhost:3001/SignUp", {
+        firstname,
+        lastname,
+        email,
+        password,
+      })
+      .then((result) => {
+        console.log(result);
+        navigate("/Login");
+      })
+      .catch((err) => console.log(err));
+  };
 
   const [showPassword, setShowPassword] = useState("");
 
@@ -23,54 +43,62 @@ function SignUp() {
       <div className="signup-page">
         <div className="container-signup">
           <div className="heading-signup">Sign up</div>
-          <div className="input">
-            <i className="fa-solid fa-user"></i>
-            <input
-              type="firstname"
-              id="fname"
-              name="firstname"
-              placeholder="Firstname..."
-            ></input>
-          </div>
-
-          <div className="input">
-            <i className="fa-solid fa-user"></i>
-            <input
-              type="lastname"
-              id="lname"
-              name="Lastname"
-              placeholder="Lastname..."
-            ></input>
-          </div>
-
-          <div className="input">
-            <i className="fa-solid fa-envelope"></i>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter Email..."
-            ></input>
-          </div>
-          <div className="input">
-            <i className="fa-solid fa-key"></i>
-            <input
-              type={`${showPassword ? "text" : "password"}`}
-              id="password"
-              name="password"
-              placeholder="Password..."
-            ></input>
-            <i
-              className={`fa-solid ${showPassword ? "fa-eye-slash" : "fa-eye"}`}
-              type="show-password"
-              onClick={() => setShowPassword((state) => !state)}
-            ></i>
-          </div>
-          <div className="button-container2">
-            <div className="signup-button">
-              <a onClick={() => navigate("/Login")}>Sign up</a>
+          <form>
+            <div className="input">
+              <i className="fa-solid fa-user"></i>
+              <input
+                type="firstname"
+                id="fname"
+                name="firstname"
+                placeholder="Firstname..."
+                onChange={(e) => setFirstname(e.target.value)}
+              ></input>
             </div>
-          </div>
+
+            <div className="input">
+              <i className="fa-solid fa-user"></i>
+              <input
+                type="lastname"
+                id="lname"
+                name="Lastname"
+                placeholder="Lastname..."
+                onChange={(e) => setLastname(e.target.value)}
+              ></input>
+            </div>
+
+            <div className="input">
+              <i className="fa-solid fa-envelope"></i>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter Email..."
+                onChange={(e) => setEmail(e.target.value)}
+              ></input>
+            </div>
+            <div className="input">
+              <i className="fa-solid fa-key"></i>
+              <input
+                type={`${showPassword ? "text" : "password"}`}
+                id="password"
+                name="password"
+                placeholder="Password..."
+                onChange={(e) => setPassword(e.target.value)}
+              ></input>
+              <i
+                className={`fa-solid ${
+                  showPassword ? "fa-eye-slash" : "fa-eye"
+                }`}
+                type="show-password"
+                onClick={() => setShowPassword((state) => !state)}
+              ></i>
+            </div>
+            <div className="button-container2">
+              <div className="signup-button">
+                <a onClick={() => handleSubmit()}>Sign up</a>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </>
