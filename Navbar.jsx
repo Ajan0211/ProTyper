@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import "./navbar.css";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "./pro-typer/src/userContext";
 
 /**
  * This file holds the navbar component which is used throughout the pages so user can navigate to different pages at any time.
@@ -9,6 +11,8 @@ import { useNavigate } from "react-router-dom";
  */
 function Navbar() {
   const navigate = useNavigate();
+  const { user } = useContext(UserContext);
+
   return (
     <div className="navbar">
       <div className="nav-left">
@@ -29,7 +33,18 @@ function Navbar() {
         onClick={() => navigate("/")}
       ></img>
       <div className="nav-right">
-        <a onClick={() => navigate("/Login")}>Login/Signup</a>
+        <a
+          onClick={() => {
+            if (user) {
+              alert("Account page not made yet!");
+            } else {
+              navigate("/Login");
+            }
+          }}
+        >
+          {/* Login/Signup */}
+          {user ? "My Account" : "Login / Signup"}
+        </a>
       </div>
     </div>
   );

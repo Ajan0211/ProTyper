@@ -2,6 +2,7 @@ import Navbar from "../../Navbar.jsx";
 import "./SignUp.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
 /**
  * @author Ajanthapan Agilaruben
@@ -14,6 +15,25 @@ import { useState } from "react";
  */
 function SignUp() {
   const navigate = useNavigate();
+  const [firstname, setFirstname] = useState();
+  const [lastname, setLastname] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
+  const handleSubmit = () => {
+    axios
+      .post("/api/SignUp", {
+        firstname,
+        lastname,
+        email,
+        password,
+      })
+      .then((result) => {
+        console.log(result);
+        navigate("/Login");
+      })
+      .catch((err) => console.log(err));
+  };
 
   const [showPassword, setShowPassword] = useState("");
 
@@ -23,6 +43,7 @@ function SignUp() {
       <div className="signup-page">
         <div className="container-signup">
           <div className="heading-signup">Sign up</div>
+
           <div className="input">
             <i className="fa-solid fa-user"></i>
             <input
@@ -30,6 +51,7 @@ function SignUp() {
               id="fname"
               name="firstname"
               placeholder="Firstname..."
+              onChange={(e) => setFirstname(e.target.value)}
             ></input>
           </div>
 
@@ -40,6 +62,7 @@ function SignUp() {
               id="lname"
               name="Lastname"
               placeholder="Lastname..."
+              onChange={(e) => setLastname(e.target.value)}
             ></input>
           </div>
 
@@ -50,6 +73,7 @@ function SignUp() {
               id="email"
               name="email"
               placeholder="Enter Email..."
+              onChange={(e) => setEmail(e.target.value)}
             ></input>
           </div>
           <div className="input">
@@ -59,6 +83,7 @@ function SignUp() {
               id="password"
               name="password"
               placeholder="Password..."
+              onChange={(e) => setPassword(e.target.value)}
             ></input>
             <i
               className={`fa-solid ${showPassword ? "fa-eye-slash" : "fa-eye"}`}
@@ -68,7 +93,7 @@ function SignUp() {
           </div>
           <div className="button-container2">
             <div className="signup-button">
-              <a onClick={() => navigate("/Login")}>Sign up</a>
+              <a onClick={() => handleSubmit()}>Sign up</a>
             </div>
           </div>
         </div>
