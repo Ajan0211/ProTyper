@@ -43,62 +43,59 @@ function SignUp() {
       <div className="signup-page">
         <div className="container-signup">
           <div className="heading-signup">Sign up</div>
-          <form>
-            <div className="input">
-              <i className="fa-solid fa-user"></i>
-              <input
-                type="firstname"
-                id="fname"
-                name="firstname"
-                placeholder="Firstname..."
-                onChange={(e) => setFirstname(e.target.value)}
-              ></input>
-            </div>
 
-            <div className="input">
-              <i className="fa-solid fa-user"></i>
-              <input
-                type="lastname"
-                id="lname"
-                name="Lastname"
-                placeholder="Lastname..."
-                onChange={(e) => setLastname(e.target.value)}
-              ></input>
-            </div>
+          <div className="input">
+            <i className="fa-solid fa-user"></i>
+            <input
+              type="firstname"
+              id="fname"
+              name="firstname"
+              placeholder="Firstname..."
+              onChange={(e) => setFirstname(e.target.value)}
+            ></input>
+          </div>
 
-            <div className="input">
-              <i className="fa-solid fa-envelope"></i>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter Email..."
-                onChange={(e) => setEmail(e.target.value)}
-              ></input>
+          <div className="input">
+            <i className="fa-solid fa-user"></i>
+            <input
+              type="lastname"
+              id="lname"
+              name="Lastname"
+              placeholder="Lastname..."
+              onChange={(e) => setLastname(e.target.value)}
+            ></input>
+          </div>
+
+          <div className="input">
+            <i className="fa-solid fa-envelope"></i>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter Email..."
+              onChange={(e) => setEmail(e.target.value)}
+            ></input>
+          </div>
+          <div className="input">
+            <i className="fa-solid fa-key"></i>
+            <input
+              type={`${showPassword ? "text" : "password"}`}
+              id="password"
+              name="password"
+              placeholder="Password..."
+              onChange={(e) => setPassword(e.target.value)}
+            ></input>
+            <i
+              className={`fa-solid ${showPassword ? "fa-eye-slash" : "fa-eye"}`}
+              type="show-password"
+              onClick={() => setShowPassword((state) => !state)}
+            ></i>
+          </div>
+          <div className="button-container2">
+            <div className="signup-button">
+              <a onClick={() => handleSubmit()}>Sign up</a>
             </div>
-            <div className="input">
-              <i className="fa-solid fa-key"></i>
-              <input
-                type={`${showPassword ? "text" : "password"}`}
-                id="password"
-                name="password"
-                placeholder="Password..."
-                onChange={(e) => setPassword(e.target.value)}
-              ></input>
-              <i
-                className={`fa-solid ${
-                  showPassword ? "fa-eye-slash" : "fa-eye"
-                }`}
-                type="show-password"
-                onClick={() => setShowPassword((state) => !state)}
-              ></i>
-            </div>
-            <div className="button-container2">
-              <div className="signup-button">
-                <a onClick={() => handleSubmit()}>Sign up</a>
-              </div>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
     </>

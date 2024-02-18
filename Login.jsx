@@ -29,7 +29,7 @@ function Login() {
       .then((result) => {
         console.log(result);
         if (result.data === "Success") {
-          navigate("/Game");
+          navigate("/");
         }
       })
       .catch((err) => console.log(err));
