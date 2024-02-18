@@ -43,7 +43,13 @@ function Navbar() {
           }}
         >
           {/* Login/Signup */}
-          {user ? "My Account" : "Login / Signup"}
+          {user ? (
+            <>
+              My Account <i className="fa-solid fa-user"></i>
+            </>
+          ) : (
+            "Login / Signup"
+          )}
         </a>
       </div>
     </div>
