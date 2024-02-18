@@ -14,6 +14,9 @@ import ResetPassword from "./ResetPassword";
 import Shop from "./Shop";
 import Checkout from "./Checkout";
 import Settings from "./Settings";
+import axios from "axios";
+
+axios.defaults.withCredentials = true;
 
 function App() {
   return (

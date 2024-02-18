@@ -22,7 +22,7 @@ function SignUp() {
 
   const handleSubmit = () => {
     axios
-      .post("http://localhost:3001/SignUp", {
+      .post("/api/SignUp", {
         firstname,
         lastname,
         email,

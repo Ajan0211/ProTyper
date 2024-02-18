@@ -22,13 +22,13 @@ function Login() {
 
   const handleSubmit = () => {
     axios
-      .post("http://localhost:3001/Login", {
+      .post("/api/Login", {
         email,
         password,
       })
       .then((result) => {
         console.log(result);
-        if (result.data === "Success") {
+        if (result.data !== "the password is incorrect") {
           navigate("/");
         }
       })

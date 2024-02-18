@@ -2,6 +2,8 @@ import "./ShopNav.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Bag from "./Bag";
+import { useContext } from "react";
+import { UserContext } from "./userContext";
 
 /**
  * @author Ajanthapan Agilaruben
@@ -17,6 +19,8 @@ function ShopNav(props) {
   const { searchValue, setSearchValue, typeFilter, setTypeFilter } = props;
   const [popUp, setPopUp] = useState(false);
   const navigate = useNavigate();
+
+  const { user } = useContext(UserContext);
   return (
     <>
       <div className="navbar1">
@@ -43,8 +47,24 @@ function ShopNav(props) {
 
         <div className="shopnav-right">
           <div className="shopnav-item1">
-            <a onClick={() => navigate("/Login")}>Login/SignUp </a>
-            {/* <i className="fa-solid fa-user"></i> */}
+            <a
+              onClick={() => {
+                if (user) {
+                  alert("Account page not made yet!");
+                } else {
+                  navigate("/Login");
+                }
+              }}
+            >
+              {user ? (
+                <>
+                  My Account
+                  <i className="fa-solid fa-user"></i>
+                </>
+              ) : (
+                "Login / Signup"
+              )}
+            </a>
           </div>
 
           <div className="shopnav-item1">
