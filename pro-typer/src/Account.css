@@ -77,9 +77,3 @@ input {
   box-shadow: 0 0px 15px rgba(34, 34, 34, 0.835);
   transform: translateY(-5px);
 }
-
-.change-container {
-  display: flex;
-  flex-direction: row;
-  column-gap: 40px;
-}
