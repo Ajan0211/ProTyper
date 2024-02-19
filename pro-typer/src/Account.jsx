@@ -20,13 +20,13 @@ function Account() {
           <div className="account-nav">
             <div className="nav-left">
               <div className="nav-item1">
-                <a onClick={() => navigate("/")}>Update details</a>
+                <a onClick={() => navigate("/Account")}>Update Details</a>
               </div>
               <div className="nav-item1">
-                <a onClick={() => navigate("/Shop")}>Owned Items</a>
+                <a onClick={() => navigate("/Owned-Items")}>Owned Items</a>
               </div>
               <div className="nav-item1">
-                <a onClick={() => navigate("/Settings")}>Statistics</a>
+                <a onClick={() => navigate("/Statistics")}>Statistics</a>
               </div>
             </div>
           </div>
