@@ -1,5 +1,6 @@
 import Navbar from "../../Navbar.jsx";
 import "./Account.css";
+import { useNavigate } from "react-router-dom";
 
 /**
  * @author Ajanthapan Agilaruben
@@ -11,6 +12,7 @@ import "./Account.css";
  * @returns the Account component
  */
 function Account() {
+  const navigate = useNavigate();
   return (
     <>
       <Navbar></Navbar>

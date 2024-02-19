@@ -1,7 +1,9 @@
 import Navbar from "../../Navbar.jsx";
 import "./OwnedItems.css";
+import { useNavigate } from "react-router-dom";
 
 function OwnedItems() {
+  const navigate = useNavigate();
   return (
     <>
       <Navbar></Navbar>
