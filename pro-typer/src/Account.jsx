@@ -23,7 +23,7 @@ function Account() {
                 <a onClick={() => navigate("/Account")}>Update Details</a>
               </div>
               <div className="nav-item1">
-                <a onClick={() => navigate("/Owned-Items")}>Owned Items</a>
+                <a onClick={() => navigate("/OwnedItems")}>Owned Items</a>
               </div>
               <div className="nav-item1">
                 <a onClick={() => navigate("/Statistics")}>Statistics</a>

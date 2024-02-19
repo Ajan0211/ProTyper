@@ -1,5 +1,5 @@
 import Navbar from "../../Navbar.jsx";
-import "./OwndedItems.css";
+import "./OwnedItems.css";
 
 function OwnedItems() {
   return (
@@ -14,7 +14,7 @@ function OwnedItems() {
                 <a onClick={() => navigate("/Account")}>Update Details</a>
               </div>
               <div className="nav-item1">
-                <a onClick={() => navigate("/Owned-Items")}>Owned Items</a>
+                <a onClick={() => navigate("/OwnedItems")}>Owned Items</a>
               </div>
               <div className="nav-item1">
                 <a onClick={() => navigate("/Statistics")}>Statistics</a>
@@ -23,8 +23,8 @@ function OwnedItems() {
           </div>
           <div className="button-container2">
             <div className="change-button">Change skin</div>
-          </div>{" "}
-        </div>{" "}
+          </div>
+        </div>
       </div>
     </>
   );
