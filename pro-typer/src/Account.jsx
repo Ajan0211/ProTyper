@@ -17,6 +17,19 @@ function Account() {
       <div className="account-page">
         <div className="container-account">
           <div className="heading-account">My Account</div>
+          <div className="account-nav">
+            <div className="nav-left">
+              <div className="nav-item1">
+                <a onClick={() => navigate("/")}>Update details</a>
+              </div>
+              <div className="nav-item1">
+                <a onClick={() => navigate("/Shop")}>Owned Items</a>
+              </div>
+              <div className="nav-item1">
+                <a onClick={() => navigate("/Settings")}>Statistics</a>
+              </div>
+            </div>
+          </div>
           Change first name
           <div className="input-account">
             <i className="fa-solid fa-user"></i>
