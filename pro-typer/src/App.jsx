@@ -15,6 +15,7 @@ import Shop from "./Shop";
 import Checkout from "./Checkout";
 import Settings from "./Settings";
 import axios from "axios";
+import Account from "./Account";
 
 axios.defaults.withCredentials = true;
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/Shop" element={<Shop />} />
         <Route path="/Checkout" element={<Checkout />} />
         <Route path="/Settings" element={<Settings />} />
+        <Route path="/Account" element={<Account />} />
       </Routes>
     </div>
   );

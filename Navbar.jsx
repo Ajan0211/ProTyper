@@ -35,11 +35,7 @@ function Navbar() {
       <div className="nav-right">
         <a
           onClick={() => {
-            if (user) {
-              alert("Account page not made yet!");
-            } else {
-              navigate("/Login");
-            }
+            navigate("/Account");
           }}
         >
           {/* Login/Signup */}
