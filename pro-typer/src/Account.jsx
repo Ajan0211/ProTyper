@@ -3,12 +3,12 @@ import "./Account.css";
 
 /**
  * @author Ajanthapan Agilaruben
- * This File contains the Sign up component which allows the user to input there personal information and
- * sign up to ProTyper.
+ * This File contains the Account component which allows the user to change there personal information and
+ * aslo look at there statistics and the current items owned by the user
  *
- * @date 12/5/2023 - 13:35:48 PM
+ * @date 19/2/2024 - 17:28:28 PM
  *
- * @returns the SignUp component
+ * @returns the Account component
  */
 function Account() {
   return (
