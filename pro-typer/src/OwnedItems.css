@@ -9,26 +9,21 @@
 
 .container-ownedItems {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
-
+  justify-content: space-between;
   background-color: #323437;
   background-color: #70768431;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
-}
-.heading-ownedItems {
-  margin-bottom: 10px;
-  font-size: larger;
-  color: aliceblue;
+  min-height: 400px;
+  min-width: 700px;
 }
 
 .button-container2 {
   display: flex;
-  column-gap: 30px;
-  margin-bottom: 5px;
+  justify-content: end;
 }
 
 .change-button {
@@ -57,48 +52,7 @@
   transform: translateY(-5px);
 }
 
-.account-nav {
-  display: flex;
-  padding: 10px;
-  justify-content: space-between;
-  align-items: center;
-
-  position: relative;
-  overflow: hidden;
-}
-
-.account-nav a {
-  text-decoration: none;
-  color: white;
-}
-
-.account-nav a:hover {
-  color: #b6c8cf9c;
-
-  cursor: pointer;
-}
-.account-nav a::before {
-  content: "";
-  display: block;
-  height: 5px;
-  background-color: #444;
-  position: absolute;
-  top: 0;
-  width: 0%;
-  transition: all ease-in-out 250ms;
-}
-.account-nav a:hover::before {
-  width: 100%;
-}
-.nav-left {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 30px;
-  margin-bottom: 10px;
-}
-
-.nav-item1 {
-  position: relative;
-  padding-top: 10px;
+.item-section {
+  font-size: 20px;
+  margin: 20px;
 }

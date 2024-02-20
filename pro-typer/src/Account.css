@@ -9,20 +9,16 @@
 
 .container-account {
   display: flex;
-  justify-content: center;
+
   align-items: center;
   flex-direction: column;
-
-  background-color: #323437;
+  justify-content: space-between;
   background-color: #70768431;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
-}
-.heading-account {
-  margin-bottom: 10px;
-  font-size: larger;
-  color: aliceblue;
+  min-height: 400px;
+  min-width: 700px;
 }
 
 .input-account {
@@ -31,7 +27,7 @@
   min-height: 32px;
   min-width: 200px;
   padding: 10px 15px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   display: flex;
   column-gap: 10px;
   align-items: center;
@@ -68,6 +64,7 @@ input {
   cursor: pointer;
   text-align: center;
   transition: transform 0.5s;
+  margin-top: 10px;
 }
 
 .change-button:hover {
@@ -78,48 +75,12 @@ input {
   transform: translateY(-5px);
 }
 
-.account-nav {
+.big-container {
   display: flex;
-  padding: 10px;
-  justify-content: space-between;
-  align-items: center;
-
-  position: relative;
-  overflow: hidden;
+  column-gap: 50px;
+  margin-top: 30px;
 }
 
-.account-nav a {
-  text-decoration: none;
-  color: white;
-}
-
-.account-nav a:hover {
-  color: #b6c8cf9c;
-
-  cursor: pointer;
-}
-.account-nav a::before {
-  content: "";
-  display: block;
-  height: 5px;
-  background-color: #444;
-  position: absolute;
-  top: 0;
-  width: 0%;
-  transition: all ease-in-out 250ms;
-}
-.account-nav a:hover::before {
-  width: 100%;
-}
-.nav-left {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 30px;
-  margin-bottom: 10px;
-}
-
-.nav-item1 {
-  position: relative;
-  padding-top: 10px;
+.container-left {
+  row-gap: 1000000px;
 }

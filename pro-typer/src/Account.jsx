@@ -1,6 +1,7 @@
 import Navbar from "../../Navbar.jsx";
 import "./Account.css";
 import { useNavigate } from "react-router-dom";
+import AccountNav from "./AccountNav.jsx";
 
 /**
  * @author Ajanthapan Agilaruben
@@ -18,54 +19,47 @@ function Account() {
       <Navbar></Navbar>
       <div className="account-page">
         <div className="container-account">
-          <div className="heading-account">My Account</div>
-          <div className="account-nav">
-            <div className="nav-left">
-              <div className="nav-item1">
-                <a onClick={() => navigate("/Account")}>Update Details</a>
+          <AccountNav></AccountNav>
+          <div className="big-container">
+            <div className="container-left">
+              Change first name
+              <div className="input-account">
+                <i className="fa-solid fa-user"></i>
+                <input
+                  type="firstname"
+                  id="fname"
+                  name="firstname"
+                  placeholder="Firstname..."
+                ></input>
               </div>
-              <div className="nav-item1">
-                <a onClick={() => navigate("/OwnedItems")}>Owned Items</a>
+              Change last name
+              <div className="input-account">
+                <i className="fa-solid fa-user"></i>
+                <input
+                  type="lastname"
+                  id="lname"
+                  name="Lastname"
+                  placeholder="Lastname..."
+                ></input>
               </div>
-              <div className="nav-item1">
-                <a onClick={() => navigate("/Statistics")}>Statistics</a>
+            </div>
+            <div className="container-right">
+              Change Email
+              <div className="input-account">
+                <i className="fa-solid fa-envelope"></i>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter Email..."
+                ></input>
               </div>
             </div>
           </div>
-          Change first name
-          <div className="input-account">
-            <i className="fa-solid fa-user"></i>
-            <input
-              type="firstname"
-              id="fname"
-              name="firstname"
-              placeholder="Firstname..."
-            ></input>
-          </div>
-          Change last name
-          <div className="input-account">
-            <i className="fa-solid fa-user"></i>
-            <input
-              type="lastname"
-              id="lname"
-              name="Lastname"
-              placeholder="Lastname..."
-            ></input>
-          </div>
-          Change Email
-          <div className="input-account">
-            <i className="fa-solid fa-envelope"></i>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter Email..."
-            ></input>
-          </div>
           <div className="button-container2">
             <div className="change-button">Make Changes</div>
-          </div>{" "}
-        </div>{" "}
+          </div>
+        </div>
       </div>
     </>
   );
