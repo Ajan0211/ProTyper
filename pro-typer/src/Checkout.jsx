@@ -1,5 +1,7 @@
 import ShopNav from "./ShopNav.jsx";
 import "./Checkout.css";
+import { useContext } from "react";
+import { UserContext } from "./userContext.jsx";
 
 /**
  * @author Ajanthapan Agilaruben
@@ -9,6 +11,7 @@ import "./Checkout.css";
  * @returns {the shopNav component as well as the payment section and the personal information section.}
  */
 function Checkout() {
+  const { user } = useContext(UserContext);
   return (
     <>
       <ShopNav></ShopNav>
@@ -118,7 +121,7 @@ function Checkout() {
                   if (user) {
                     alert("Purchase was successful");
                   } else {
-                    navigate("/Login");
+                    navigate("/Shop");
                   }
                 }}
               >
