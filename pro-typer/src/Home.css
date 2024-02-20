@@ -14,9 +14,6 @@ body {
   overflow: hidden;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: aliceblue;
-  background-image: url(./assets/background.png);
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .App {
@@ -24,6 +21,14 @@ body {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
+  background-image: url(./assets/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.App.light {
+  background-image: url(./assets/background-lightmode.png);
+  color: black;
 }
 
 .content {

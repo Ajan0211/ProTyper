@@ -2,6 +2,7 @@ import { useContext } from "react";
 import "./navbar.css";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "./pro-typer/src/userContext";
+import { ThemeContext } from "./pro-typer/src/themeContext";
 
 /**
  * This file holds the navbar component which is used throughout the pages so user can navigate to different pages at any time.
@@ -12,6 +13,7 @@ import { UserContext } from "./pro-typer/src/userContext";
 function Navbar() {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
+  const { isLightMode } = useContext(ThemeContext);
 
   return (
     <div className="navbar">
@@ -29,7 +31,11 @@ function Navbar() {
 
       <img
         className="logo"
-        src="src/assets/Layer 1.png"
+        src={`${
+          isLightMode
+            ? "src/assets/logo-lightmode.png"
+            : "src/assets/Layer 1.png"
+        }`}
         onClick={() => navigate("/")}
       ></img>
       <div className="nav-right">

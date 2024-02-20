@@ -18,12 +18,16 @@ import axios from "axios";
 import Account from "./Account";
 import OwnedItems from "./OwnedItems";
 import Statistics from "./Satistics";
+import { useContext } from "react";
+import { ThemeContext } from "./themeContext";
 
 axios.defaults.withCredentials = true;
 
 function App() {
+  const { isLightMode } = useContext(ThemeContext);
+
   return (
-    <div className="App">
+    <div className={`App ${isLightMode ? "light" : ""}`}>
       <Routes>
         <Route path="/Login" element={<Login />} />
         <Route path="/" element={<Home />} />
