@@ -12,7 +12,7 @@
   cursor: pointer;
   border-radius: 8px;
   border: 0px solid rgba(0, 0, 0, 0);
-  background-image: linear-gradient(90deg, #252525, #261d19, #96938f);
+  background-image: linear-gradient(90deg, #797979, #261d19, #96938f);
   box-shadow: 0 0px 10px rgba(34, 34, 34, 0.835);
   background-size: 300%;
   background-position: right;
@@ -22,12 +22,23 @@
   margin-top: 12px;
 }
 
+.App.light .font1 {
+  color: black;
+  background-image: linear-gradient(90deg, #252525, #504743, #f3f3f3);
+  border: 0px solid rgba(255, 255, 255);
+  box-shadow: 0 0px 15px rgba(173, 173, 173, 0.835);
+}
+
 .font1:hover {
   cursor: pointer;
   background-position: left;
   transition: 0.6s;
-  box-shadow: 0 0px 15px rgba(34, 34, 34, 0.835);
   transform: translateY(-5px);
+}
+
+.App.light .font1:hover {
+  background-color: #8f8f8f;
+  background-image: none;
 }
 
 .font-container {
