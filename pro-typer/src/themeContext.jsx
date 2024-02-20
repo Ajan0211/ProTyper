@@ -4,9 +4,33 @@ export const ThemeContext = createContext({});
 
 export function ThemeContextProvider({ children }) {
   const [isLightMode, setIsLightMode] = useState(false);
+  const [currentFont, setCurrentFont] = useState(null);
+
+  const fontList = [
+    { name: "Kode Mono", styleString: '"Kode Mono", monospace' },
+    { name: "Montserrat", styleString: '"Montserrat", sans-serif' },
+    { name: "Playfair", styleString: '"Playfair Display", serif' },
+    { name: "Tangerine", styleString: '"Tangerine", cursive' },
+  ];
+
+  const getCurrentFontString = () => {
+    if (currentFont == null) {
+      return null;
+    }
+    return fontList.filter((item) => item.name == currentFont)[0].styleString;
+  };
 
   return (
-    <ThemeContext.Provider value={{ isLightMode, setIsLightMode }}>
+    <ThemeContext.Provider
+      value={{
+        isLightMode,
+        setIsLightMode,
+        fontList,
+        currentFont,
+        setCurrentFont,
+        getCurrentFontString,
+      }}
+    >
       {children}
     </ThemeContext.Provider>
   );

@@ -4,71 +4,31 @@ import { useContext } from "react";
 import { ThemeContext } from "./themeContext";
 
 function Setting() {
-  const { setIsLightMode } = useContext(ThemeContext);
+  const { setIsLightMode, fontList, currentFont, setCurrentFont } =
+    useContext(ThemeContext);
   return (
     <>
       <Navbar></Navbar>
       <div className="title">Fonts</div>
       <div className="font-container">
+        {fontList.map((item) => {
+          return (
+            <div
+              key={`font-button-${item.name}`}
+              style={{ fontFamily: item.styleString }}
+              onClick={() => setCurrentFont(item.name)}
+              className="button2"
+            >
+              {item.name}
+            </div>
+          );
+        })}
         <div
-          style={{ fontFamily: '"Kode Mono", monospace' }}
-          className="button2"
+          onClick={() => setCurrentFont(null)}
+          className="button2 default-font"
         >
-          Kode Mono
+          Default
         </div>
-        <div style={{ fontFamily: '"Anta", sans-serif' }} className="button2">
-          Anta
-        </div>
-        <div
-          style={{ fontFamily: '"Montserrat", sans-serif' }}
-          className="button2"
-        >
-          Montserrat
-        </div>
-        <div
-          style={{ fontFamily: '"Roboto Condensed", sans-serif' }}
-          className="button2"
-        >
-          Roboto Condensed
-        </div>
-        <div
-          style={{ fontFamily: '"Playfair Display", serif' }}
-          className="button2"
-        >
-          Playfair Display
-        </div>
-        <div style={{ fontFamily: '"Oswald", sans-serif' }} className="button2">
-          Oswald
-        </div>
-        <div
-          style={{ fontFamily: '"Bebas Neue", sans-serif' }}
-          className="button2"
-        >
-          Bebas Neue
-        </div>
-        <div style={{ fontFamily: '"Kanit", sans-serif' }} className="button2">
-          Kanit
-        </div>
-        <div style={{ fontFamily: '"Caveat", cursive' }} className="button2">
-          Caveat
-        </div>
-        <div
-          style={{ fontFamily: '"Lobster", sans-serif' }}
-          className="button2"
-        >
-          Lobster
-        </div>
-        <div
-          style={{ fontFamily: '"Indie Flower", cursive' }}
-          className="button2"
-        >
-          Indie Flower
-        </div>
-        <div style={{ fontFamily: '"Tangerine", cursive' }} className="button2">
-          Tangerine
-        </div>
-
-        <div className="button2">Default</div>
       </div>
 
       <div className="title">Background</div>

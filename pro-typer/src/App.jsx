@@ -24,10 +24,16 @@ import { ThemeContext } from "./themeContext";
 axios.defaults.withCredentials = true;
 
 function App() {
-  const { isLightMode } = useContext(ThemeContext);
+  const { isLightMode, getCurrentFontString } = useContext(ThemeContext);
 
+  console.log(getCurrentFontString());
   return (
-    <div className={`App ${isLightMode ? "light" : ""}`}>
+    <div
+      style={
+        getCurrentFontString() ? { fontFamily: getCurrentFontString() } : {}
+      }
+      className={`App ${isLightMode ? "light" : ""}`}
+    >
       <Routes>
         <Route path="/Login" element={<Login />} />
         <Route path="/" element={<Home />} />

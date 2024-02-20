@@ -26,3 +26,7 @@
   text-shadow: 0 0px 15px rgba(34, 34, 34, 0.835);
   transform: translateY(-5px);
 }
+
+.default-font {
+  font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}
