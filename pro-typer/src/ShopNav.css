@@ -14,6 +14,11 @@
   color: white;
 }
 
+.App.light .navbar1 a {
+  text-decoration: none;
+  color: black;
+}
+
 .navbar1 a:hover {
   color: #b6c8cf9c;
 
@@ -45,6 +50,11 @@
 .navbar2 a {
   text-decoration: none;
   color: white;
+}
+
+.App.light .navbar2 a {
+  text-decoration: none;
+  color: black;
 }
 
 .navbar2 a:hover,
@@ -88,6 +98,13 @@
   transform: translate(-50%, calc(-50% - 5px));
 }
 
+.App.light .shoplogo:hover {
+  cursor: pointer;
+  background-position: left;
+  filter: drop-shadow(0px 15px rgba(196, 196, 196, 0.5));
+  transform: translate(-50%, calc(-50% - 5px));
+}
+
 .shopnav-left {
   display: flex;
   justify-content: center;
@@ -121,6 +138,28 @@
   text-align: center;
 }
 
+.App.light .PopUp {
+  position: absolute;
+  right: 0;
+  transform: translateX(7px) translateY(20px);
+  z-index: 1;
+  background-color: #a4a5a8;
+  box-shadow: 0 4px 16px rgba(138, 138, 138, 0.75);
+  padding: 20px;
+  border-radius: 20px;
+  opacity: 0;
+  filter: blur(10px);
+  transition: opacity 0.15s, filter 0.15s;
+  min-width: 250px;
+  height: 300px;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.App.light .PopUp.show {
+  opacity: 100%;
+  filter: blur(0);
+}
 .PopUp.show {
   opacity: 100%;
   filter: blur(0);
@@ -178,6 +217,24 @@
   transition: 0.3s;
   outline: none;
   color: white;
+}
+
+.App.light .searchbar {
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+  border: 3px solid #6c6c6c;
+  min-height: 10px;
+  min-width: 350px;
+  padding: 10px 15px;
+
+  column-gap: 10px;
+  align-items: center;
+
+  background-color: #70768431;
+  transition: 0.3s;
+  outline: none;
+  color: black;
 }
 
 .checkout-button {
