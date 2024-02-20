@@ -17,6 +17,7 @@ import Settings from "./Settings";
 import axios from "axios";
 import Account from "./Account";
 import OwnedItems from "./OwnedItems";
+import Statistics from "./Satistics";
 
 axios.defaults.withCredentials = true;
 
@@ -34,6 +35,7 @@ function App() {
         <Route path="/Settings" element={<Settings />} />
         <Route path="/Account" element={<Account />} />
         <Route path="/OwnedItems" element={<OwnedItems />} />
+        <Route path="/Statistics" element={<Statistics />} />
       </Routes>
     </div>
   );
