@@ -6,12 +6,12 @@ function Statistics() {
   return (
     <>
       <Navbar></Navbar>
-      <div className="ownedItems-page">
-        <div className="container-ownedItems">
+      <div className="statistics-page">
+        <div className="container-statistics">
           <AccountNav></AccountNav>
-
-          <div className="button-container2">
-            <div className="change-button">Change skin</div>
+          <div className="content-container">
+            <div className="races">Number of Races: </div>
+            <div className="avg-speed">Average speed: </div>
           </div>
         </div>
       </div>
