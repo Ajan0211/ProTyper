@@ -9,7 +9,7 @@ function OwnedItems() {
       <div className="ownedItems-page">
         <div className="container-ownedItems">
           <AccountNav></AccountNav>
-          <div className="item-section">Skins</div>
+          <div className="item-section">Skins:</div>
           <div className="button-container2">
             <div className="change-button">Change skin</div>
           </div>
