@@ -55,11 +55,7 @@ function ShopNav(props) {
           <div className="shopnav-item1">
             <a
               onClick={() => {
-                if (user) {
-                  alert("Account page not made yet!");
-                } else {
-                  navigate("/Login");
-                }
+                navigate("/Account");
               }}
             >
               {user ? (

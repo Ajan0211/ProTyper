@@ -112,7 +112,18 @@ function Checkout() {
           <div className="payment">
             <div className="pay-section">
               Amount due: £XX.XX
-              <div className="pay-button">Pay Now</div>
+              <div
+                className="pay-button"
+                onClick={() => {
+                  if (user) {
+                    alert("Purchase was successful");
+                  } else {
+                    navigate("/Login");
+                  }
+                }}
+              >
+                Pay Now
+              </div>
             </div>
           </div>
         </div>
