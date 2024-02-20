@@ -53,24 +53,81 @@ body {
 }
 
 .button {
-  text-align: center;
-  background-color: #2f3335;
-  border: none;
+  display: flex;
+  align-items: center;
   color: white;
   padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  width: min-content;
+  column-gap: 5px;
+  transition: 0.6s;
   cursor: pointer;
-  border-radius: 15px;
-  /* position: absolute; */
+  border-radius: 8px;
+  border: 0px solid rgba(0, 0, 0, 0);
+  background-image: linear-gradient(90deg, #797979, #261d19, #96938f);
+  box-shadow: 0 0px 10px rgba(34, 34, 34, 0.835);
+  background-size: 300%;
+  background-position: right;
+  cursor: pointer;
+  text-align: center;
   transition: transform 0.5s;
+  margin-top: 12px;
+}
+
+.App.light .button {
+  color: black;
+  background-image: linear-gradient(90deg, #252525, #504743, #f3f3f3);
+  border: 0px solid rgba(255, 255, 255);
+  box-shadow: 0 0px 15px rgba(173, 173, 173, 0.835);
 }
 
 .button:hover {
+  cursor: pointer;
+  background-position: left;
+  transition: 0.6s;
   transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.App.light .button:hover {
+  background-color: #8f8f8f;
+  background-image: none;
+}
+
+.button2 {
+  color: white;
+  padding: 5px 12px;
+  min-width: 200px;
+  max-height: 30px;
+  transition: 0.6s;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 0px solid rgba(0, 0, 0, 0);
+  background-image: linear-gradient(90deg, #797979, #261d19, #96938f);
+  box-shadow: 0 0px 10px rgba(34, 34, 34, 0.835);
+  background-size: 300%;
+  background-position: right;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.5s;
+  margin-top: 12px;
+}
+
+.App.light .button2 {
+  color: black;
+  background-image: linear-gradient(90deg, #252525, #504743, #f3f3f3);
+  border: 0px solid rgba(255, 255, 255);
+  box-shadow: 0 0px 15px rgba(173, 173, 173, 0.835);
+}
+
+.button2:hover {
+  cursor: pointer;
+  background-position: left;
+  transition: 0.6s;
+  transform: translateY(-5px);
+}
+
+.App.light .button2:hover {
+  background-color: #8f8f8f;
+  background-image: none;
 }
 
 .heading {

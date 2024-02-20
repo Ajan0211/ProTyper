@@ -10,18 +10,18 @@ function Setting() {
       <Navbar></Navbar>
       <div className="title">Fonts</div>
       <div className="font-container">
-        <div className="font1">font1</div>
-        <div className="font1">font1</div>
-        <div className="font1">font1</div>
-        <div className="font1">font1</div>
-        <div className="font1">font1</div>
-        <div className="font1">font1</div>
-        <div className="font1">font1</div>
-        <div className="font1">font1</div>
-        <div className="font1">font1</div>
-        <div className="font1">font1</div>
-        <div className="font1">font1</div>
-        <div className="font1">font1</div>
+        <div className="button2">font1</div>
+        <div className="button2">font1</div>
+        <div className="button2">font1</div>
+        <div className="button2">font1</div>
+        <div className="button2">font1</div>
+        <div className="button2">font1</div>
+        <div className="button2">font1</div>
+        <div className="button2">font1</div>
+        <div className="button2">font1</div>
+        <div className="button2">font1</div>
+        <div className="button2">font1</div>
+        <div className="button2">font1</div>
       </div>
 
       <div className="title">Background</div>
