@@ -58,8 +58,7 @@ function ShopNav(props) {
             >
               {user ? (
                 <>
-                  My Account
-                  <i className="fa-solid fa-user"></i>
+                  My Account <i className="fa-solid fa-user"></i>
                 </>
               ) : (
                 "Login / Signup"

@@ -35,15 +35,17 @@ function Navbar() {
       <div className="nav-right">
         <a
           onClick={() => {
-            if (user) {
-              alert("Account page not made yet!");
-            } else {
-              navigate("/Login");
-            }
+            navigate("/Account");
           }}
         >
           {/* Login/Signup */}
-          {user ? "My Account" : "Login / Signup"}
+          {user ? (
+            <>
+              My Account <i className="fa-solid fa-user"></i>
+            </>
+          ) : (
+            "Login / Signup"
+          )}
         </a>
       </div>
     </div>

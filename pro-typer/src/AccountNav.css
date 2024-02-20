@@ -1,0 +1,49 @@
+.heading-accountNav {
+  margin-bottom: 10px;
+  font-size: larger;
+  color: aliceblue;
+  margin-left: 45px;
+}
+
+.accountNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.accountNav a {
+  text-decoration: none;
+  color: white;
+}
+
+.accountNav a:hover {
+  color: #b6c8cf9c;
+
+  cursor: pointer;
+}
+.accountNav a::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background-color: #444;
+  position: absolute;
+  top: 0;
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+.accountNav a:hover::before {
+  width: 100%;
+}
+.Accountnav-left {
+  display: flex;
+  width: 100%;
+  column-gap: 189px;
+  margin-bottom: 10px;
+}
+
+.nav-item1 {
+  display: flex;
+  justify-content: left;
+  padding-top: 10px;
+}
