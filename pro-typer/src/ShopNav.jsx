@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Bag from "./Bag";
 import { useContext } from "react";
 import { UserContext } from "./userContext";
+import { ThemeContext } from "./themeContext";
 
 /**
  * @author Ajanthapan Agilaruben
@@ -21,14 +22,19 @@ function ShopNav(props) {
   const navigate = useNavigate();
 
   const { user } = useContext(UserContext);
+  const { isLightMode } = useContext(ThemeContext);
   return (
     <>
       <div className="navbar1">
         <img
           className="shoplogo"
-          src="src/assets/Layer 1.png"
+          src={`${
+            isLightMode
+              ? "src/assets/logo-lightmode.png"
+              : "src/assets/Layer 1.png"
+          }`}
           onClick={() => navigate("/")}
-        />
+        ></img>
         <div className="shopnav-left">
           <div className="shopnav-item1">
             <div className="searchbar">
@@ -49,11 +55,7 @@ function ShopNav(props) {
           <div className="shopnav-item1">
             <a
               onClick={() => {
-                if (user) {
-                  alert("Account page not made yet!");
-                } else {
-                  navigate("/Login");
-                }
+                navigate("/Account");
               }}
             >
               {user ? (

@@ -127,6 +127,7 @@ function Game() {
             })}
           </div>
           <input
+            className="write"
             id="text"
             value={inputValue}
             onChange={(e) => {
@@ -143,7 +144,7 @@ function Game() {
         <div className="math-container">
           <div>Words Per Minute: {wordsPerMinute} </div>
           <div
-            className="reset-button"
+            className="button"
             onClick={() => {
               setStartedTyping(false);
               newText();

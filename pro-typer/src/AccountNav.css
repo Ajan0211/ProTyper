@@ -4,6 +4,12 @@
   color: aliceblue;
   margin-left: 45px;
 }
+.App.light .heading-accountNav {
+  margin-bottom: 10px;
+  font-size: larger;
+  color: rgb(0, 0, 0);
+  margin-left: 45px;
+}
 
 .accountNav {
   display: flex;
@@ -15,6 +21,11 @@
 .accountNav a {
   text-decoration: none;
   color: white;
+}
+
+.App.light .accountNav a {
+  text-decoration: none;
+  color: black;
 }
 
 .accountNav a:hover {

@@ -1,5 +1,7 @@
 import ShopNav from "./ShopNav.jsx";
 import "./Checkout.css";
+import { useContext } from "react";
+import { UserContext } from "./userContext.jsx";
 
 /**
  * @author Ajanthapan Agilaruben
@@ -9,6 +11,7 @@ import "./Checkout.css";
  * @returns {the shopNav component as well as the payment section and the personal information section.}
  */
 function Checkout() {
+  const { user } = useContext(UserContext);
   return (
     <>
       <ShopNav></ShopNav>
@@ -112,7 +115,18 @@ function Checkout() {
           <div className="payment">
             <div className="pay-section">
               Amount due: £XX.XX
-              <div className="pay-button">Pay Now</div>
+              <div
+                className="pay-button"
+                onClick={() => {
+                  if (user) {
+                    alert("Purchase was successful");
+                  } else {
+                    navigate("/Shop");
+                  }
+                }}
+              >
+                Pay Now
+              </div>
             </div>
           </div>
         </div>

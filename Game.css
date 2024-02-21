@@ -129,6 +129,9 @@ input[id="text"] {
   outline: none;
 }
 
+.App.light .write {
+  color: black;
+}
 .correct {
   color: green;
 }
@@ -149,21 +152,4 @@ input[id="text"] {
   align-items: center;
   border-radius: 10px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
-}
-
-.reset-button {
-  display: flex;
-  align-items: center;
-  column-gap: 5px;
-  background-color: #323437;
-  width: min-content;
-  padding: 15px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.reset-button:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  transform: translateY(-3px);
 }
