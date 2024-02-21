@@ -10,7 +10,17 @@ export function ThemeContextProvider({ children }) {
     { name: "Kode Mono", styleString: '"Kode Mono", monospace' },
     { name: "Montserrat", styleString: '"Montserrat", sans-serif' },
     { name: "Playfair", styleString: '"Playfair Display", serif' },
+
     { name: "Tangerine", styleString: '"Tangerine", cursive' },
+    {
+      name: "Jacquarda Bastarda 9",
+      styleString: '"Jacquarda Bastarda 9", serif',
+    },
+
+    {
+      name: "Coming Soon",
+      styleString: '"Coming Soon", cursive',
+    },
   ];
 
   const getCurrentFontString = () => {

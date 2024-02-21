@@ -127,6 +127,7 @@ function Game() {
             })}
           </div>
           <input
+            className="write"
             id="text"
             value={inputValue}
             onChange={(e) => {

@@ -129,6 +129,9 @@ input[id="text"] {
   outline: none;
 }
 
+.App.light .write {
+  color: black;
+}
 .correct {
   color: green;
 }
