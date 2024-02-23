@@ -26,17 +26,17 @@ function Shop() {
   const [typeFilter, setTypeFilter] = useState("");
 
   const items = [
-    { name: "item1", price: "£8.99", type: "theme" },
+    { name: "item1", price: "10 coins", type: "theme" },
     { name: "F1 Car", price: "11 coins", type: "skin", image: Car2 },
-    { name: "item3", price: "£8.99", type: "theme" },
+    { name: "item3", price: "15 coins", type: "theme" },
     { name: "Police Car", price: "10 coins", type: "skin", image: Car3 },
-    { name: "item5", price: "£8.99", type: "theme" },
+    { name: "item5", price: "5 coins", type: "theme" },
     { name: "Sports Car", price: "10 coins", type: "skin", image: Car4 },
-    { name: "item7", price: "£8.99", type: "theme" },
+    { name: "item7", price: "10 coins", type: "theme" },
     { name: "Jet", price: "13 coins", type: "skin", image: Jet },
-    { name: "5 coins", price: "£10.99", type: "coin", image: CoinImage },
-    { name: "10 coins", price: "£15.99", type: "coin", image: CoinImage },
-    { name: "15 coins", price: "£5.99", type: "coin", image: CoinImage },
+    { name: "5 coins", price: "£5.99", type: "coin", image: CoinImage },
+    { name: "10 coins", price: "£10.99", type: "coin", image: CoinImage },
+    { name: "15 coins", price: "£15.99", type: "coin", image: CoinImage },
     { name: "20 coins", price: "£25.99", type: "coin", image: CoinImage },
   ];
 
