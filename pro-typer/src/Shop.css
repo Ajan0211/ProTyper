@@ -80,3 +80,17 @@
   background-color: #8f8f8f;
   background-image: none;
 }
+
+.product-image {
+  width: 200px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: grayscale(1);
+  transition: filter 0.5s;
+}
+
+.box-container:hover .product-image {
+  filter: none;
+}

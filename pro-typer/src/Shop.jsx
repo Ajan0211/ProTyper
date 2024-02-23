@@ -3,6 +3,8 @@ import "./Shop.css";
 import ShopItem from "./ShopItem.jsx";
 import { useState } from "react";
 
+import CoinImage from "./assets/coins.png";
+
 /**
  * @author Ajanthapan Agilaruben
  * This file is used for the shop page were the user can use a search filter to look for the exact item the
@@ -28,10 +30,10 @@ function Shop() {
     { name: "item6", price: "£8.99", type: "skin" },
     { name: "item7", price: "£8.99", type: "theme" },
     { name: "item8", price: "£8.99", type: "skin" },
-    { name: "item9", price: "£10.99", type: "coin" },
-    { name: "item10", price: "£15.99", type: "coin" },
-    { name: "item11", price: "£5.99", type: "coin" },
-    { name: "item12", price: "£25.99", type: "coin" },
+    { name: "5 coins", price: "£10.99", type: "coin", image: CoinImage },
+    { name: "10 coins", price: "£15.99", type: "coin", image: CoinImage },
+    { name: "15 coins", price: "£5.99", type: "coin", image: CoinImage },
+    { name: "20 coins", price: "£25.99", type: "coin", image: CoinImage },
   ];
 
   const filterItems = () => {
@@ -64,6 +66,7 @@ function Shop() {
               key={`shop-item-${index}`}
               name={item.name}
               price={item.price}
+              image={item.image}
             />
           );
         })}
