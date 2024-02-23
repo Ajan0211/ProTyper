@@ -27,13 +27,13 @@ function Shop() {
 
   const items = [
     { name: "item1", price: "£8.99", type: "theme" },
-    { name: "item2", price: "£8.99", type: "skin", image: Car2 },
+    { name: "F1 Car", price: "11 coins", type: "skin", image: Car2 },
     { name: "item3", price: "£8.99", type: "theme" },
-    { name: "item4", price: "£8.99", type: "skin", image: Car3 },
+    { name: "Police Car", price: "10 coins", type: "skin", image: Car3 },
     { name: "item5", price: "£8.99", type: "theme" },
-    { name: "item6", price: "£8.99", type: "skin", image: Car4 },
+    { name: "Sports Car", price: "10 coins", type: "skin", image: Car4 },
     { name: "item7", price: "£8.99", type: "theme" },
-    { name: "item8", price: "£8.99", type: "skin", image: Jet },
+    { name: "Jet", price: "13 coins", type: "skin", image: Jet },
     { name: "5 coins", price: "£10.99", type: "coin", image: CoinImage },
     { name: "10 coins", price: "£15.99", type: "coin", image: CoinImage },
     { name: "15 coins", price: "£5.99", type: "coin", image: CoinImage },
