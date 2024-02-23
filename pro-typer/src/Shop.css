@@ -82,7 +82,9 @@
 }
 
 .product-image {
-  width: 100px;
+  /* width: 100px; */
+  object-fit: contain;
+  width: auto;
   height: 150px;
   display: flex;
   justify-content: center;
