@@ -4,6 +4,10 @@ import ShopItem from "./ShopItem.jsx";
 import { useState } from "react";
 
 import CoinImage from "./assets/coins.png";
+import Car2 from "./assets/car2.png";
+import Car3 from "./assets/car3.png";
+import Jet from "./assets/jet.png";
+import Car4 from "./assets/car4.png";
 
 /**
  * @author Ajanthapan Agilaruben
@@ -23,13 +27,13 @@ function Shop() {
 
   const items = [
     { name: "item1", price: "£8.99", type: "theme" },
-    { name: "item2", price: "£8.99", type: "skin" },
+    { name: "item2", price: "£8.99", type: "skin", image: Car2 },
     { name: "item3", price: "£8.99", type: "theme" },
-    { name: "item4", price: "£8.99", type: "skin" },
+    { name: "item4", price: "£8.99", type: "skin", image: Car3 },
     { name: "item5", price: "£8.99", type: "theme" },
-    { name: "item6", price: "£8.99", type: "skin" },
+    { name: "item6", price: "£8.99", type: "skin", image: Car4 },
     { name: "item7", price: "£8.99", type: "theme" },
-    { name: "item8", price: "£8.99", type: "skin" },
+    { name: "item8", price: "£8.99", type: "skin", image: Jet },
     { name: "5 coins", price: "£10.99", type: "coin", image: CoinImage },
     { name: "10 coins", price: "£15.99", type: "coin", image: CoinImage },
     { name: "15 coins", price: "£5.99", type: "coin", image: CoinImage },
