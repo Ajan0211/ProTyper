@@ -39,6 +39,8 @@ function Navbar() {
         onClick={() => navigate("/")}
       ></img>
       <div className="nav-right">
+        <div className="coins">Coins:</div>
+        <div className="coin-button">+</div>{" "}
         <a
           onClick={() => {
             navigate("/Account");

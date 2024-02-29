@@ -80,4 +80,6 @@
 .nav-right {
   position: relative;
   padding-top: 10px;
+  display: flex;
+  column-gap: 40px;
 }
