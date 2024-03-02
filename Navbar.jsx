@@ -41,20 +41,29 @@ function Navbar() {
       <div className="nav-right">
         <div className="coins">Coins:</div>
         <div className="coin-button">+</div>{" "}
-        <a
-          onClick={() => {
-            navigate("/Account");
-          }}
-        >
-          {/* Login/Signup */}
-          {user ? (
-            <>
-              My Account <i className="fa-solid fa-user"></i>
-            </>
-          ) : (
-            "Login / Signup"
-          )}
-        </a>
+        <div className="myaccount">
+          <a
+            onClick={() => {
+              if (user) {
+                navigate("/Account");
+              } else {
+                navigate("/Login");
+              }
+            }}
+          >
+            {/* Login/Signup */}
+            {user ? (
+              <>
+                My Account <i className="fa-solid fa-user"></i>
+              </>
+            ) : (
+              "Login / Signup"
+            )}
+          </a>
+        </div>
+        <div className="logout">
+          <a>Logout</a>
+        </div>
       </div>
     </div>
   );

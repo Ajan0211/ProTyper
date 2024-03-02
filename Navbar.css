@@ -82,13 +82,18 @@
   padding-top: 10px;
   display: flex;
   column-gap: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 30px;
+  margin-bottom: 10px;
 }
 
 .coin-button {
   color: white;
-  padding: 2px 6px;
-  min-width: 10px;
-  min-height: 10px;
+  padding: 5px 5px;
+  min-width: 5px;
+  min-height: 5px;
   transition: 0.6s;
   cursor: pointer;
   border-radius: 50%;
@@ -98,10 +103,26 @@
   background-size: 300%;
   background-position: right;
   text-align: center;
+  position: relative;
+  margin-top: 10px;
 }
 .coin-button:hover {
   cursor: pointer;
   background-position: left;
   transition: 0.6s;
   box-shadow: 0 0px 15px rgba(34, 34, 34, 0.835);
+}
+
+.logout {
+  position: relative;
+  padding-top: 10px;
+}
+.myaccount {
+  position: relative;
+  padding-top: 10px;
+}
+
+.coins {
+  position: relative;
+  padding-top: 10px;
 }
