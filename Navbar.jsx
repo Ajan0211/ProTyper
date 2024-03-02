@@ -40,7 +40,9 @@ function Navbar() {
       ></img>
       <div className="nav-right">
         <div className="coins">Coins:</div>
-        <div className="coin-button">+</div>{" "}
+        <div className="coin-button" onClick={() => navigate("/Coins")}>
+          +
+        </div>{" "}
         <div className="myaccount">
           <a
             onClick={() => {
