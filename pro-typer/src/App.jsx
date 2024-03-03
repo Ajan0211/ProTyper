@@ -19,6 +19,7 @@ import Account from "./Account";
 import OwnedItems from "./OwnedItems";
 import Statistics from "./Satistics";
 import Coins from "./Coins";
+import CoinsCheckout from "./CoinsCheckout";
 import { useContext } from "react";
 import { ThemeContext } from "./themeContext";
 
@@ -48,6 +49,7 @@ function App() {
         <Route path="/OwnedItems" element={<OwnedItems />} />
         <Route path="/Statistics" element={<Statistics />} />
         <Route path="/Coins" element={<Coins />} />
+        <Route path="/CoinsCheckout" element={<CoinsCheckout />} />
       </Routes>
     </div>
   );
