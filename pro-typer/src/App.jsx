@@ -18,6 +18,7 @@ import axios from "axios";
 import Account from "./Account";
 import OwnedItems from "./OwnedItems";
 import Statistics from "./Satistics";
+import Coins from "./Coins";
 import { useContext } from "react";
 import { ThemeContext } from "./themeContext";
 
@@ -46,6 +47,7 @@ function App() {
         <Route path="/Account" element={<Account />} />
         <Route path="/OwnedItems" element={<OwnedItems />} />
         <Route path="/Statistics" element={<Statistics />} />
+        <Route path="/Coins" element={<Coins />} />
       </Routes>
     </div>
   );
