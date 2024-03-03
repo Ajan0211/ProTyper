@@ -2,6 +2,7 @@ import ShopNav from "./ShopNav.jsx";
 import "./CoinsCheckout.css";
 import { useContext } from "react";
 import { UserContext } from "./userContext.jsx";
+import { useNavigate } from "react-router-dom";
 
 /**
  * @author Ajanthapan Agilaruben
@@ -12,6 +13,7 @@ import { UserContext } from "./userContext.jsx";
  */
 function CoinsCheckout() {
   const { user } = useContext(UserContext);
+  const navigate = useNavigate();
   return (
     <>
       <ShopNav></ShopNav>
@@ -57,7 +59,12 @@ function CoinsCheckout() {
                     XX <i class="fa-solid fa-coins"></i>
                   </div>
                 </div>
-                <div className="cost-container2"> Purchase more Coins +</div>
+                <div
+                  className="cost-container2"
+                  onClick={() => navigate("/Coins")}
+                >
+                  Purchase more Coins +
+                </div>
               </div>
             </div>
           </div>
