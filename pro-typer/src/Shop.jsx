@@ -3,7 +3,6 @@ import "./Shop.css";
 import ShopItem from "./ShopItem.jsx";
 import { useState } from "react";
 
-import CoinImage from "./assets/coins.png";
 import Car2 from "./assets/car2.png";
 import Car3 from "./assets/car3.png";
 import Jet from "./assets/jet.png";
@@ -34,10 +33,6 @@ function Shop() {
     { name: "Sports Car", price: "10 coins", type: "skin", image: Car4 },
     { name: "item7", price: "10 coins", type: "theme" },
     { name: "Jet", price: "13 coins", type: "skin", image: Jet },
-    { name: "5 coins", price: "£5.99", type: "coin", image: CoinImage },
-    { name: "10 coins", price: "£10.99", type: "coin", image: CoinImage },
-    { name: "15 coins", price: "£15.99", type: "coin", image: CoinImage },
-    { name: "20 coins", price: "£25.99", type: "coin", image: CoinImage },
   ];
 
   const filterItems = () => {

@@ -125,14 +125,15 @@ function ShopNav(props) {
         <div className="shopnav-item1">
           <a
             className={typeFilter == "coin" ? `active` : ""}
-            onClick={() =>
-              setTypeFilter((state) => {
-                if (state == "coin") {
-                  return "";
-                }
-                return "coin";
-              })
-            }
+            onClick={() => navigate("/Coins")}
+            // onClick={() =>
+            //   // setTypeFilter((state) => {
+            //   //   if (state == "coin") {
+            //   //     return "";
+            //   //   }
+            //   //   return "coin";
+            //   // })
+            // }
           >
             Coins
           </a>
