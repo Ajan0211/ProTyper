@@ -84,7 +84,7 @@ function ShopNav(props) {
 
           <div
             className="checkout-button"
-            onClick={() => navigate("/Checkout")}
+            onClick={() => navigate("/CoinsCheckout")}
           >
             {" "}
             Checkout
