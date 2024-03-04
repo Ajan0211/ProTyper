@@ -2,6 +2,7 @@ import "./Checkout.css";
 import { useContext } from "react";
 import { UserContext } from "./userContext.jsx";
 import Navbar from "../../Navbar.jsx";
+import { BagContext } from "./BagContext.jsx";
 
 /**
  * @author Ajanthapan Agilaruben
@@ -12,6 +13,8 @@ import Navbar from "../../Navbar.jsx";
  */
 function Checkout() {
   const { user } = useContext(UserContext);
+  const { bag } = useContext(BagContext);
+
   return (
     <>
       <Navbar></Navbar>
@@ -81,51 +84,72 @@ function Checkout() {
             </div>
           </div>
         </div>
-        <div className="card-info">
-          Card Information
-          <div className="card-container">
-            <img className="card" src="src/assets/Mastercard-Logo.png"></img>
-            <div className="card-info-text">Enter card information below</div>
+        <div className="split1">
+          <div className="pay-container">
+            Order Summary
+            <div className="personal-container">
+              Items selected shown below
+              {bag.map((item) => {
+                return (
+                  <div className="item-order">
+                    Number of coins: {item.quantity} <br />
+                    Price: {item.price} <br />
+                    Type: {item.type}
+                    <i className="fa-solid fa-trash"></i>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div className="card-info">
+            Card Information
+            <div className="card-container">
+              <img className="card" src="src/assets/Mastercard-Logo.png"></img>
+              <div className="card-info-text">Enter card information below</div>
 
-            <div className="card-input-container">
-              <div className="input-container">
-                <i className="fa-solid fa-credit-card"></i>
-                <input
-                  placeholder="XXXX-XXXX-XXXX-XXXX"
-                  className="input-box-card"
-                  id="card-number"
-                />
-              </div>
-              <div className="split">
-                <div className="input-container2">
+              <div className="card-input-container">
+                <div className="input-container">
                   <i className="fa-solid fa-credit-card"></i>
                   <input
-                    placeholder="XX/XX"
-                    className="input-box"
-                    id="exp-date"
+                    placeholder="XXXX-XXXX-XXXX-XXXX"
+                    className="input-box-card"
+                    id="card-number"
                   />
                 </div>
-                <div className="input-container2">
-                  <i className="fa-solid fa-credit-card"></i>
-                  <input placeholder="CVV" className="input-box" id="cvv" />
+                <div className="split">
+                  <div className="input-container2">
+                    <i className="fa-solid fa-credit-card"></i>
+                    <input
+                      placeholder="XX/XX"
+                      className="input-box"
+                      id="exp-date"
+                    />
+                  </div>
+                  <div className="input-container2">
+                    <i className="fa-solid fa-credit-card"></i>
+                    <input placeholder="CVV" className="input-box" id="cvv" />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="payment">
-            <div className="pay-section">
-              Amount due: £XX.XX
-              <div
-                className="pay-button"
-                onClick={() => {
-                  if (user) {
-                    alert("Purchase was successful");
-                  } else {
-                    navigate("/Shop");
-                  }
-                }}
-              >
-                Pay Now
+            <div className="payment">
+              <div className="pay-section">
+                Amount due: £XX.XX
+                <div
+                  className="pay-button"
+                  onClick={() => {
+                    if (user) {
+                      const dataToSend = { bag };
+                      axios.post("/api/checkout", dataToSend).then(() => {
+                        alert("Purchase was successful");
+                      });
+                    } else {
+                      alert("You're not signed in!");
+                    }
+                  }}
+                >
+                  Pay Now
+                </div>
               </div>
             </div>
           </div>

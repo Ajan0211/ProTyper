@@ -4,16 +4,41 @@ import CoinItem from "./CoinItem.jsx";
 import { useState } from "react";
 
 import CoinImage from "./assets/coins.png";
+import ShopNav from "./ShopNav.jsx";
 
 function Coins() {
   const [searchValue, setSearchValue] = useState("");
   const [typeFilter, setTypeFilter] = useState("");
 
   const items = [
-    { name: "5 coins", price: "£5.99", type: "coin", image: CoinImage },
-    { name: "10 coins", price: "£10.99", type: "coin", image: CoinImage },
-    { name: "15 coins", price: "£15.99", type: "coin", image: CoinImage },
-    { name: "20 coins", price: "£25.99", type: "coin", image: CoinImage },
+    {
+      name: "5 coins",
+      quantity: 5,
+      price: "£5.99",
+      type: "coin",
+      image: CoinImage,
+    },
+    {
+      name: "10 coins",
+      quantity: 10,
+      price: "£10.99",
+      type: "coin",
+      image: CoinImage,
+    },
+    {
+      name: "15 coins",
+      quantity: 15,
+      price: "£15.99",
+      type: "coin",
+      image: CoinImage,
+    },
+    {
+      name: "25 coins",
+      quantity: 25,
+      price: "£25.99",
+      type: "coin",
+      image: CoinImage,
+    },
   ];
 
   const filterItems = () => {
@@ -32,7 +57,9 @@ function Coins() {
   };
   return (
     <>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
+
+      <ShopNav />
       <div className="coinsTitle">Coins</div>
 
       <div className="page-container">
@@ -43,6 +70,8 @@ function Coins() {
               name={item.name}
               price={item.price}
               image={item.image}
+              quantity={item.quantity}
+              type={"coin"}
             />
           );
         })}
