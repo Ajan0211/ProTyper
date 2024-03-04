@@ -43,7 +43,7 @@ app.post("/Login", (req, res) => {
   });
 });
 app.post("/SignUp", (req, res) => {
-  ClientModel.create(req.body)
+  ClientModel.create({ ...req.body, coinbalance: 0 })
     .then((clients) => res.json(clients))
     .catch((err) => res.json(err));
 });
