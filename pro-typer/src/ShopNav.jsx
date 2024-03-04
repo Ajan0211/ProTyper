@@ -67,12 +67,12 @@ function ShopNav(props) {
               )}
             </a>
           </div>
-          <div className="shopnav-item1">
-            <div className="coins">Coins:</div>
-            <div className="coin-button" onClick={() => navigate("/Coins")}>
-              +
-            </div>
+
+          <div className="coins">Coins:</div>
+          <div className="coin-button" onClick={() => navigate("/Coins")}>
+            +
           </div>
+
           {/* <div className="shopnav-item1">
             <div
               className="bag-button"
