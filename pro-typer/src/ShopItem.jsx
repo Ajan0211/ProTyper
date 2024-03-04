@@ -9,11 +9,12 @@
 import React from "react";
 
 const ShopItem = (props) => {
-  const { name, price } = props;
+  const { name, price, image } = props;
   return (
     <div className="box-container">
       {name}
-      <div className="image-container"></div>
+      <img className="product-image" src={image} alt="Product Image" />
+      {/* <div className="image-container"></div> */}
       <div className="price-container">
         {price}
         <div className="Add-button">

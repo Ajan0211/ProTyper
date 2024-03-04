@@ -39,20 +39,33 @@ function Navbar() {
         onClick={() => navigate("/")}
       ></img>
       <div className="nav-right">
-        <a
-          onClick={() => {
-            navigate("/Account");
-          }}
-        >
-          {/* Login/Signup */}
-          {user ? (
-            <>
-              My Account <i className="fa-solid fa-user"></i>
-            </>
-          ) : (
-            "Login / Signup"
-          )}
-        </a>
+        <div className="coins">Coins:</div>
+        <div className="coin-button" onClick={() => navigate("/Coins")}>
+          +
+        </div>{" "}
+        <div className="myaccount">
+          <a
+            onClick={() => {
+              if (user) {
+                navigate("/Account");
+              } else {
+                navigate("/Login");
+              }
+            }}
+          >
+            {/* Login/Signup */}
+            {user ? (
+              <>
+                My Account <i className="fa-solid fa-user"></i>
+              </>
+            ) : (
+              "Login / Signup"
+            )}
+          </a>
+        </div>
+        <div className="logout">
+          <a>Logout</a>
+        </div>
       </div>
     </div>
   );

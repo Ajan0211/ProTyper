@@ -1,7 +1,7 @@
-import ShopNav from "./ShopNav.jsx";
 import "./Checkout.css";
 import { useContext } from "react";
 import { UserContext } from "./userContext.jsx";
+import Navbar from "../../Navbar.jsx";
 
 /**
  * @author Ajanthapan Agilaruben
@@ -14,7 +14,7 @@ function Checkout() {
   const { user } = useContext(UserContext);
   return (
     <>
-      <ShopNav></ShopNav>
+      <Navbar></Navbar>
 
       <div className="checkout-heading">
         Thank you for shopping at ProTyper!
