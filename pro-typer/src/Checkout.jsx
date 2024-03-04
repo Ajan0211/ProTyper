@@ -92,10 +92,14 @@ function Checkout() {
               {bag.map((item) => {
                 return (
                   <div className="item-order">
-                    Number of coins: {item.quantity} <br />
-                    Price: {item.price} <br />
-                    Type: {item.type}
-                    <i className="fa-solid fa-trash"></i>
+                    <div className="coin-order">
+                      <span>Number of coins: {item.quantity}</span>
+                      <i className="fa-solid fa-coins"></i>
+                    </div>
+                    <div className="coin-order">Price: {item.price} </div>
+                    <div className="coin-order">
+                      <i className="fa-solid fa-trash"></i>
+                    </div>
                   </div>
                 );
               })}
