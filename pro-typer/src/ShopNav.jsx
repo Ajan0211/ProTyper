@@ -73,7 +73,7 @@ function ShopNav(props) {
             +
           </div>
 
-          {/* <div className="shopnav-item1">
+          <div className="shopnav-item1">
             <div
               className="bag-button"
               onClick={() =>
@@ -85,7 +85,7 @@ function ShopNav(props) {
               <i className="fa-solid fa-bag-shopping"></i>
             </div>
             <Bag popUp={popUp} />
-          </div> */}
+          </div>
 
           <div
             className="checkout-button"
