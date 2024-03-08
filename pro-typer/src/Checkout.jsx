@@ -3,6 +3,8 @@ import { useContext } from "react";
 import { UserContext } from "./userContext.jsx";
 import Navbar from "../../Navbar.jsx";
 import { BagContext } from "./BagContext.jsx";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 /**
  * @author Ajanthapan Agilaruben
@@ -12,8 +14,9 @@ import { BagContext } from "./BagContext.jsx";
  * @returns {the shopNav component as well as the payment section and the personal information section.}
  */
 function Checkout() {
-  const { user } = useContext(UserContext);
-  const { bag } = useContext(BagContext);
+  const { user, updateProfile } = useContext(UserContext);
+  const { bag, setBag } = useContext(BagContext);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -145,7 +148,10 @@ function Checkout() {
                     if (user) {
                       const dataToSend = { bag };
                       axios.post("/api/checkout", dataToSend).then(() => {
+                        setBag([]);
+                        updateProfile();
                         alert("Purchase was successful");
+                        navigate("/");
                       });
                     } else {
                       alert("You're not signed in!");

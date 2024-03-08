@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./navbar.css";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "./pro-typer/src/userContext";
@@ -14,6 +14,12 @@ function Navbar() {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
   const { isLightMode } = useContext(ThemeContext);
+
+  const [balance, setBalance] = useState(0);
+
+  useEffect(() => {
+    setBalance(user?.coinbalance);
+  }, [user]);
 
   return (
     <div className="navbar">
@@ -39,7 +45,7 @@ function Navbar() {
         onClick={() => navigate("/")}
       ></img>
       <div className="nav-right">
-        <div className="coins">Coins:</div>
+        <div className="coins">Coins: {balance}</div>
         <div className="coin-button" onClick={() => navigate("/Coins")}>
           +
         </div>{" "}
