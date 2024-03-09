@@ -7,6 +7,7 @@ const ClientSchema = new mongoose.Schema({
   password: String,
   coinbalance: Number,
   items: Array,
+  races: Array,
 });
 
 const ClientModel = mongoose.model("clients", ClientSchema);
