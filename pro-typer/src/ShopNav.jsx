@@ -1,5 +1,5 @@
 import "./ShopNav.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Bag from "./Bag";
 import { useContext } from "react";
@@ -23,6 +23,12 @@ function ShopNav(props) {
 
   const { user } = useContext(UserContext);
   const { isLightMode } = useContext(ThemeContext);
+
+  const [balance, setBalance] = useState(0);
+
+  useEffect(() => {
+    setBalance(user?.coinbalance);
+  }, [user]);
   return (
     <>
       <div className="navbar1">
@@ -66,6 +72,11 @@ function ShopNav(props) {
                 "Login / Signup"
               )}
             </a>
+          </div>
+
+          <div className="coins">Coins: {balance}</div>
+          <div className="coin-button" onClick={() => navigate("/Coins")}>
+            +
           </div>
 
           <div className="shopnav-item1">
