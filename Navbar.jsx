@@ -12,7 +12,7 @@ import { ThemeContext } from "./pro-typer/src/themeContext";
  */
 function Navbar() {
   const navigate = useNavigate();
-  const { user } = useContext(UserContext);
+  const { user, logout } = useContext(UserContext);
   const { isLightMode } = useContext(ThemeContext);
 
   const [balance, setBalance] = useState(0);
@@ -45,8 +45,14 @@ function Navbar() {
         onClick={() => navigate("/")}
       ></img>
       <div className="nav-right">
-        <div className="coins">Coins: {balance}</div>
-        <div className="coin-button" onClick={() => navigate("/Coins")}>
+        <div style={{ display: user ? "" : "none" }} className="coins">
+          Coins: {balance}
+        </div>
+        <div
+          style={{ display: user ? "" : "none" }}
+          className="coin-button"
+          onClick={() => navigate("/Coins")}
+        >
           +
         </div>{" "}
         <div className="myaccount">
@@ -69,7 +75,13 @@ function Navbar() {
             )}
           </a>
         </div>
-        <div className="logout">
+        <div
+          style={{ display: user ? "" : "none" }}
+          onClick={() => {
+            logout();
+          }}
+          className="logout"
+        >
           <a>Logout</a>
         </div>
       </div>
