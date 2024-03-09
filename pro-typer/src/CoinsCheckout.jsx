@@ -3,7 +3,8 @@ import "./CoinsCheckout.css";
 import { useContext } from "react";
 import { UserContext } from "./userContext.jsx";
 import { useNavigate } from "react-router-dom";
-
+import { BagContext } from "./BagContext.jsx";
+import axios from "axios";
 /**
  * @author Ajanthapan Agilaruben
  *  This file contains the Checkout page which would allow the user to pay for what has been placed in the users basket.
@@ -13,7 +14,19 @@ import { useNavigate } from "react-router-dom";
  */
 function CoinsCheckout() {
   const { user } = useContext(UserContext);
+  const { bag, setBag } = useContext(BagContext);
   const navigate = useNavigate();
+
+  const calculateCost = () => {
+    let cost = 0;
+    bag.forEach((item) => {
+      if (item.type != "coin") {
+        cost += item.price;
+      }
+    });
+
+    return cost;
+  };
   return (
     <>
       <ShopNav></ShopNav>
@@ -27,15 +40,22 @@ function CoinsCheckout() {
           Order Summary
           <div className="personal-container">
             Items selected shown below
-            <div className="item-order">
-              Item1<i className="fa-solid fa-trash"></i>
-            </div>
-            <div className="item-order">
+            {bag
+              .filter((item) => item.type != "coin")
+              .map((item) => {
+                return (
+                  <div className="item-order">
+                    {item.quantity}x {item.name} ({item.price} coins)
+                    <i className="fa-solid fa-trash"></i>
+                  </div>
+                );
+              })}
+            {/* <div className="item-order">
               Item2<i className="fa-solid fa-trash"></i>
             </div>
             <div className="item-order">
               Item3<i className="fa-solid fa-trash"></i>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="card-info">
@@ -49,14 +69,15 @@ function CoinsCheckout() {
               <div className="cost-container">
                 Current Balance:
                 <div className="coin-balance">
-                  XX <i class="fa-solid fa-coins"></i>
+                  {user?.coinbalance ? user.coinbalance : 0}{" "}
+                  <i className="fa-solid fa-coins"></i>
                 </div>
               </div>
               <div className="split">
                 <div className="cost-container3">
                   Costs:
                   <div className="coin-balance">
-                    XX <i class="fa-solid fa-coins"></i>
+                    {calculateCost()} <i className="fa-solid fa-coins"></i>
                   </div>
                 </div>
                 <div
@@ -74,7 +95,16 @@ function CoinsCheckout() {
                 className="pay-button"
                 onClick={() => {
                   if (user) {
-                    alert("Purchase was successful");
+                    const dataToSend = {
+                      bag: bag.filter((item) => item.type != "coin"),
+                      type: "item",
+                    };
+                    axios.post("/api/checkout", dataToSend).then(() => {
+                      setBag([]);
+                      updateProfile();
+                      alert("Purchase was successful");
+                      navigate("/");
+                    });
                   } else {
                     navigate("/Shop");
                   }

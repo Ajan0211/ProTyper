@@ -57,35 +57,87 @@ app.get("/logout", (req, res) => {
   });
 });
 
-app.post("/checkout", (req, res) => {
-  const { bag } = req.body;
-
-  checkLoggedIn(req).then((user) => {
-    let purchased_balance = 0;
-    bag.forEach((element) => {
-      if (element) {
-        if (element.type == "coin") {
-          purchased_balance += element.quantity;
-        }
+const checkoutForCoins = (bag, user, res) => {
+  let purchased_balance = 0;
+  bag.forEach((element) => {
+    if (element) {
+      if (element.type == "coin") {
+        purchased_balance += element.quantity;
       }
-    });
+    }
+  });
 
-    let current_balance = 0;
+  let current_balance = 0;
 
-    if (user?.coinbalance) {
-      current_balance = user.coinbalance;
+  if (user?.coinbalance) {
+    current_balance = user.coinbalance;
+  }
+
+  const new_balance = purchased_balance + current_balance;
+  const query = { email: user.email };
+  const newData = { coinbalance: new_balance };
+  ClientModel.findOneAndUpdate(query, newData, {
+    upsert: true,
+    returnNewDocument: true,
+  }).then((updatedDoc) => {
+    if (!updatedDoc) return res.send(500, { error: err });
+    return res.send("Successfully updated coin balance");
+  });
+};
+
+const checkoutForItems = (bag, user, res) => {
+  let items_cost = 0;
+  bag.forEach((element) => {
+    if (element) {
+      if (element.type != "coin") {
+        items_cost += element.price;
+      }
+    }
+  });
+
+  let current_balance = 0;
+
+  if (user?.coinbalance) {
+    current_balance = user.coinbalance;
+  }
+
+  if (current_balance < items_cost) {
+    return res.send(401, { message: "Insufficient coin balance!" });
+  } else {
+    const new_balance = current_balance - items_cost;
+    const query = { email: user.email };
+
+    let current_items = [];
+    if (user?.items) {
+      current_items = user.items;
     }
 
-    const new_balance = purchased_balance + current_balance;
-    const query = { email: user.email };
-    const newData = { coinbalance: new_balance };
+    // also need to do logic for checking if user already has item
+
+    const newData = {
+      coinbalance: new_balance,
+      items: [...current_items, ...bag],
+    };
+
     ClientModel.findOneAndUpdate(query, newData, {
       upsert: true,
       returnNewDocument: true,
     }).then((updatedDoc) => {
       if (!updatedDoc) return res.send(500, { error: err });
-      return res.send("Successfully updated coin balance");
+      return res.send("Successfully purchased items!");
     });
+  }
+};
+
+app.post("/checkout", (req, res) => {
+  const { bag, type } = req.body;
+
+  checkLoggedIn(req).then((user) => {
+    if (type == "coin") {
+      return checkoutForCoins(bag, user, res);
+    } else if (type == "item") {
+      return checkoutForItems(bag, user, res);
+    }
   });
 });
 
