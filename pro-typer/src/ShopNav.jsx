@@ -61,7 +61,11 @@ function ShopNav(props) {
           <div className="shopnav-item1">
             <a
               onClick={() => {
-                navigate("/Account");
+                if (user) {
+                  navigate("/Account");
+                } else {
+                  navigate("/Login");
+                }
               }}
             >
               {user ? (
@@ -74,8 +78,14 @@ function ShopNav(props) {
             </a>
           </div>
 
-          <div className="coins">Coins: {balance}</div>
-          <div className="coin-button" onClick={() => navigate("/Coins")}>
+          <div style={{ display: user ? "" : "none" }} className="coins">
+            Coins: {balance}
+          </div>
+          <div
+            style={{ display: user ? "" : "none" }}
+            className="coin-button"
+            onClick={() => navigate("/Coins")}
+          >
             +
           </div>
 

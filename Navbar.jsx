@@ -45,8 +45,14 @@ function Navbar() {
         onClick={() => navigate("/")}
       ></img>
       <div className="nav-right">
-        <div className="coins">Coins: {balance}</div>
-        <div className="coin-button" onClick={() => navigate("/Coins")}>
+        <div style={{ display: user ? "" : "none" }} className="coins">
+          Coins: {balance}
+        </div>
+        <div
+          style={{ display: user ? "" : "none" }}
+          className="coin-button"
+          onClick={() => navigate("/Coins")}
+        >
           +
         </div>{" "}
         <div className="myaccount">
