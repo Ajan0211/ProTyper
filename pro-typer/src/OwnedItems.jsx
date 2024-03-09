@@ -3,9 +3,11 @@ import Navbar from "../../Navbar.jsx";
 import AccountNav from "./AccountNav.jsx";
 import "./OwnedItems.css";
 import { UserContext } from "./userContext.jsx";
+import { ThemeContext } from "./themeContext.jsx";
 
 function OwnedItems() {
   const { user } = useContext(UserContext);
+  const { setCurrentSkin } = useContext(ThemeContext);
   return (
     <>
       <Navbar></Navbar>
@@ -17,7 +19,15 @@ function OwnedItems() {
             {user?.items
               ? user.items.map((item, index) => {
                   return (
-                    <div key={`owned-item-${index}`} className="owned-item">
+                    <div
+                      key={`owned-item-${index}`}
+                      className="owned-item"
+                      onClick={() => {
+                        if (item.type == "skin") {
+                          setCurrentSkin(item);
+                        }
+                      }}
+                    >
                       {item.name}
                     </div>
                   );

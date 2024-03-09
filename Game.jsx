@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import { useEffect, useState, useContext } from "react";
 import { UserContext } from "./pro-typer/src/userContext";
 import axios from "axios";
+import { ThemeContext } from "./pro-typer/src/themeContext";
 const TEXT_API_URL = "https://api.quotable.io/random";
 
 /**
@@ -42,6 +43,7 @@ function Game() {
   const [lastKeyPress, setLastKeyPress] = useState(0);
 
   const { updateProfile } = useContext(UserContext);
+  const { currentSkin } = useContext(ThemeContext);
 
   /** Calculates typing metrics such as words per minute and sets each state */
 
@@ -101,7 +103,7 @@ function Game() {
             className={`running-animation ${animPaused ? "paused" : ""} ${
               finishedRace ? "reset" : ""
             }`}
-            src="src/assets/car.png"
+            src={currentSkin ? currentSkin.image : "src/assets/car.png"}
           ></img>
           <div className="time" id="timer">
             Timer: {timer}

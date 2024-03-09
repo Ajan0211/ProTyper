@@ -25,8 +25,9 @@
 }
 
 .running-animation {
-  width: 20px;
-  height: 20px;
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 
   position: absolute;
   top: 0;

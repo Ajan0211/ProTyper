@@ -1,12 +1,19 @@
+import { useContext } from "react";
 import "./AccountNav.css";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "./userContext";
 
 function AccountNav() {
   const navigate = useNavigate();
+  const { user } = useContext(UserContext);
   return (
     <>
       <div className="accountNav">
-        <div className="heading-accountNav">My ProTyper Account</div>
+        <div className="heading-accountNav">
+          {user
+            ? user.firstname + " " + user.lastname + "'s Account"
+            : "My ProTyper Account"}
+        </div>
 
         <div className="Accountnav-left">
           <div className="nav-item1">
