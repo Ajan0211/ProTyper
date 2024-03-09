@@ -14,41 +14,54 @@ mongoose.connect("mongodb://127.0.0.1:27017/client");
 
 const JWT_KEY = "dummy-secret-key";
 
-app.post("/checkout", (req, res) => {
-  const { bag } = req.body;
+const checkLoggedIn = async (req) => {
   const { token } = req.cookies;
   if (token) {
-    jwt.verify(token, JWT_KEY, {}, (err, user) => {
-      if (err) throw err;
+    // Later add logic to check blacklist for token
 
-      let purchased_balance = 0;
-
-      bag.forEach((element) => {
-        if (element) {
-          if (element.type == "coin") {
-            purchased_balance += element.quantity;
-          }
-        }
-      });
-
-      ClientModel.findOne({ email: user.email }).then((userRecord) => {
-        if (userRecord?.coinbalance) {
-          const new_balance = purchased_balance + userRecord.coinbalance;
-          const query = { email: user.email };
-          const newData = { coinbalance: new_balance };
-          ClientModel.findOneAndUpdate(query, newData, {
-            upsert: true,
-            returnNewDocument: true,
-          }).then((updatedDoc) => {
-            if (!updatedDoc) return res.send(500, { error: err });
-            return res.send("Successfully updated coin balance");
-          });
-        }
+    return await new Promise((resolve, reject) => {
+      jwt.verify(token, JWT_KEY, {}, (err, user) => {
+        if (err) reject(err);
+        ClientModel.findOne({ email: user.email }).then((userRecord) => {
+          resolve(userRecord);
+        });
       });
     });
-  } else {
-    res.json(null);
   }
+
+  return null;
+};
+
+app.post("/checkout", (req, res) => {
+  const { bag } = req.body;
+
+  checkLoggedIn(req).then((user) => {
+    let purchased_balance = 0;
+    bag.forEach((element) => {
+      if (element) {
+        if (element.type == "coin") {
+          purchased_balance += element.quantity;
+        }
+      }
+    });
+
+    let current_balance = 0;
+
+    if (user?.coinbalance) {
+      current_balance = user.coinbalance;
+    }
+
+    const new_balance = purchased_balance + current_balance;
+    const query = { email: user.email };
+    const newData = { coinbalance: new_balance };
+    ClientModel.findOneAndUpdate(query, newData, {
+      upsert: true,
+      returnNewDocument: true,
+    }).then((updatedDoc) => {
+      if (!updatedDoc) return res.send(500, { error: err });
+      return res.send("Successfully updated coin balance");
+    });
+  });
 });
 
 app.post("/Login", (req, res) => {
@@ -86,17 +99,9 @@ app.post("/SignUp", (req, res) => {
 });
 
 app.get("/profile", (req, res) => {
-  const { token } = req.cookies;
-  if (token) {
-    jwt.verify(token, JWT_KEY, {}, (err, user) => {
-      if (err) throw err;
-      ClientModel.findOne({ email: user.email }).then((userRecord) => {
-        res.json(userRecord);
-      });
-    });
-  } else {
-    res.json(null);
-  }
+  checkLoggedIn(req).then((user) => {
+    res.json(user);
+  });
 });
 
 app.listen(3001, () => {
