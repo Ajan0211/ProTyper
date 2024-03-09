@@ -12,18 +12,22 @@ const BagItem =
  * @returns {item and number of quantity.}
  */
   (props) => {
-    const { priceIndex, priceList } = props;
+    const { item } = props;
 
     return (
       <>
         <div className="shop-container">
-          item1
+          {item.name}
           <div className="quantity">
             <i className="fa-solid fa-minus"></i>
-            <div className="quantity-num">1</div>
+            <div className="quantity-num">{item.quantity}</div>
             <i className="fa-solid fa-plus"></i>
           </div>
-          <div className="total-container">{priceList[priceIndex]}</div>
+          <div className="total-container">
+            {item.type == "coin"
+              ? `£${item.price}`
+              : `${item.price * item.quantity} coins`}
+          </div>
         </div>
       </>
     );

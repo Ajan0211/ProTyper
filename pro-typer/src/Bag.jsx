@@ -5,35 +5,24 @@
  * @returns {The bag item component with a list of items with its price and total and a button that leads to the checkout page.}
  */
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import BagItem from "./BagItem";
 import { useNavigate } from "react-router-dom";
+import { BagContext } from "./BagContext";
 
 const Bag = (props) => {
   const { popUp } = props;
-  const [priceList, setPriceList] = useState([18, 6, 4]);
+  const { bag } = useContext(BagContext);
   const navigate = useNavigate();
   return (
     <div className={`PopUp ${[popUp ? "show" : ""]}`}>
       Shopping bag
       <div className="item-container">
-        {priceList.map((_, index) => {
-          return (
-            <BagItem
-              priceIndex={index}
-              priceList={priceList}
-              setPriceList={setPriceList}
-              key={`bag-item-${index}`}
-            />
-          );
+        {bag.map((item, index) => {
+          return <BagItem key={`bag-item-${index}`} item={item} />;
         })}
       </div>
-      <div className="total-cost">
-        Total:
-        {priceList.reduce((a, b) => {
-          return a + b;
-        })}
-      </div>
+      <div className="total-cost">Total: £</div>
       <div className="bag-checkout" onClick={() => navigate("/Checkout")}>
         Checkout
       </div>

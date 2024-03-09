@@ -6,18 +6,28 @@
  * @returns {ShopItem component.}
  */
 
-import React from "react";
+import React, { useContext } from "react";
+import { BagContext } from "./BagContext";
 
 const ShopItem = (props) => {
-  const { name, price, image } = props;
+  const { name, price, image, type } = props;
+  const { setBag } = useContext(BagContext);
   return (
     <div className="box-container">
       {name}
       <img className="product-image" src={image} alt="Product Image" />
       {/* <div className="image-container"></div> */}
       <div className="price-container">
-        {price}
-        <div className="Add-button">
+        {price} coins
+        <div
+          onClick={() => {
+            setBag((current) => [
+              ...current,
+              { type, quantity: 1, image, price, name },
+            ]);
+          }}
+          className="Add-button"
+        >
           <i className="fa-solid fa-plus"></i>
         </div>
       </div>

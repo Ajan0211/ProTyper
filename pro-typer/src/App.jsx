@@ -28,7 +28,6 @@ axios.defaults.withCredentials = true;
 function App() {
   const { isLightMode, getCurrentFontString } = useContext(ThemeContext);
 
-  console.log(getCurrentFontString());
   return (
     <div
       style={
