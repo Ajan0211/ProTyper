@@ -1,6 +1,8 @@
 import "./Game.css";
 import Navbar from "./Navbar";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { UserContext } from "./pro-typer/src/userContext";
+import axios from "axios";
 const TEXT_API_URL = "https://api.quotable.io/random";
 
 /**
@@ -38,6 +40,8 @@ function Game() {
   const [finishedRace, setFinishedRace] = useState(false);
   const [animPaused, setAnimPaused] = useState(true);
   const [lastKeyPress, setLastKeyPress] = useState(0);
+
+  const { updateProfile } = useContext(UserContext);
 
   /** Calculates typing metrics such as words per minute and sets each state */
 
@@ -81,6 +85,10 @@ function Game() {
       setAnimPaused(true);
       setLastKeyPress(timer);
       setFinishedRace(true);
+
+      axios.post("/api/save-race", { speed: wordsPerMinute }).then(() => {
+        updateProfile();
+      });
     }
   }, [inputValue]);
 

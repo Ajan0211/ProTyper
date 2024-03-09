@@ -141,6 +141,27 @@ app.post("/checkout", (req, res) => {
   });
 });
 
+app.post("/save-race", (req, res) => {
+  checkLoggedIn(req).then((user) => {
+    let current_races = [];
+    if (user?.races) {
+      current_races = [...user.races];
+    }
+
+    const { speed } = req.body;
+    const query = { email: user.email };
+    const newData = { races: [...current_races, { speed }] };
+
+    ClientModel.findOneAndUpdate(query, newData, {
+      upsert: true,
+      returnNewDocument: true,
+    }).then((updatedDoc) => {
+      if (!updatedDoc) return res.send(500, { error: err });
+      return res.send("Successfully saved race!");
+    });
+  });
+});
+
 app.post("/Login", (req, res) => {
   const { email, password } = req.body;
   ClientModel.findOne({ email: email }).then((user) => {
