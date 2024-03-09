@@ -12,7 +12,7 @@ import { ThemeContext } from "./pro-typer/src/themeContext";
  */
 function Navbar() {
   const navigate = useNavigate();
-  const { user } = useContext(UserContext);
+  const { user, logout } = useContext(UserContext);
   const { isLightMode } = useContext(ThemeContext);
 
   const [balance, setBalance] = useState(0);
@@ -69,7 +69,13 @@ function Navbar() {
             )}
           </a>
         </div>
-        <div className="logout">
+        <div
+          style={{ display: user ? "" : "none" }}
+          onClick={() => {
+            logout();
+          }}
+          className="logout"
+        >
           <a>Logout</a>
         </div>
       </div>

@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const ClientModel = require("./models/client");
+const BlacklistModel = require("./models/blacklist");
 const cookieParser = require("cookie-parser");
 const jwt = require("jsonwebtoken");
 
@@ -17,20 +18,44 @@ const JWT_KEY = "dummy-secret-key";
 const checkLoggedIn = async (req) => {
   const { token } = req.cookies;
   if (token) {
-    // Later add logic to check blacklist for token
-
     return await new Promise((resolve, reject) => {
-      jwt.verify(token, JWT_KEY, {}, (err, user) => {
-        if (err) reject(err);
-        ClientModel.findOne({ email: user.email }).then((userRecord) => {
-          resolve(userRecord);
-        });
+      BlacklistModel.findOne({ token }).then((alreadyBlacklisted) => {
+        if (alreadyBlacklisted) {
+          resolve(null);
+        } else {
+          jwt.verify(token, JWT_KEY, {}, (err, user) => {
+            if (err) reject(err);
+            ClientModel.findOne({ email: user.email }).then((userRecord) => {
+              resolve(userRecord);
+            });
+          });
+        }
       });
     });
   }
 
   return null;
 };
+
+app.get("/logout", (req, res) => {
+  checkLoggedIn(req).then(() => {
+    const { token } = req.cookies;
+    if (token) {
+      BlacklistModel.findOne({ token }).then((alreadyBlacklisted) => {
+        if (alreadyBlacklisted) {
+          return res.sendStatus(500); // send error
+        } else {
+          BlacklistModel.create({ token })
+            .then(() => {
+              // res.setHeader("Clear-Site-Data", "cookies");
+              res.status(200).json({ message: "You are logged out!" });
+            })
+            .catch((err) => res.json(err));
+        }
+      });
+    }
+  });
+});
 
 app.post("/checkout", (req, res) => {
   const { bag } = req.body;

@@ -12,11 +12,17 @@ export function UserContextProvider({ children }) {
     });
   };
 
+  const logout = () => {
+    axios.get("/api/logout", () => {
+      setUser(null);
+    });
+  };
+
   useEffect(() => {
     updateProfile();
   }, []);
   return (
-    <UserContext.Provider value={{ user, updateProfile }}>
+    <UserContext.Provider value={{ user, setUser, logout, updateProfile }}>
       {children}
     </UserContext.Provider>
   );

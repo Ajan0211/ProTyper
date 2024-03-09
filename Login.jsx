@@ -1,8 +1,9 @@
 import Navbar from "./Navbar.jsx";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
+import { UserContext } from "./pro-typer/src/userContext.jsx";
 
 /**
  * @author Ajanthapan Agilaruben
@@ -19,6 +20,7 @@ function Login() {
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const { setUser } = useContext(UserContext);
 
   const handleSubmit = () => {
     axios
@@ -27,8 +29,8 @@ function Login() {
         password,
       })
       .then((result) => {
-        console.log(result);
         if (result.data !== "the password is incorrect") {
+          setUser(result.data);
           navigate("/");
         }
       })
