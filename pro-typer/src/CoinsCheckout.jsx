@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { UserContext } from "./userContext.jsx";
 import { useNavigate } from "react-router-dom";
 import { BagContext } from "./BagContext.jsx";
-
+import axios from "axios";
 /**
  * @author Ajanthapan Agilaruben
  *  This file contains the Checkout page which would allow the user to pay for what has been placed in the users basket.
@@ -14,7 +14,7 @@ import { BagContext } from "./BagContext.jsx";
  */
 function CoinsCheckout() {
   const { user } = useContext(UserContext);
-  const { bag } = useContext(BagContext);
+  const { bag, setBag } = useContext(BagContext);
   const navigate = useNavigate();
 
   const calculateCost = () => {
@@ -95,7 +95,16 @@ function CoinsCheckout() {
                 className="pay-button"
                 onClick={() => {
                   if (user) {
-                    alert("Purchase was successful");
+                    const dataToSend = {
+                      bag: bag.filter((item) => item.type != "coin"),
+                      type: "item",
+                    };
+                    axios.post("/api/checkout", dataToSend).then(() => {
+                      setBag([]);
+                      updateProfile();
+                      alert("Purchase was successful");
+                      navigate("/");
+                    });
                   } else {
                     navigate("/Shop");
                   }

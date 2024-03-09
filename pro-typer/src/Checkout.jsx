@@ -92,20 +92,22 @@ function Checkout() {
             Order Summary
             <div className="personal-container">
               Items selected shown below
-              {bag.map((item) => {
-                return (
-                  <div className="item-order">
-                    <div className="coin-order">
-                      <span>Number of coins: {item.quantity}</span>
-                      <i className="fa-solid fa-coins"></i>
+              {bag
+                .filter((item) => item.type == "coin")
+                .map((item) => {
+                  return (
+                    <div className="item-order">
+                      <div className="coin-order">
+                        <span>Number of coins: {item.quantity}</span>
+                        <i className="fa-solid fa-coins"></i>
+                      </div>
+                      <div className="coin-order">Price: {item.price} </div>
+                      <div className="coin-order">
+                        <i className="fa-solid fa-trash"></i>
+                      </div>
                     </div>
-                    <div className="coin-order">Price: {item.price} </div>
-                    <div className="coin-order">
-                      <i className="fa-solid fa-trash"></i>
-                    </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
             </div>
           </div>
           <div className="card-info">
@@ -146,7 +148,10 @@ function Checkout() {
                   className="pay-button"
                   onClick={() => {
                     if (user) {
-                      const dataToSend = { bag };
+                      const dataToSend = {
+                        bag: bag.filter((item) => item.type == "coin"),
+                        type: "coin",
+                      };
                       axios.post("/api/checkout", dataToSend).then(() => {
                         setBag([]);
                         updateProfile();

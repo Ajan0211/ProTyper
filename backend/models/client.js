@@ -6,6 +6,7 @@ const ClientSchema = new mongoose.Schema({
   email: String,
   password: String,
   coinbalance: Number,
+  items: Array,
 });
 
 const ClientModel = mongoose.model("clients", ClientSchema);
