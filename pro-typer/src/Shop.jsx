@@ -7,6 +7,7 @@ import Car2 from "./assets/car2.png";
 import Car3 from "./assets/car3.png";
 import Jet from "./assets/jet.png";
 import Car4 from "./assets/car4.png";
+import ShopFilter from "./ShopFilter.jsx";
 
 /**
  * @author Ajanthapan Agilaruben
@@ -55,9 +56,9 @@ function Shop() {
       <ShopNav
         searchValue={searchValue}
         setSearchValue={setSearchValue}
-        setTypeFilter={setTypeFilter}
-        typeFilter={typeFilter}
       ></ShopNav>
+      <ShopFilter typeFilter={typeFilter} setTypeFilter={setTypeFilter} />
+
       <div className="page-container">
         {filterItems().map((item, index) => {
           return (

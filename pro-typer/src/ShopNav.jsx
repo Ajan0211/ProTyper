@@ -17,7 +17,7 @@ import { ThemeContext } from "./themeContext";
  * @returns {ShopNav component}
  */
 function ShopNav(props) {
-  const { searchValue, setSearchValue, typeFilter, setTypeFilter } = props;
+  const { searchValue, setSearchValue } = props;
   const [popUp, setPopUp] = useState(false);
   const navigate = useNavigate();
 
@@ -110,54 +110,6 @@ function ShopNav(props) {
             {" "}
             Checkout
           </div>
-        </div>
-      </div>
-      <div className="navbar2">
-        <div className="shopnav-item1">
-          <a
-            className={typeFilter == "skin" ? `active` : ""}
-            onClick={() =>
-              setTypeFilter((state) => {
-                if (state == "skin") {
-                  return "";
-                }
-                return "skin";
-              })
-            }
-          >
-            Skins
-          </a>
-        </div>
-        <div className="shopnav-item1">
-          <a
-            className={typeFilter == "theme" ? `active` : ""}
-            onClick={() =>
-              setTypeFilter((state) => {
-                if (state == "theme") {
-                  return "";
-                }
-                return "theme";
-              })
-            }
-          >
-            Themes
-          </a>
-        </div>
-        <div className="shopnav-item1">
-          <a
-            className={typeFilter == "coin" ? `active` : ""}
-            onClick={() => navigate("/Coins")}
-            // onClick={() =>
-            //   // setTypeFilter((state) => {
-            //   //   if (state == "coin") {
-            //   //     return "";
-            //   //   }
-            //   //   return "coin";
-            //   // })
-            // }
-          >
-            Coins
-          </a>
         </div>
       </div>
     </>
