@@ -28,6 +28,11 @@ function OwnedItems() {
                         }
                       }}
                     >
+                      <img
+                        className="Owned-items-image"
+                        src={item.image}
+                        alt=""
+                      />
                       {item.name}
                     </div>
                   );
