@@ -73,10 +73,14 @@
 }
 
 .owned-items-list {
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   column-gap: 25px;
   row-gap: 30px;
+  width: 100%;
 }
 
 .owned-item {
@@ -84,6 +88,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  row-gap: 8px;
+  cursor: default;
+}
+
+.owned-item.active {
+  border: 3px dashed #b6c8cf9c;
+  border-radius: 10px;
+  color: #b6c8cf9c;
+  font-weight: 600;
+  padding: 10px;
 }
 
 .Owned-items-image {

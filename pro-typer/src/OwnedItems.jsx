@@ -7,7 +7,7 @@ import { ThemeContext } from "./themeContext.jsx";
 
 function OwnedItems() {
   const { user } = useContext(UserContext);
-  const { setCurrentSkin } = useContext(ThemeContext);
+  const { currentSkin, setCurrentSkin } = useContext(ThemeContext);
   return (
     <>
       <Navbar></Navbar>
@@ -21,7 +21,9 @@ function OwnedItems() {
                   return (
                     <div
                       key={`owned-item-${index}`}
-                      className="owned-item"
+                      className={`owned-item ${
+                        currentSkin == item ? "active" : ""
+                      }`}
                       onClick={() => {
                         if (item.type == "skin") {
                           setCurrentSkin(item);
