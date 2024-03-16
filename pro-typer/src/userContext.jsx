@@ -17,9 +17,8 @@ export function UserContextProvider({ children }) {
   };
 
   const logout = () => {
-    axios.get("/api/logout", () => {
-      setUser(null);
-    });
+    setUser(null);
+    axios.get("/api/logout");
   };
 
   const checkout = (dataToSend) => {
