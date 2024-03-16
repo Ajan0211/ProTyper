@@ -14,9 +14,8 @@ import { useNavigate } from "react-router-dom";
  * @returns {the shopNav component as well as the payment section and the personal information section.}
  */
 function Checkout() {
-  const { user, updateProfile } = useContext(UserContext);
-  const { bag, setBag } = useContext(BagContext);
-  const navigate = useNavigate();
+  const { user, checkout } = useContext(UserContext);
+  const { bag } = useContext(BagContext);
 
   return (
     <>
@@ -152,12 +151,7 @@ function Checkout() {
                         bag: bag.filter((item) => item.type == "coin"),
                         type: "coin",
                       };
-                      axios.post("/api/checkout", dataToSend).then(() => {
-                        setBag([]);
-                        updateProfile();
-                        alert("Purchase was successful");
-                        navigate("/");
-                      });
+                      checkout(dataToSend);
                     } else {
                       alert("You're not signed in!");
                     }

@@ -13,8 +13,8 @@ import axios from "axios";
  * @returns {the shopNav component as well as the payment section and the personal information section.}
  */
 function CoinsCheckout() {
-  const { user } = useContext(UserContext);
-  const { bag, setBag } = useContext(BagContext);
+  const { user, checkout } = useContext(UserContext);
+  const { bag } = useContext(BagContext);
   const navigate = useNavigate();
 
   const calculateCost = () => {
@@ -99,12 +99,7 @@ function CoinsCheckout() {
                       bag: bag.filter((item) => item.type != "coin"),
                       type: "item",
                     };
-                    axios.post("/api/checkout", dataToSend).then(() => {
-                      setBag([]);
-                      updateProfile();
-                      alert("Purchase was successful");
-                      navigate("/");
-                    });
+                    checkout(dataToSend);
                   } else {
                     navigate("/Shop");
                   }
