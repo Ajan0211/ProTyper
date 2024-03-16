@@ -100,6 +100,11 @@
   padding: 10px;
 }
 
+.App.light .owned-item.active {
+  border: 3px dashed black;
+  color: black;
+}
+
 .Owned-items-image {
   height: 70px;
   width: auto;
