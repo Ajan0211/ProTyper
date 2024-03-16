@@ -27,11 +27,12 @@
   color: black;
 }
 
-.accountNav a:hover {
+.accountNav a:hover,
+.accountNav a.active {
   color: #b6c8cf9c;
-
   cursor: pointer;
 }
+
 .accountNav a::before {
   content: "";
   display: block;
@@ -42,14 +43,17 @@
   width: 0%;
   transition: all ease-in-out 250ms;
 }
-.accountNav a:hover::before {
+
+.accountNav a:hover::before,
+.accountNav a.active::before {
   width: 100%;
 }
+
 .Accountnav-links {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  margin-bottom: 10px;
+  padding: 18px 0;
 }
 
 .nav-item1 {

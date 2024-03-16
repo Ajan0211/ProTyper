@@ -1,10 +1,9 @@
 import { useContext } from "react";
 import "./AccountNav.css";
-import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { UserContext } from "./userContext";
 
 function AccountNav() {
-  const navigate = useNavigate();
   const { user } = useContext(UserContext);
   return (
     <>
@@ -17,13 +16,19 @@ function AccountNav() {
 
         <div className="Accountnav-links">
           <div className="nav-item1">
-            <a onClick={() => navigate("/Account")}>Update Details</a>
+            <NavLink activeClassName="active" to="/Account">
+              Update Details
+            </NavLink>
           </div>
           <div className="nav-item1">
-            <a onClick={() => navigate("/OwnedItems")}>Owned Items</a>
+            <NavLink activeClassName="active" to="/OwnedItems">
+              Owned Items
+            </NavLink>
           </div>
           <div className="nav-item1">
-            <a onClick={() => navigate("/Statistics")}>Statistics</a>
+            <NavLink activeClassName="active" to="/Statistics">
+              Statistics
+            </NavLink>
           </div>
         </div>
       </div>
