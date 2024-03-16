@@ -15,7 +15,7 @@ function AccountNav() {
             : "My ProTyper Account"}
         </div>
 
-        <div className="Accountnav-left">
+        <div className="Accountnav-links">
           <div className="nav-item1">
             <a onClick={() => navigate("/Account")}>Update Details</a>
           </div>
