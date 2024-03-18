@@ -33,21 +33,17 @@ function Setting() {
 
       <div className="title">Background</div>
       <div className="background-container">
-        <div onClick={() => setIsLightMode(true)} className="background1">
-          <img
-            className="Image"
-            src={"src/assets/light-mode.png"}
-            onClick={() => navigate("/")}
-          ></img>
-          Light Mode
+        <div className="mode">
+          <img className="Image" src={"src/assets/light-mode.png"}></img>
+          <div onClick={() => setIsLightMode(true)} className="background1">
+            Light Mode
+          </div>
         </div>
-        <div onClick={() => setIsLightMode(false)} className="background1">
-          <img
-            className="Image"
-            src={"src/assets/dark-mode.png"}
-            onClick={() => navigate("/")}
-          ></img>
-          Dark Mode
+        <div className="mode">
+          <img className="Image" src={"src/assets/dark-mode.png"}></img>
+          <div onClick={() => setIsLightMode(false)} className="background1">
+            Dark Mode
+          </div>
         </div>
       </div>
     </>

@@ -34,3 +34,18 @@
 .default-font {
   font-family: Verdana, Geneva, Tahoma, sans-serif !important;
 }
+
+.Image {
+  width: 600px;
+  height: auto;
+}
+
+.mode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.background1 {
+  margin: 20px;
+}
