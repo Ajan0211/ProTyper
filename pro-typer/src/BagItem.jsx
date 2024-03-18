@@ -18,11 +18,7 @@ const BagItem =
       <>
         <div className="shop-container">
           {item.name}
-          <div className="quantity">
-            <i className="fa-solid fa-minus"></i>
-            <div className="quantity-num">{item.quantity}</div>
-            <i className="fa-solid fa-plus"></i>
-          </div>
+
           <div className="total-container">
             {item.type == "coin"
               ? `£${item.price}`
