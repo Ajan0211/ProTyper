@@ -37,7 +37,7 @@ const Bag = (props) => {
         Total: {calculateCost()}
         <i className="fa-solid fa-coins"></i>
       </div>
-      <div className="bag-checkout" onClick={() => navigate("/Checkout")}>
+      <div className="bag-checkout" onClick={() => navigate("/CoinsCheckout")}>
         Checkout
       </div>
     </div>
