@@ -33,7 +33,10 @@ const Bag = (props) => {
           return <BagItem key={`bag-item-${index}`} item={item} />;
         })}
       </div>
-      <div className="total-cost">Total: £ {calculateCost()}</div>
+      <div className="total-cost">
+        Total: {calculateCost()}
+        <i className="fa-solid fa-coins"></i>
+      </div>
       <div className="bag-checkout" onClick={() => navigate("/Checkout")}>
         Checkout
       </div>
