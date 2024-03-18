@@ -41,6 +41,9 @@ function OwnedItems() {
                 })
               : "No items found..."}
           </div>
+          <div className="button-container2">
+            <div className="change-button">Head to game</div>
+          </div>
         </div>
       </div>
     </>
