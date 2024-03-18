@@ -152,7 +152,7 @@ function Checkout() {
             </div>
             <div className="payment">
               <div className="pay-section">
-                Amount due: {calculateCost()}
+                Amount due: £ {calculateCost()}
                 <div
                   className="pay-button"
                   onClick={() => {
