@@ -4,10 +4,12 @@ import AccountNav from "./AccountNav.jsx";
 import "./OwnedItems.css";
 import { UserContext } from "./userContext.jsx";
 import { ThemeContext } from "./themeContext.jsx";
+import { useNavigate } from "react-router-dom";
 
 function OwnedItems() {
   const { user } = useContext(UserContext);
   const { currentSkin, setCurrentSkin } = useContext(ThemeContext);
+  const navigate = useNavigate();
   return (
     <>
       <Navbar></Navbar>
@@ -42,7 +44,9 @@ function OwnedItems() {
               : "No items found..."}
           </div>
           <div className="button-container2">
-            <div className="change-button">Head to game</div>
+            <div className="change-button" onClick={() => navigate("/Game")}>
+              Head to Game
+            </div>
           </div>
         </div>
       </div>
