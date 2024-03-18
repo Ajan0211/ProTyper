@@ -14,6 +14,17 @@ const Bag = (props) => {
   const { popUp } = props;
   const { bag } = useContext(BagContext);
   const navigate = useNavigate();
+
+  const calculateCost = () => {
+    let cost = 0;
+    bag.forEach((item) => {
+      if (item.type != "coin") {
+        cost += item.price;
+      }
+    });
+
+    return cost;
+  };
   return (
     <div className={`PopUp ${[popUp ? "show" : ""]}`}>
       Shopping bag
@@ -22,7 +33,7 @@ const Bag = (props) => {
           return <BagItem key={`bag-item-${index}`} item={item} />;
         })}
       </div>
-      <div className="total-cost">Total: £</div>
+      <div className="total-cost">Total: £ {calculateCost()}</div>
       <div className="bag-checkout" onClick={() => navigate("/Checkout")}>
         Checkout
       </div>
