@@ -16,7 +16,16 @@ import { useNavigate } from "react-router-dom";
 function Checkout() {
   const { user, checkout } = useContext(UserContext);
   const { bag } = useContext(BagContext);
+  const calculateCost = () => {
+    let cost = 0;
+    bag.forEach((item) => {
+      if ((item.type = "coin")) {
+        cost += item.price;
+      }
+    });
 
+    return cost;
+  };
   return (
     <>
       <Navbar></Navbar>
@@ -142,7 +151,7 @@ function Checkout() {
             </div>
             <div className="payment">
               <div className="pay-section">
-                Amount due: £XX.XX
+                Amount due: {calculateCost()}
                 <div
                   className="pay-button"
                   onClick={() => {
