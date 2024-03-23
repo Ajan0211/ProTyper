@@ -1,5 +1,6 @@
 import React from "react";
-
+import { useContext } from "react";
+import { BagContext } from "./BagContext.jsx";
 const BagItem =
   /**
  * @author Ajanthapan Agilaruben
@@ -11,19 +12,23 @@ const BagItem =
  * @param {props which are priceIndex and priceList} 
  * @returns {item and number of quantity.}
  */
+
   (props) => {
     const { item } = props;
-
+    const { bag, removeFromBag } = useContext(BagContext);
     return (
       <>
         <div className="shop-container">
           {item.name}
-
           <div className="total-container">
             {item.type == "coin"
               ? `£${item.price}`
               : `${item.price * item.quantity} coins`}
-          </div>
+          </div>{" "}
+          <i
+            onClick={() => removeFromBag(item)}
+            className="fa-solid fa-trash"
+          ></i>
         </div>
       </>
     );
