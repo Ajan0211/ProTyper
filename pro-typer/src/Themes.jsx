@@ -18,6 +18,9 @@ function Skins() {
           <AccountNav></AccountNav>
 
           <div className="item-section">Themes:</div>
+          <div className="note">
+            *Click on theme twice to go back to default background*
+          </div>
           <div className="owned-items-list">
             {user?.items
               ? user.items
