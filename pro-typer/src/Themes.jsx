@@ -48,11 +48,6 @@ function Skins() {
                   })
               : "No items found..."}
           </div>
-          <div className="button-container2">
-            <div className="change-button" onClick={() => navigate("/Game")}>
-              Head to Game
-            </div>
-          </div>
         </div>
       </div>
     </>
