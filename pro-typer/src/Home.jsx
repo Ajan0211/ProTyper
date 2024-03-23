@@ -31,8 +31,9 @@ function Home() {
               <div className="time">All Time</div>
             </div>
             <div className="people">
-              <div className="name"></div>
-              <div className="fastest-wpm"></div>
+              <div className="rank">1st</div>
+              <div className="name">ajan</div>
+              <div className="fastest-wpm">30 WPM</div>
             </div>
           </div>
           <div className="button">
