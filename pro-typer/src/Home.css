@@ -37,6 +37,7 @@ body {
   background-repeat: no-repeat;
 
   transition: color 0.5s, background-color 0.5s, background-image 0.5s;
+  scroll-behavior: smooth;
 }
 
 .App.light {
@@ -54,15 +55,26 @@ body {
 }
 
 .container-summary {
+  width: 100%;
+}
+
+.home-welcome {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
   row-gap: 50px;
   /* position: absolute;
   left: 50%;
   top: 50%; */
   /* transform: translateX(-50%) translateY(-50%); */
+}
+
+.home-welcome-buttons {
+  display: flex;
+  column-gap: 50px;
+  white-space: nowrap;
 }
 
 .button {
@@ -84,6 +96,7 @@ body {
   text-align: center;
   transition: transform 0.5s;
   margin-top: 12px;
+  text-decoration: none;
 }
 
 .App.light .button {
@@ -162,7 +175,7 @@ body {
   margin-top: 15px;
 }
 
-.time {
+.leaderboard-time {
   color: white;
   padding: 5px 12px;
   min-width: 30px;
@@ -193,7 +206,6 @@ body {
   min-height: 52px;
   min-width: 400px;
   padding: 10px 15px;
-  margin-top: 10px;
   display: flex;
   column-gap: 10px;
   align-items: center;
@@ -203,6 +215,24 @@ body {
   color: white;
   justify-content: space-between;
 }
+
+.leaderboard-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 0 100px;
+  text-align: center;
+}
+
+.people-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  row-gap: 10px;
+  /* overflow-y: auto;
+  height: 60px; */
+}
 .leaderboard-title {
-  font-size: 70px;
+  font-size: 60px;
 }
