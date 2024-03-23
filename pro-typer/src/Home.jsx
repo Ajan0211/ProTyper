@@ -23,6 +23,14 @@ function Home() {
             Get ready to unleash your typing skills in the ultimate race against
             the clock – where speed meets precision at ProTyper!
           </div>
+          <div className="leaderboard-container">
+            <div className="leaderboard-title">Leaderboard</div>
+            <div className="duration">
+              <div className="time">7 Days</div>
+              <div className="time">30 Days</div>
+              <div className="time">All Time</div>
+            </div>
+          </div>
           <div className="button">
             <a onClick={() => navigate("/Game")}>Start Game</a>
           </div>
