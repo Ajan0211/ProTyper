@@ -19,6 +19,7 @@ import Account from "./Account";
 import Skins from "./Skins";
 import Statistics from "./Satistics";
 import Coins from "./Coins";
+import Themes from "./Themes";
 import CoinsCheckout from "./CoinsCheckout";
 import { useContext } from "react";
 import { ThemeContext } from "./themeContext";
@@ -62,6 +63,7 @@ function App() {
         <Route path="/Settings" element={<Settings />} />
         <Route path="/Account" element={<Account />} />
         <Route path="/Skins" element={<Skins />} />
+        <Route path="/Themes" element={<Themes />} />
         <Route path="/Statistics" element={<Statistics />} />
         <Route path="/Coins" element={<Coins />} />
         <Route path="/CoinsCheckout" element={<CoinsCheckout />} />
