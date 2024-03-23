@@ -29,13 +29,13 @@ function Shop() {
   const [typeFilter, setTypeFilter] = useState("");
 
   const items = [
-    { name: "item1", price: 10, type: "theme" },
+    { name: "item1", price: 10, type: "theme", image: Theme1 },
     { name: "F1 Car", price: 11, type: "skin", image: Car2 },
-    { name: "item3", price: 15, type: "theme" },
+    { name: "item3", price: 15, type: "theme", image: Theme2 },
     { name: "Police Car", price: 10, type: "skin", image: Car3 },
-    { name: "item5", price: 5, type: "theme" },
+    { name: "item5", price: 5, type: "theme", image: Theme3 },
     { name: "Sports Car", price: 10, type: "skin", image: Car4 },
-    { name: "item7", price: 10, type: "theme" },
+    { name: "item7", price: 10, type: "theme", image: Theme4 },
     { name: "Jet", price: 13, type: "skin", image: Jet },
   ];
 
