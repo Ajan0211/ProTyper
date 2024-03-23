@@ -18,10 +18,10 @@
   border-radius: 15px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
   row-gap: 20px;
-  min-height: 400px;
   min-width: 600px;
+  min-height: 500px;
   width: 600px;
-  height: 400px;
+  height: 500px;
 }
 
 .button-container2 {
@@ -109,7 +109,11 @@
 }
 
 .Owned-items-image {
-  height: 70px;
+  height: 40px;
   width: auto;
   object-fit: contain;
+}
+
+.Owned-items-image.theme-image {
+  height: 70px;
 }

@@ -19,28 +19,55 @@ function OwnedItems() {
           <div className="item-section">Skins:</div>
           <div className="owned-items-list">
             {user?.items
-              ? user.items.map((item, index) => {
-                  return (
-                    <div
-                      key={`owned-item-${index}`}
-                      className={`owned-item ${
-                        currentSkin == item ? "active" : ""
-                      }`}
-                      onClick={() => {
-                        if (item.type == "skin") {
+              ? user.items
+                  .filter((item) => item.type == "skin")
+                  .map((item, index) => {
+                    return (
+                      <div
+                        key={`owned-item-${index}`}
+                        className={`owned-item ${
+                          currentSkin == item ? "active" : ""
+                        }`}
+                        onClick={() => {
                           setCurrentSkin(item);
-                        }
-                      }}
-                    >
-                      <img
-                        className="Owned-items-image"
-                        src={item.image}
-                        alt=""
-                      />
-                      {item.name}
-                    </div>
-                  );
-                })
+                        }}
+                      >
+                        <img
+                          className="Owned-items-image"
+                          src={item.image}
+                          alt=""
+                        />
+                        {item.name}
+                      </div>
+                    );
+                  })
+              : "No items found..."}
+          </div>
+          <div className="item-section">Themes:</div>
+          <div className="owned-items-list">
+            {user?.items
+              ? user.items
+                  .filter((item) => item.type == "theme")
+                  .map((item, index) => {
+                    return (
+                      <div
+                        key={`owned-item-theme-${index}`}
+                        className={`owned-item ${
+                          currentSkin == item ? "active" : ""
+                        }`}
+                        onClick={() => {
+                          // setCurrentSkin(item);
+                        }}
+                      >
+                        <img
+                          className="Owned-items-image theme-image"
+                          src={item.image}
+                          alt=""
+                        />
+                        {item.name}
+                      </div>
+                    );
+                  })
               : "No items found..."}
           </div>
           <div className="button-container2">
