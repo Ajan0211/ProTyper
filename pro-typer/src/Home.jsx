@@ -30,6 +30,10 @@ function Home() {
               <div className="time">30 Days</div>
               <div className="time">All Time</div>
             </div>
+            <div className="people">
+              <div className="name"></div>
+              <div className="fastest-wpm"></div>
+            </div>
           </div>
           <div className="button">
             <a onClick={() => navigate("/Game")}>Start Game</a>
