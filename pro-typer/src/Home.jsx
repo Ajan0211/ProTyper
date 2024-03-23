@@ -48,34 +48,6 @@ function Home() {
                 </div>
                 <div className="fastest-wpm">30 WPM</div>
               </div>
-              <div className="people">
-                <div className="rank">1st</div>
-                <div className="name">
-                  <i className="fa-solid fa-user"></i> ajan
-                </div>
-                <div className="fastest-wpm">30 WPM</div>
-              </div>
-              <div className="people">
-                <div className="rank">1st</div>
-                <div className="name">
-                  <i className="fa-solid fa-user"></i> ajan
-                </div>
-                <div className="fastest-wpm">30 WPM</div>
-              </div>
-              <div className="people">
-                <div className="rank">1st</div>
-                <div className="name">
-                  <i className="fa-solid fa-user"></i> ajan
-                </div>
-                <div className="fastest-wpm">30 WPM</div>
-              </div>
-              <div className="people">
-                <div className="rank">1st</div>
-                <div className="name">
-                  <i className="fa-solid fa-user"></i> ajan
-                </div>
-                <div className="fastest-wpm">30 WPM</div>
-              </div>
             </div>
           </div>
         </div>
