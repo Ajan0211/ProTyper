@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
  */
 function Checkout() {
   const { user, checkout } = useContext(UserContext);
-  const { bag } = useContext(BagContext);
+  const { bag, removeFromBag } = useContext(BagContext);
 
   const calculateCost = () => {
     let cost = 0;
@@ -112,7 +112,10 @@ function Checkout() {
                       </div>
                       <div className="coin-order">Price: {item.price} </div>
                       <div className="coin-order">
-                        <i className="fa-solid fa-trash"></i>
+                        <i
+                          onClick={() => removeFromBag(item)}
+                          className="fa-solid fa-trash"
+                        ></i>
                       </div>
                     </div>
                   );
