@@ -6,6 +6,7 @@ export function ThemeContextProvider({ children }) {
   const [isLightMode, setIsLightMode] = useState(false);
   const [currentFont, setCurrentFont] = useState(null);
   const [currentSkin, setCurrentSkin] = useState(null);
+  const [currentBG, setCurrentBG] = useState(null);
 
   const fontList = [
     { name: "Kode Mono", styleString: '"Kode Mono", monospace' },
@@ -42,6 +43,8 @@ export function ThemeContextProvider({ children }) {
         getCurrentFontString,
         currentSkin,
         setCurrentSkin,
+        currentBG,
+        setCurrentBG,
       }}
     >
       {children}

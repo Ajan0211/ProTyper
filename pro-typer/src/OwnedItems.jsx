@@ -8,7 +8,8 @@ import { useNavigate } from "react-router-dom";
 
 function OwnedItems() {
   const { user } = useContext(UserContext);
-  const { currentSkin, setCurrentSkin } = useContext(ThemeContext);
+  const { currentSkin, setCurrentSkin, currentBG, setCurrentBG } =
+    useContext(ThemeContext);
   const navigate = useNavigate();
   return (
     <>
@@ -53,10 +54,14 @@ function OwnedItems() {
                       <div
                         key={`owned-item-theme-${index}`}
                         className={`owned-item ${
-                          currentSkin == item ? "active" : ""
+                          currentBG == item.image ? "active" : ""
                         }`}
                         onClick={() => {
-                          // setCurrentSkin(item);
+                          if (currentBG == item.image) {
+                            setCurrentBG(null);
+                          } else {
+                            setCurrentBG(item.image);
+                          }
                         }}
                       >
                         <img

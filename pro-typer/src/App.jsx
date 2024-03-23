@@ -22,17 +22,33 @@ import Coins from "./Coins";
 import CoinsCheckout from "./CoinsCheckout";
 import { useContext } from "react";
 import { ThemeContext } from "./themeContext";
+import DarkBackground from "./assets/background.png";
+import LightBackground from "./assets/background-lightmode.png";
 
 axios.defaults.withCredentials = true;
 
 function App() {
-  const { isLightMode, getCurrentFontString } = useContext(ThemeContext);
+  const { isLightMode, getCurrentFontString, currentBG } =
+    useContext(ThemeContext);
+
+  const getBG = () => {
+    if (!currentBG) {
+      if (isLightMode) {
+        return LightBackground;
+      } else {
+        return DarkBackground;
+      }
+    } else {
+      return currentBG;
+    }
+  };
 
   return (
     <div
-      style={
-        getCurrentFontString() ? { fontFamily: getCurrentFontString() } : {}
-      }
+      style={{
+        fontFamily: getCurrentFontString() ? getCurrentFontString() : undefined,
+        backgroundImage: `url("${getBG()}")`,
+      }}
       className={`App ${isLightMode ? "light" : ""}`}
     >
       <Routes>
