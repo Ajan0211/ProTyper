@@ -14,7 +14,7 @@ import axios from "axios";
  */
 function CoinsCheckout() {
   const { user, checkout } = useContext(UserContext);
-  const { bag } = useContext(BagContext);
+  const { bag, removeFromBag } = useContext(BagContext);
   const navigate = useNavigate();
 
   const calculateCost = () => {
@@ -46,7 +46,10 @@ function CoinsCheckout() {
                 return (
                   <div className="item-order">
                     {item.quantity}x {item.name} ({item.price} coins)
-                    <i className="fa-solid fa-trash"></i>
+                    <i
+                      onClick={() => removeFromBag(item)}
+                      className="fa-solid fa-trash"
+                    ></i>
                   </div>
                 );
               })}
