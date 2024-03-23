@@ -8,7 +8,10 @@ import Car3 from "./assets/car3.png";
 import Jet from "./assets/jet.png";
 import Car4 from "./assets/car4.png";
 import ShopFilter from "./ShopFilter.jsx";
-
+import Theme1 from "./assets/Theme1.gif";
+import Theme2 from "./assets/Theme2.gif";
+import Theme3 from "./assets/Theme3.gif";
+import Theme4 from "./assets/Theme4.gif";
 /**
  * @author Ajanthapan Agilaruben
  * This file is used for the shop page were the user can use a search filter to look for the exact item the
