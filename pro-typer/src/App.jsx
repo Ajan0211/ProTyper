@@ -16,7 +16,7 @@ import Checkout from "./Checkout";
 import Settings from "./Settings";
 import axios from "axios";
 import Account from "./Account";
-import OwnedItems from "./OwnedItems";
+import Skins from "./Skins";
 import Statistics from "./Satistics";
 import Coins from "./Coins";
 import CoinsCheckout from "./CoinsCheckout";
@@ -61,7 +61,7 @@ function App() {
         <Route path="/Checkout" element={<Checkout />} />
         <Route path="/Settings" element={<Settings />} />
         <Route path="/Account" element={<Account />} />
-        <Route path="/OwnedItems" element={<OwnedItems />} />
+        <Route path="/Skins" element={<Skins />} />
         <Route path="/Statistics" element={<Statistics />} />
         <Route path="/Coins" element={<Coins />} />
         <Route path="/CoinsCheckout" element={<CoinsCheckout />} />

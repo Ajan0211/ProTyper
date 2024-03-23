@@ -21,8 +21,13 @@ function AccountNav() {
             </NavLink>
           </div>
           <div className="nav-item1">
-            <NavLink activeClassName="active" to="/OwnedItems">
-              Owned Items
+            <NavLink activeClassName="active" to="/Skins">
+              Skins
+            </NavLink>
+          </div>
+          <div className="nav-item1">
+            <NavLink activeClassName="active" to="/Themes">
+              Themes
             </NavLink>
           </div>
           <div className="nav-item1">

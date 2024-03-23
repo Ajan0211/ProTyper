@@ -6,7 +6,7 @@ import { UserContext } from "./userContext.jsx";
 import { ThemeContext } from "./themeContext.jsx";
 import { useNavigate } from "react-router-dom";
 
-function OwnedItems() {
+function Skins() {
   const { user } = useContext(UserContext);
   const { currentSkin, setCurrentSkin, currentBG, setCurrentBG } =
     useContext(ThemeContext);
@@ -86,4 +86,4 @@ function OwnedItems() {
   );
 }
 
-export default OwnedItems;
+export default Skins;
