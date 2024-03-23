@@ -44,37 +44,7 @@ function Skins() {
                   })
               : "No items found..."}
           </div>
-          <div className="item-section">Themes:</div>
-          <div className="owned-items-list">
-            {user?.items
-              ? user.items
-                  .filter((item) => item.type == "theme")
-                  .map((item, index) => {
-                    return (
-                      <div
-                        key={`owned-item-theme-${index}`}
-                        className={`owned-item ${
-                          currentBG == item.image ? "active" : ""
-                        }`}
-                        onClick={() => {
-                          if (currentBG == item.image) {
-                            setCurrentBG(null);
-                          } else {
-                            setCurrentBG(item.image);
-                          }
-                        }}
-                      >
-                        <img
-                          className="Owned-items-image theme-image"
-                          src={item.image}
-                          alt=""
-                        />
-                        {item.name}
-                      </div>
-                    );
-                  })
-              : "No items found..."}
-          </div>
+
           <div className="button-container2">
             <div className="change-button" onClick={() => navigate("/Game")}>
               Head to Game
