@@ -19,6 +19,7 @@
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
   min-height: 400px;
   min-width: 700px;
+  backdrop-filter: blur(5px);
 }
 
 .button-container2 {
