@@ -23,11 +23,18 @@ export function UserContextProvider({ children }) {
   };
 
   const checkout = (dataToSend) => {
-    axios.post("/api/checkout", dataToSend).then(() => {
-      setBag([]);
-      toast.success("Purchase was successful");
-      navigate("/");
-    });
+    axios
+      .post("/api/checkout", dataToSend)
+      .then(() => {
+        setBag([]);
+        toast.success("Purchase was successful");
+        navigate("/");
+      })
+      .catch((error) => {
+        if (error.response.status == 401) {
+          toast.error(error.response.data.message);
+        }
+      });
   };
 
   useEffect(() => {
