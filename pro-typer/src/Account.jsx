@@ -54,6 +54,16 @@ function Account() {
                   placeholder="Enter Email..."
                 ></input>
               </div>
+              Change Password
+              <div className="input-account">
+                <i className="fa-solid fa-key"></i>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Enter Password..."
+                ></input>
+              </div>
             </div>
           </div>
           <div className="button-container2">

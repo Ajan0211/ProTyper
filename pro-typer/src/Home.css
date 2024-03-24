@@ -37,6 +37,7 @@ body {
   background-repeat: no-repeat;
 
   transition: color 0.5s, background-color 0.5s, background-image 0.5s;
+  scroll-behavior: smooth;
 }
 
 .App.light {
@@ -54,15 +55,27 @@ body {
 }
 
 .container-summary {
+  width: 100%;
+}
+
+.home-welcome {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
   row-gap: 50px;
+  margin-bottom: 20px;
   /* position: absolute;
   left: 50%;
   top: 50%; */
   /* transform: translateX(-50%) translateY(-50%); */
+}
+
+.home-welcome-buttons {
+  display: flex;
+  column-gap: 50px;
+  white-space: nowrap;
 }
 
 .button {
@@ -84,6 +97,7 @@ body {
   text-align: center;
   transition: transform 0.5s;
   margin-top: 12px;
+  text-decoration: none;
 }
 
 .App.light .button {
@@ -154,4 +168,72 @@ body {
   width: 60%;
   text-align: center;
   font-size: 20px;
+}
+
+.duration {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.leaderboard-time {
+  color: white;
+  padding: 5px 12px;
+  min-width: 30px;
+  max-height: 30px;
+  transition: 0.6s;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 0px solid rgba(0, 0, 0, 0);
+  background-image: linear-gradient(90deg, #797979, #261d19, #96938f);
+  box-shadow: 0 0px 10px rgba(34, 34, 34, 0.835);
+  background-size: 300%;
+  background-position: right;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.5s;
+  margin-top: 12px;
+}
+.time:hover {
+  cursor: pointer;
+  background-position: left;
+  transition: 0.6s;
+  transform: translateY(-5px);
+}
+
+.people {
+  border-radius: 20px;
+  border: 3px solid #6c6c6c;
+  min-height: 52px;
+  min-width: 400px;
+  padding: 10px 15px;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  background-color: transparent;
+  transition: 0.3s;
+  outline: none;
+  color: white;
+  justify-content: space-between;
+}
+
+.leaderboard-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 15px 100px;
+  text-align: center;
+}
+
+.people-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  row-gap: 10px;
+  /* overflow-y: auto;
+  height: 60px; */
+}
+.leaderboard-title {
+  font-size: 60px;
 }

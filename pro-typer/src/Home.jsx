@@ -18,13 +18,37 @@ function Home() {
 
       <div className="content">
         <div className="container-summary">
-          <div className="heading">Welcome to ProTyper</div>
-          <div className="summary">
-            Get ready to unleash your typing skills in the ultimate race against
-            the clock – where speed meets precision at ProTyper!
+          <div className="home-welcome">
+            <div className="heading">Welcome to ProTyper</div>
+            <div className="summary">
+              Get ready to unleash your typing skills in the ultimate race
+              against the clock – where speed meets precision at ProTyper!
+            </div>
+            <div className="home-welcome-buttons">
+              <a href="#leaderboard-container" className="button">
+                <span>View Leadboard</span>
+              </a>
+              <div className="button">
+                <a onClick={() => navigate("/Game")}>Start Game</a>
+              </div>
+            </div>
           </div>
-          <div className="button">
-            <a onClick={() => navigate("/Game")}>Start Game</a>
+          <div id="leaderboard-container" className="leaderboard-container">
+            <div className="leaderboard-title">Leaderboard</div>
+            <div className="duration">
+              <div className="leaderboard-time">7 Days</div>
+              <div className="leaderboard-time">30 Days</div>
+              <div className="leaderboard-time">All Time</div>
+            </div>
+            <div className="people-container">
+              <div className="people">
+                <div className="rank">1st</div>
+                <div className="name">
+                  <i className="fa-solid fa-user"></i> ajan
+                </div>
+                <div className="fastest-wpm">30 WPM</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
