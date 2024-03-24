@@ -1,6 +1,9 @@
 import "./Home.css";
 import Navbar from "../../Navbar";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
 
 /**
  * @author Ajanthapan Agilaruben
@@ -12,6 +15,14 @@ import { useNavigate } from "react-router-dom";
  */
 function Home() {
   const navigate = useNavigate();
+  const [leaderboard, setLeaderboard] = useState([]);
+
+  useEffect(() => {
+    axios.post("/api/leaderboard").then((response) => {
+      setLeaderboard(response.data.leaderboard);
+      console.log(response.data.leaderboard);
+    });
+  }, []);
   return (
     <>
       <Navbar></Navbar>
@@ -41,13 +52,18 @@ function Home() {
               <div className="leaderboard-time">All Time</div>
             </div>
             <div className="people-container">
-              <div className="people">
-                <div className="rank">1st</div>
-                <div className="name">
-                  <i className="fa-solid fa-user"></i> ajan
-                </div>
-                <div className="fastest-wpm">30 WPM</div>
-              </div>
+              {leaderboard.map((person, index) => {
+                return (
+                  <div className="people">
+                    <div className="rank">{index + 1}</div>
+                    <div className="name">
+                      <i className="fa-solid fa-user"></i> {person.firstname}{" "}
+                      {person.lastname}
+                    </div>
+                    <div className="fastest-wpm">{person.wpm} WPM</div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

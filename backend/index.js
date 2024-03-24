@@ -162,6 +162,40 @@ app.post("/save-race", (req, res) => {
   });
 });
 
+app.post("/leaderboard", async (req, res) => {
+  try {
+    const leaderboard = await ClientModel.aggregate([
+      {
+        $addFields: {
+          races: {
+            $ifNull: ["$races", []], // Making sure races is an array if it's null or missing.
+          },
+        },
+      },
+      {
+        $project: {
+          _id: 0,
+          firstname: 1,
+          lastname: 1,
+          wpm: {
+            $cond: {
+              if: { $eq: [{ $size: "$races" }, 0] }, // Check if races is empty.
+              then: 0,
+              else: { $avg: "$races.speed" }, // Calculate the average speed if not empty.
+            },
+          },
+        },
+      },
+      { $sort: { wpm: -1 } }, // Sort by WPM in descending order (since it's a leaderboard).
+    ]);
+
+    return res.json({ leaderboard });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).send(error);
+  }
+});
+
 app.post("/Login", (req, res) => {
   const { email, password } = req.body;
   ClientModel.findOne({ email: email }).then((user) => {
