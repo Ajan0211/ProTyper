@@ -25,6 +25,7 @@ import { useContext } from "react";
 import { ThemeContext } from "./themeContext";
 import DarkBackground from "./assets/background.png";
 import LightBackground from "./assets/background-lightmode.png";
+import { Toaster } from "react-hot-toast";
 
 axios.defaults.withCredentials = true;
 
@@ -52,6 +53,7 @@ function App() {
       }}
       className={`App ${isLightMode ? "light" : ""}`}
     >
+      <Toaster position="bottom-right" toastOptions={{ duration: 1500 }} />
       <Routes>
         <Route path="/Login" element={<Login />} />
         <Route path="/" element={<Home />} />

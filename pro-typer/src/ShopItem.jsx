@@ -8,6 +8,7 @@
 
 import React, { useContext } from "react";
 import { BagContext } from "./BagContext";
+import { toast } from "react-hot-toast";
 
 const ShopItem = (props) => {
   const { name, price, image, type } = props;
@@ -25,6 +26,7 @@ const ShopItem = (props) => {
               ...current,
               { type, quantity: 1, image, price, name },
             ]);
+            toast.success("Added to basket!");
           }}
           className="Add-button"
         >

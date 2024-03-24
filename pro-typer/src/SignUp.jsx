@@ -3,6 +3,7 @@ import "./SignUp.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import { toast } from "react-hot-toast";
 
 /**
  * @author Ajanthapan Agilaruben
@@ -28,9 +29,13 @@ function SignUp() {
         email,
         password,
       })
-      .then((result) => {
-        console.log(result);
-        navigate("/Login");
+      .then((response) => {
+        if (response.data.error) {
+          toast.error(response.data.message);
+        } else {
+          toast.success(response.data.message);
+          navigate("/Login");
+        }
       })
       .catch((err) => console.log(err));
   };
