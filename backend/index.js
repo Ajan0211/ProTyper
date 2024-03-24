@@ -193,10 +193,21 @@ app.post("/Login", (req, res) => {
   });
 });
 app.post("/SignUp", (req, res) => {
-  hashPword(req.body.password).then((hashedPW) => {
-    ClientModel.create({ ...req.body, password: hashedPW, coinbalance: 0 })
-      .then((clients) => res.json(clients))
-      .catch((err) => res.json(err));
+  ClientModel.findOne({ email: req.body.email }).then((user) => {
+    if (user) {
+      res.json({ message: "That email is already being used!", error: true });
+    } else {
+      hashPword(req.body.password).then((hashedPW) => {
+        ClientModel.create({ ...req.body, password: hashedPW, coinbalance: 0 })
+          .then((clients) =>
+            res.json({
+              message: `Successfully signed up as ${req.body.email}!`,
+              error: false,
+            })
+          )
+          .catch((err) => res.json(err));
+      });
+    }
   });
 });
 
