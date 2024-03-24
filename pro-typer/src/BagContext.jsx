@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { toast } from "react-hot-toast";
 
 export const BagContext = createContext({});
 
@@ -11,6 +12,7 @@ export function BagContextProvider({ children }) {
       const newBag = [...bag];
       newBag.splice(indexToRemove, 1);
       setBag(newBag);
+      toast.success("Removed from basket!");
     }
   };
 
