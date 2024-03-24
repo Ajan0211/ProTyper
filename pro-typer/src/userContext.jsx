@@ -2,6 +2,7 @@ import axios from "axios";
 import { createContext, useState, useEffect, useContext } from "react";
 import { BagContext } from "./BagContext";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 export const UserContext = createContext({});
 
@@ -24,7 +25,7 @@ export function UserContextProvider({ children }) {
   const checkout = (dataToSend) => {
     axios.post("/api/checkout", dataToSend).then(() => {
       setBag([]);
-      alert("Purchase was successful");
+      toast.success("Purchase was successful");
       navigate("/");
     });
   };
