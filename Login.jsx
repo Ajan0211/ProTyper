@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import axios from "axios";
 import { UserContext } from "./pro-typer/src/userContext.jsx";
+import { toast } from "react-hot-toast";
 
 /**
  * @author Ajanthapan Agilaruben
@@ -29,9 +30,15 @@ function Login() {
         password,
       })
       .then((result) => {
-        if (result.data !== "the password is incorrect") {
+        if (
+          result.data !== "the password is incorrect" &&
+          result.data !== "No record existed"
+        ) {
           setUser(result.data);
           navigate("/");
+          toast.success("Logged in!");
+        } else {
+          toast.error("Incorrect email or password. Please try again!");
         }
       })
       .catch((err) => console.log(err));
