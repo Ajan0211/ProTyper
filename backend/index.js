@@ -251,6 +251,57 @@ app.get("/profile", (req, res) => {
   });
 });
 
+app.post("/account-changes", (req, res) => {
+  checkLoggedIn(req).then((user) => {
+    ClientModel.findOne({ email: req.body.email }).then((other_user) => {
+      if (other_user) {
+        res.json({ message: "That email is already being used!", error: true });
+      } else {
+        const query = { email: user.email };
+        const updateData = Object.entries(req.body).reduce(
+          (acc, [key, value]) => {
+            if (value !== "") {
+              acc[key] = value;
+            }
+            return acc;
+          },
+          {}
+        );
+
+        if (updateData.password) {
+          hashPword(updateData.password).then((hashedPW) => {
+            let actualUpdate = {};
+            actualUpdate = { ...updateData, password: hashedPW };
+            ClientModel.findOneAndUpdate(query, actualUpdate, {
+              upsert: true,
+              returnNewDocument: true,
+            }).then((updatedDoc) => {
+              if (!updatedDoc) return res.send(500, { error: err });
+              return res.json({
+                message: "Successfully updated account details!",
+                error: false,
+              });
+            });
+          });
+        } else {
+          console.log(updateData);
+          console.log(query);
+          ClientModel.findOneAndUpdate(query, updateData, {
+            upsert: true,
+            returnNewDocument: true,
+          }).then((updatedDoc) => {
+            if (!updatedDoc) return res.send(500, { error: err });
+            return res.json({
+              message: "Successfully updated account details!",
+              error: false,
+            });
+          });
+        }
+      }
+    });
+  });
+});
+
 app.listen(3001, () => {
   console.log("server is running");
 });

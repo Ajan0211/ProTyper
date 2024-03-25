@@ -26,8 +26,8 @@ function Account() {
   const handleSubmit = () => {
     axios
       .post("/api/account-changes", {
-        firstName,
-        lastName,
+        firstname: firstName,
+        lastname: lastName,
         email,
         password,
       })
@@ -35,7 +35,11 @@ function Account() {
         if (response.data.error) {
           toast.error(response.data.message);
         } else {
-          toast.success("Changes saved!");
+          if (email) {
+            toast.success("Changes saved! You must log back in again");
+          } else {
+            toast.success("Changes saved!");
+          }
         }
       })
       .catch((err) => console.log(err));
