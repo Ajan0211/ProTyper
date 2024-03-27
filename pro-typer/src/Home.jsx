@@ -46,11 +46,7 @@ function Home() {
           </div>
           <div id="leaderboard-container" className="leaderboard-container">
             <div className="leaderboard-title">Leaderboard</div>
-            <div className="duration">
-              <div className="leaderboard-time">7 Days</div>
-              <div className="leaderboard-time">30 Days</div>
-              <div className="leaderboard-time">All Time</div>
-            </div>
+
             <div className="people-container">
               {leaderboard.map((person, index) => {
                 return (
