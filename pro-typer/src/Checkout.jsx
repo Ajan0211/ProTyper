@@ -1,22 +1,20 @@
+/**
+ * @author Ajanthapan Agilaruben
+ *  This file contains the Checkout page which would allow the user to pay for what has been placed in the users basket.
+ * @date 30/3/2024 - 12:46:36 PM
+ *
+ * @returns {The Checkout component}
+ */
 import "./Checkout.css";
 import { useContext } from "react";
 import { UserContext } from "./userContext.jsx";
 import Navbar from "../../Navbar.jsx";
 import { BagContext } from "./BagContext.jsx";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
-/**
- * @author Ajanthapan Agilaruben
- *  This file contains the Checkout page which would allow the user to pay for what has been placed in the users basket.
- * @date 12/5/2023 - 12:46:36 PM
- *
- * @returns {the shopNav component as well as the payment section and the personal information section.}
- */
 function Checkout() {
   const { user, checkout } = useContext(UserContext);
   const { bag, removeFromBag } = useContext(BagContext);
-
+  // This calculates the costs of what is in the order summary.
   const calculateCost = () => {
     let cost = 0;
     bag.forEach((item) => {
@@ -105,6 +103,8 @@ function Checkout() {
                 .filter((item) => item.type == "coin")
                 .map((item) => {
                   return (
+                    // This returns the item the user has selected with its price
+                    // and an icon of a trash bag if they want to remove it from the bag
                     <div className="item-order">
                       <div className="coin-order">
                         <span>Number of coins: {item.quantity}</span>
@@ -155,8 +155,10 @@ function Checkout() {
             </div>
             <div className="payment">
               <div className="pay-section">
+                {/* This tells the user what is total cost */}
                 Amount due: £ {calculateCost()}
                 <div
+                  // This makes the user purchase the coins they have bought when clicked on
                   className="pay-button"
                   onClick={() => {
                     if (user) {
