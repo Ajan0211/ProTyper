@@ -1,8 +1,3 @@
-import Navbar from "../../Navbar.jsx";
-import "./Account.css";
-import { useNavigate } from "react-router-dom";
-import AccountNav from "./AccountNav.jsx";
-
 /**
  * @author Ajanthapan Agilaruben
  * This File contains the Account component which allows the user to change there personal information and
@@ -12,8 +7,44 @@ import AccountNav from "./AccountNav.jsx";
  *
  * @returns the Account component
  */
+
+import Navbar from "../../Navbar.jsx";
+import "./Account.css";
+import { useNavigate } from "react-router-dom";
+import AccountNav from "./AccountNav.jsx";
+import { useState } from "react";
+import axios from "axios";
+import toast from "react-hot-toast";
+
 function Account() {
   const navigate = useNavigate();
+
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = () => {
+    axios
+      .post("/api/account-changes", {
+        firstname: firstName,
+        lastname: lastName,
+        email,
+        password,
+      })
+      .then((response) => {
+        if (response.data.error) {
+          toast.error(response.data.message);
+        } else {
+          if (email) {
+            toast.success("Changes saved! You must log back in again");
+          } else {
+            toast.success("Changes saved!");
+          }
+        }
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <>
       <Navbar></Navbar>
@@ -30,6 +61,8 @@ function Account() {
                   id="fname"
                   name="firstname"
                   placeholder="Firstname..."
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
                 ></input>
               </div>
               Change last name
@@ -40,6 +73,8 @@ function Account() {
                   id="lname"
                   name="Lastname"
                   placeholder="Lastname..."
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
                 ></input>
               </div>
             </div>
@@ -52,6 +87,8 @@ function Account() {
                   id="email"
                   name="email"
                   placeholder="Enter Email..."
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 ></input>
               </div>
               Change Password
@@ -62,12 +99,16 @@ function Account() {
                   id="password"
                   name="password"
                   placeholder="Enter Password..."
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 ></input>
               </div>
             </div>
           </div>
           <div className="button-container2">
-            <div className="change-button">Make Changes</div>
+            <div onClick={handleSubmit} className="change-button">
+              Make Changes
+            </div>
           </div>
         </div>
       </div>

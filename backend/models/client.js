@@ -1,3 +1,11 @@
+/**
+ * @author Ajanthapan Agilaruben
+ * This File contains the Schema for the Mongo DB table that houses user account details, inventory and coin balance.
+ *
+ * @date 29/03/2024 - 15:40:28 PM
+ *
+ */
+
 const mongoose = require("mongoose");
 
 const ClientSchema = new mongoose.Schema({
