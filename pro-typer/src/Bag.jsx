@@ -1,6 +1,6 @@
 /**
  * This file is a component of the shopNav.jsx file and it is shopping bag feature which is shown as a pop up on the shop page when you click on the Navbar.
- * @date 12/5/2023 - 11:20:23 AM
+ * @date 30/3/2024 - 11:20:23 AM
  * @author Ajanthapan Agilaruben
  * @returns {The bag item component with a list of items with its price and total and a button that leads to the checkout page.}
  */
@@ -14,7 +14,7 @@ const Bag = (props) => {
   const { popUp } = props;
   const { bag } = useContext(BagContext);
   const navigate = useNavigate();
-
+  // This calculates the costs of the items within the bag.
   const calculateCost = () => {
     let cost = 0;
     bag.forEach((item) => {
@@ -29,14 +29,17 @@ const Bag = (props) => {
     <div className={`PopUp ${[popUp ? "show" : ""]}`}>
       Shopping bag
       <div className="item-container">
+        {/* Calls teh bag item component and returns it to the bag. */}
         {bag.map((item, index) => {
           return <BagItem key={`bag-item-${index}`} item={item} />;
         })}
       </div>
       <div className="total-cost">
+        {/* Returns the cost */}
         Total: {calculateCost()}
         <i className="fa-solid fa-coins"></i>
       </div>
+      {/* Navigates to the coins checkout page */}
       <div className="bag-checkout" onClick={() => navigate("/CoinsCheckout")}>
         Checkout
       </div>
