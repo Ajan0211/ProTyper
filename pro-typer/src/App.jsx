@@ -32,7 +32,7 @@ axios.defaults.withCredentials = true;
 function App() {
   const { isLightMode, getCurrentFontString, currentBG } =
     useContext(ThemeContext);
-
+  // This function returns currentBG if lightmode or darkmode is on
   const getBG = () => {
     if (!currentBG) {
       if (isLightMode) {
@@ -46,6 +46,7 @@ function App() {
   };
 
   return (
+    // This function helps use the font feature as it would set the current font through out all the routes.
     <div
       style={{
         fontFamily: getCurrentFontString() ? getCurrentFontString() : undefined,
@@ -53,6 +54,7 @@ function App() {
       }}
       className={`App ${isLightMode ? "light" : ""}`}
     >
+      {/* toaster makes the notifications appear at the bottom right of the screen */}
       <Toaster position="bottom-right" toastOptions={{ duration: 1500 }} />
       <Routes>
         <Route path="/Login" element={<Login />} />
