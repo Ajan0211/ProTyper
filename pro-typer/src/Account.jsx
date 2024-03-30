@@ -1,11 +1,3 @@
-import Navbar from "../../Navbar.jsx";
-import "./Account.css";
-import { useNavigate } from "react-router-dom";
-import AccountNav from "./AccountNav.jsx";
-import { useState } from "react";
-import axios from "axios";
-import toast from "react-hot-toast";
-
 /**
  * @author Ajanthapan Agilaruben
  * This File contains the Account component which allows the user to change there personal information and
@@ -15,6 +7,15 @@ import toast from "react-hot-toast";
  *
  * @returns the Account component
  */
+
+import Navbar from "../../Navbar.jsx";
+import "./Account.css";
+import { useNavigate } from "react-router-dom";
+import AccountNav from "./AccountNav.jsx";
+import { useState } from "react";
+import axios from "axios";
+import toast from "react-hot-toast";
+
 function Account() {
   const navigate = useNavigate();
 
