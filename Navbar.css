@@ -106,6 +106,10 @@
   position: relative;
   margin-top: 10px;
 }
+
+.App.light .coin-button {
+  color: black;
+}
 .coin-button:hover {
   cursor: pointer;
   background-position: left;
