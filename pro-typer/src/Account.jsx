@@ -24,6 +24,8 @@ function Account() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [showPassword, setShowPassword] = useState("");
+
   const handleSubmit = () => {
     axios
       .post("/api/account-changes", {
@@ -45,6 +47,7 @@ function Account() {
       })
       .catch((err) => console.log(err));
   };
+
   return (
     <>
       <Navbar></Navbar>
@@ -94,14 +97,21 @@ function Account() {
               Change Password
               <div className="input-account">
                 <i className="fa-solid fa-key"></i>
+
                 <input
-                  type="password"
+                  type={`${showPassword ? "text" : "password"}`}
                   id="password"
                   name="password"
-                  placeholder="Enter Password..."
-                  value={password}
+                  placeholder="Password..."
                   onChange={(e) => setPassword(e.target.value)}
                 ></input>
+                <i
+                  className={`fa-solid ${
+                    showPassword ? "fa-eye-slash" : "fa-eye"
+                  }`}
+                  type="show-password"
+                  onClick={() => setShowPassword((state) => !state)}
+                ></i>
               </div>
             </div>
           </div>
