@@ -1,8 +1,8 @@
 /**
- * This file is a component of the shopNav.jsx file and it is shopping bag feature which is shown as a pop up on the shop page when you click on the Navbar.
+ * This file is a component used in the shopNav.jsx file and it is the shopping bag feature which is shown as a pop up on the shop page when you click on the Navbar.
  * @date 30/3/2024 - 11:20:23 AM
  * @author Ajanthapan Agilaruben
- * @returns {The bag item component with a list of items with its price and total and a button that leads to the checkout page.}
+ * @returns {The bag component with a bag icon and a list of items.}
  */
 
 import React, { useContext, useState } from "react";
@@ -29,7 +29,7 @@ const Bag = (props) => {
     <div className={`PopUp ${[popUp ? "show" : ""]}`}>
       Shopping bag
       <div className="item-container">
-        {/* Calls teh bag item component and returns it to the bag. */}
+        {/* Calls the bag item component and returns it to the bag. */}
         {bag.map((item, index) => {
           return <BagItem key={`bag-item-${index}`} item={item} />;
         })}
