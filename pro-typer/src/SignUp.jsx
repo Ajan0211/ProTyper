@@ -100,6 +100,9 @@ function SignUp() {
             <div className="signup-button">
               <a onClick={() => handleSubmit()}>Sign up</a>
             </div>
+            <div className="submit-button">
+              <a onClick={() => navigate("/Login")}>Login</a>
+            </div>
           </div>
         </div>
       </div>
