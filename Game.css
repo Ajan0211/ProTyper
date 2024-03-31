@@ -1,3 +1,12 @@
+/**
+ *  This file contains the CSS file for the main game page.
+ *  @author Ajanthapan Agilaruben
+ *  
+ *
+ *  @date 31/03/2024 - 15:39:28 PM
+ *
+ */
+
 .main-container {
   display: flex;
   justify-content: center;

@@ -151,18 +151,21 @@ function Game() {
             disabled={finishedRace}
           ></input>
         </div>
+        {/* This displays the words per minute */}
         <div className="math-container">
           <div>Words Per Minute: {wordsPerMinute} </div>
+
+          {/* This resets the flag indicating the users typing  */}
           <div
             className="button"
             onClick={() => {
-              setStartedTyping(false);
-              newText();
-              setWordsPerMinute(0);
-              setTimer(0);
-              setInputValue("");
-              setFinishedRace(false);
-              setAnimPaused(true);
+              setStartedTyping(false); // This resets the flag indicating the users typing
+              newText(); // loads new text
+              setWordsPerMinute(0); // resets the wpm
+              setTimer(0); // resets the timer
+              setInputValue(""); // clears the current input
+              setFinishedRace(false); // resets the flag indicating the typing race is finished
+              setAnimPaused(true); // pauses any ongoing animations
             }}
           >
             <i className="fa-solid fa-rotate-right" />
