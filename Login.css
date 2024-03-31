@@ -49,6 +49,18 @@
   transition: transform 0.5s;
 }
 
+.App.light .submit-button {
+  color: black;
+  background-image: linear-gradient(90deg, #252525, #504743, #f3f3f3);
+  border: 0px solid rgba(255, 255, 255);
+  box-shadow: 0 0px 15px rgba(173, 173, 173, 0.835);
+}
+
+.App.light .submit-button:hover {
+  background-color: #8f8f8f;
+  background-image: none;
+}
+
 .submit-button:hover {
   cursor: pointer;
   background-position: left;
@@ -63,6 +75,10 @@
 
   color: aliceblue;
 }
+
+.App.light .heading-login {
+  color: black;
+}
 .forgot-password {
   margin-bottom: 10px;
   text-decoration: none;
@@ -71,6 +87,10 @@
   font-size: 11px;
   text-align: center;
   transition: transform 0.5s;
+}
+
+.App.light .forgot-password {
+  color: black;
 }
 
 .forgot-password:hover {
