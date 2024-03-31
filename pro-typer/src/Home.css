@@ -170,37 +170,6 @@ body {
   font-size: 20px;
 }
 
-.duration {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
-}
-
-.leaderboard-time {
-  color: white;
-  padding: 5px 12px;
-  min-width: 30px;
-  max-height: 30px;
-  transition: 0.6s;
-  cursor: pointer;
-  border-radius: 8px;
-  border: 0px solid rgba(0, 0, 0, 0);
-  background-image: linear-gradient(90deg, #797979, #261d19, #96938f);
-  box-shadow: 0 0px 10px rgba(34, 34, 34, 0.835);
-  background-size: 300%;
-  background-position: right;
-  cursor: pointer;
-  text-align: center;
-  transition: transform 0.5s;
-  margin-top: 12px;
-}
-.time:hover {
-  cursor: pointer;
-  background-position: left;
-  transition: 0.6s;
-  transform: translateY(-5px);
-}
-
 .people {
   border-radius: 20px;
   border: 3px solid #6c6c6c;
@@ -215,6 +184,10 @@ body {
   outline: none;
   color: white;
   justify-content: space-between;
+}
+
+.App.light .people {
+  color: black;
 }
 
 .leaderboard-container {
