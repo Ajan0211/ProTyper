@@ -25,6 +25,9 @@
   color: aliceblue;
 }
 
+.App.light .heading-signup {
+  color: black;
+}
 .input {
   border-radius: 20px;
   border: 3px solid #6c6c6c;
@@ -44,6 +47,9 @@ input {
   outline: none;
   color: white;
   width: 100%;
+}
+.App.light input {
+  color: black;
 }
 
 i[type="show-password"] {
@@ -72,6 +78,18 @@ i[type="show-password"] {
   cursor: pointer;
   text-align: center;
   transition: transform 0.5s;
+}
+
+.App.light .signup-button {
+  color: black;
+  background-image: linear-gradient(90deg, #252525, #504743, #f3f3f3);
+  border: 0px solid rgba(255, 255, 255);
+  box-shadow: 0 0px 15px rgba(173, 173, 173, 0.835);
+}
+
+.App.light .signup-button:hover {
+  background-color: #8f8f8f;
+  background-image: none;
 }
 
 .signup-button:hover {
