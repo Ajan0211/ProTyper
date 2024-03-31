@@ -3,7 +3,7 @@ import AccountNav from "./AccountNav.jsx";
 import "./Statistics.css";
 
 import { useContext } from "react";
-import { UserContext } from "./UserContext";
+import { UserContext } from "./userContext";
 
 function Statistics() {
   const { user } = useContext(UserContext);

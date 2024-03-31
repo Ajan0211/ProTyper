@@ -6,7 +6,7 @@ import { ThemeContext } from "./pro-typer/src/themeContext";
 
 /**
  * This file holds the navbar component which is used throughout the pages so user can navigate to different pages at any time.
- * @date 12/5/2023 - 15:33:47 PM
+ * @date 31/3/2023 - 15:33:47 PM
  *
  * @returns {the Navbar component}
  */
@@ -22,6 +22,7 @@ function Navbar() {
   }, [user]);
 
   return (
+    // contains all the nav links which are on the left of the navbar.
     <div className="navbar">
       <div className="nav-left">
         <div className="nav-item1">
@@ -34,7 +35,7 @@ function Navbar() {
           <a onClick={() => navigate("/Settings")}>Settings</a>
         </div>
       </div>
-
+      {/* contains the logo in the centre of the navbar which leads to the home page when clicked and changes to when on lightmode */}
       <img
         className="logo"
         src={`${
@@ -44,6 +45,7 @@ function Navbar() {
         }`}
         onClick={() => navigate("/")}
       ></img>
+      {/* Conatins all the nav links in the right of the navbar and also has the users coin balance when logged in */}
       <div className="nav-right">
         <div style={{ display: user ? "" : "none" }} className="coins">
           Coins: {balance}
@@ -54,7 +56,8 @@ function Navbar() {
           onClick={() => navigate("/Coins")}
         >
           +
-        </div>{" "}
+        </div>
+        {/* switches from My Account or Login/Signup depending on if the user is logged in or not */}
         <div className="myaccount">
           <a
             onClick={() => {
@@ -75,6 +78,8 @@ function Navbar() {
             )}
           </a>
         </div>
+
+        {/* displays logout when user has been logged in to log out of the account */}
         <div
           style={{ display: user ? "" : "none" }}
           onClick={() => {
