@@ -1,4 +1,11 @@
-import Navbar from "../../Navbar.jsx";
+/**
+ * @author Ajanthapan Agilaruben
+ *  This file contains the coins page where it shows the user all the available coins for sale to purchase skins and themes.
+ * @date 1/4/2024 - 12:46:36 PM
+ *
+ * @returns {Coins component}
+ */
+
 import "./Coins.css";
 import CoinItem from "./CoinItem.jsx";
 import { useState } from "react";
@@ -9,7 +16,7 @@ import ShopNav from "./ShopNav.jsx";
 function Coins() {
   const [searchValue, setSearchValue] = useState("");
   const [typeFilter, setTypeFilter] = useState("");
-
+  // This is the array containing the coins available for purchase.
   const items = [
     {
       name: "5 coins",
@@ -40,7 +47,7 @@ function Coins() {
       image: CoinImage,
     },
   ];
-
+  // This is the function that filter items
   const filterItems = () => {
     return items.filter((item) => {
       if (item.name.toLowerCase().includes(searchValue.toLowerCase())) {
@@ -57,11 +64,9 @@ function Coins() {
   };
   return (
     <>
-      {/* <Navbar></Navbar> */}
-
       <ShopNav />
       <div className="coinsTitle">Coins</div>
-
+      {/*  This is the container for the coins */}
       <div className="page-container">
         {filterItems().map((item, index) => {
           return (
@@ -71,7 +76,7 @@ function Coins() {
               price={item.price}
               image={item.image}
               quantity={item.quantity}
-              type={"coin"}
+              type={"coin"} // gets only the coins
             />
           );
         })}
