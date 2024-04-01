@@ -1,3 +1,12 @@
+/**
+ * @author Ajanthapan Agilaruben
+ * This file is the file that allows the context providers to wrap arround the App and browser context
+ * wraps around the whole thing to ensure the contexts are accessible throughout the applications.
+ * @date 1/4/2024 - 11:33:27 AM
+ *
+ * @returns {Navbar component as well as instructions on what to do to reset password.}
+ */
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
