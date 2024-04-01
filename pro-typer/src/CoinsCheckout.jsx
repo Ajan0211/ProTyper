@@ -7,8 +7,8 @@ import { BagContext } from "./BagContext.jsx";
 import axios from "axios";
 /**
  * @author Ajanthapan Agilaruben
- *  This file contains the Checkout page which would allow the user to pay for what has been placed in the users basket.
- * @date 12/5/2023 - 12:46:36 PM
+ *  This file contains the Checkout page which would allow the user to pay for the amount of coins they have put in the basket.
+ * @date 1/4/2024 - 12:46:36 PM
  *
  * @returns {the shopNav component as well as the payment section and the personal information section.}
  */
@@ -17,15 +17,16 @@ function CoinsCheckout() {
   const { bag, removeFromBag } = useContext(BagContext);
   const navigate = useNavigate();
 
+  // This is the functionthat calculates the total cost of the items in the bag that are not coins
   const calculateCost = () => {
     let cost = 0;
     bag.forEach((item) => {
       if (item.type != "coin") {
-        cost += item.price;
+        cost += item.price; // This adds up the price of each item
       }
     });
 
-    return cost;
+    return cost; // This returns the total cost.
   };
   return (
     <>
@@ -41,24 +42,19 @@ function CoinsCheckout() {
           <div className="personal-container">
             Items selected shown below
             {bag
-              .filter((item) => item.type != "coin")
+              .filter((item) => item.type != "coin") // This filters out coin items
               .map((item) => {
                 return (
+                  // This returns the items selected by the user
                   <div className="item-order">
                     {item.quantity}x {item.name} ({item.price} coins)
                     <i
-                      onClick={() => removeFromBag(item)}
+                      onClick={() => removeFromBag(item)} // This removes the item when clicked on
                       className="fa-solid fa-trash"
                     ></i>
                   </div>
                 );
               })}
-            {/* <div className="item-order">
-              Item2<i className="fa-solid fa-trash"></i>
-            </div>
-            <div className="item-order">
-              Item3<i className="fa-solid fa-trash"></i>
-            </div> */}
           </div>
         </div>
         <div className="card-info">
@@ -72,6 +68,7 @@ function CoinsCheckout() {
               <div className="cost-container">
                 Current Balance:
                 <div className="coin-balance">
+                  {/* This displays the current coin balance of the users */}
                   {user?.coinbalance ? user.coinbalance : 0}{" "}
                   <i className="fa-solid fa-coins"></i>
                 </div>
@@ -80,12 +77,13 @@ function CoinsCheckout() {
                 <div className="cost-container3">
                   Costs:
                   <div className="coin-balance">
+                    {/* This give the total cost of the items being purchased by the user */}
                     {calculateCost()} <i className="fa-solid fa-coins"></i>
                   </div>
                 </div>
                 <div
                   className="cost-container2"
-                  onClick={() => navigate("/Coins")}
+                  onClick={() => navigate("/Coins")} // This navigates the user to the coins page.
                 >
                   Purchase more Coins +
                 </div>
@@ -98,6 +96,7 @@ function CoinsCheckout() {
                 className="pay-button"
                 onClick={() => {
                   if (user) {
+                    // If the user is logged in it would checkout but if they are not it would lead to the shop page.
                     const dataToSend = {
                       bag: bag.filter((item) => item.type != "coin"),
                       type: "item",
