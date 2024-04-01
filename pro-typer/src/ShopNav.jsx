@@ -12,10 +12,11 @@ import { ThemeContext } from "./themeContext";
  *
  * @date 12/5/2023 15:31:25 PM
  *
- * @param {searchValue, setSearchValue are used for the search bars to get the item searched by the user and
- * typefilter, setTypeFilter are used to filter through the 3 filters skins,coins and themes. }
+ * @param {searchValue, setSearchValue are used for the search bars to get the item searched by the user and}
  * @returns {ShopNav component}
  */
+
+// This is the shopNav component to display the nav bar in the shop page.
 function ShopNav(props) {
   const { searchValue, setSearchValue } = props;
   const [popUp, setPopUp] = useState(false);
@@ -26,6 +27,7 @@ function ShopNav(props) {
 
   const [balance, setBalance] = useState(0);
 
+  // This is the effect that updates the balance when the user purchases coins
   useEffect(() => {
     setBalance(user?.coinbalance);
   }, [user]);
@@ -34,6 +36,7 @@ function ShopNav(props) {
       <div className="navbar1">
         <img
           className="shoplogo"
+          // This logo changes based on what mode it is in and navigates to home page.
           src={`${
             isLightMode
               ? "src/assets/logo-lightmode.png"
@@ -41,6 +44,8 @@ function ShopNav(props) {
           }`}
           onClick={() => navigate("/")}
         ></img>
+
+        {/* This containing the search bar on the left side of the nav bar  */}
         <div className="shopnav-left">
           <div className="shopnav-item1">
             <div className="searchbar">
@@ -56,7 +61,7 @@ function ShopNav(props) {
             </div>
           </div>
         </div>
-
+        {/* This is the right side of the navbar containing account and shopping information */}
         <div className="shopnav-right">
           <div className="shopnav-item1">
             <a
@@ -68,7 +73,7 @@ function ShopNav(props) {
                 }
               }}
             >
-              {user ? (
+              {user ? ( // this is what changes between My Account and login/signUp based on if the user is logged in or not.
                 <>
                   My Account <i className="fa-solid fa-user"></i>
                 </>
@@ -77,7 +82,7 @@ function ShopNav(props) {
               )}
             </a>
           </div>
-
+          {/* Displays user coins balance if the are logged in */}
           <div style={{ display: user ? "" : "none" }} className="coins">
             Coins: {balance}
           </div>
@@ -88,7 +93,7 @@ function ShopNav(props) {
           >
             +
           </div>
-
+          {/* This has the shopping bag icon with a pop up functionality */}
           <div className="shopnav-item1">
             <div
               className="bag-button"
