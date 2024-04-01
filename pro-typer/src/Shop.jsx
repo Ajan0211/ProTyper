@@ -27,7 +27,7 @@ import Theme4 from "./assets/Theme4.gif";
 function Shop() {
   const [searchValue, setSearchValue] = useState("");
   const [typeFilter, setTypeFilter] = useState("");
-
+  // These are the items that would be displayed in the shop.
   const items = [
     { name: "Background 1", price: 10, type: "theme", image: Theme1 },
     { name: "F1 Car", price: 11, type: "skin", image: Car2 },
@@ -39,6 +39,7 @@ function Shop() {
     { name: "Jet", price: 13, type: "skin", image: Jet },
   ];
 
+  // This is the function that filters the items based on search and type filter.
   const filterItems = () => {
     return items.filter((item) => {
       if (item.name.toLowerCase().includes(searchValue.toLowerCase())) {
@@ -59,11 +60,14 @@ function Shop() {
       <ShopNav
         searchValue={searchValue}
         setSearchValue={setSearchValue}
+        // this contains the naviagtion bar with search functionality
       ></ShopNav>
+      {/* This is the component thats used to filter items by type. */}
       <ShopFilter typeFilter={typeFilter} setTypeFilter={setTypeFilter} />
 
       <div className="page-container">
         {filterItems().map((item, index) => {
+          // This maps through the filtered items and renders it as a shop items
           return (
             <ShopItem
               key={`shop-item-${index}`}
