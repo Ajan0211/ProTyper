@@ -17,7 +17,7 @@ import Settings from "./Settings";
 import axios from "axios";
 import Account from "./Account";
 import Skins from "./Skins";
-import Statistics from "./Satistics";
+import Statistics from "./Statistics";
 import Coins from "./Coins";
 import Themes from "./Themes";
 import CoinsCheckout from "./CoinsCheckout";
