@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 /**
  * @author Ajanthapan Agilaruben
  * This file is used for the user to reset there password if they have forgotten it.
- * @date 12/5/2023 - 11:33:27 AM
+ * @date 1/4/2024 - 11:33:27 AM
  *
  * @returns {Navbar component as well as instructions on what to do to reset password.}
  */
@@ -31,6 +31,7 @@ function ResetPassword() {
           ></input>
         </div>
         <div className="continue-button">
+          {/* This navigates user to login page */}
           <a onClick={() => navigate("/Login")}>Continue</a>
         </div>
       </div>
