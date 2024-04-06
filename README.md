@@ -4,7 +4,7 @@ This project is for people who are slow at typing and wish to have fun whilst im
 
 ## File description
 
-# Frontend files
+### Frontend files
 
 All the files which end in .css are all the files which I have made in order to style the pages seen in the website.
 
@@ -60,7 +60,7 @@ Login.jsx is used for the Login page where the user would type in there email an
 
 Navbar.jsx is the file that holds the navbar component which is used throughout the pages so user can navigate to different pages at any time.
 
-# Backend files
+### Backend files
 
 blacklist.js is the file that contains the Schema for the Mongo DB table that houses expired session tokens.
 
