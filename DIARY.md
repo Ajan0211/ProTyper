@@ -413,3 +413,7 @@ If i was to do this again I would have doen it alot earlier whilst I was writing
 ### 2nd April
 
 I have fully updated my diary as well as doing the professional issues section in my final year report.
+
+### 6th April
+
+I have finished my Final year report as well as update my readme file. I have also fixed some grammer mistakes within some comments in the code.
