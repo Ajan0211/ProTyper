@@ -124,7 +124,7 @@ Now the backend server should be running and it should leave a message in the te
 
 This demo would go through all the pages I currently have.
 
-https://youtu.be/NwEij9ZaGoc
+https://youtu.be/dUy7oSnPjgA
 
 ## Key Features
 
