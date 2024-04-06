@@ -1,7 +1,7 @@
 /**
  * @author Ajanthapan Agilaruben
  *  This file contains what each coin item component which will be in the coins page and it has the name image
- *  and price of the coin user would wnat to purchase.
+ *  and price of the coin user would want to purchase.
  * @date 30/3/2024 - 12:46:36 PM
  *
  * @returns {props which are name, price, image, quantity, type}

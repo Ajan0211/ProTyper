@@ -1,6 +1,6 @@
 /**
  * @author Ajanthapan Agilaruben
- * This is the file that contains the contxt that contains the user info and provides it acroos all components in the aaplication
+ * This is the file that contains the context that contains the user info and provides it across all components in the aaplication
  *
  * @date 31/3/2024 - 13:29:50 PM
  *
