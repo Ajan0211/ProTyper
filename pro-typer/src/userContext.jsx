@@ -25,12 +25,12 @@ export function UserContextProvider({ children }) {
       setUser(data);
     });
   };
-  // This is teh function that handles the user logout
+  // This is the function that handles the user logout
   const logout = () => {
     setUser(null);
     axios.get("/api/logout");
   };
-  // This isi the function that handles the checkout process
+  // This is the function that handles the checkout process
   const checkout = (dataToSend) => {
     axios
       .post("/api/checkout", dataToSend) // send the data to the backend
